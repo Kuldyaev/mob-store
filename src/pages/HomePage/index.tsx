@@ -6,7 +6,10 @@ const HomePage = () => {
       <div className={s.topImgBlock}>
         <div className={s.topImg}></div>
       </div>
-      <h3>HomePage</h3>
+      <div className={s.homedesk}>
+        <div className={s.searchBar}>Товар, бренд или артикул</div>
+        <h3>HomePage</h3>
+      </div>
     </div>
   );
 };

@@ -1,3 +1,6 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
 .back {
   display: flex;
   flex-direction: column;
@@ -7,14 +10,15 @@
 .topImgBlock {
   width: 480px;
   height: 578.45px;
-
   overflow: hidden;
+  z-index: 1;
+  position: fixed;
 }
 
 .topImg {
   width: 480px;
   height: 578.45px;
-  background-image: url("/public/images/backImg.png");
+  background-image: url("/images/frame.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position-x: center;
@@ -22,6 +26,30 @@
   overflow: hidden;
 }
 
+.homedesk {
+  display: flex;
+  flex-direction: column;
+  width: 461.54px;
+  z-index: 2;
+  margin-top: 443px;
+  min-height: 443px;
+  background-color: $color-white;
+  border: 1px solid $color-white;
+  border-radius: $size25px $size25px 0px 0px;
+  padding-top: $size15px;
+  padding-left: $size15px;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  width: $size344px;
+  height: $size20px;
+  background-color: $color-grey;
+  color: $color-grey-text;
+  border-radius: $size12px;
+  padding: $size8-5px $size8px;
+}
 @media screen and (max-width: 480px) {
   .topImgBlock {
     width: 100vw;
@@ -31,11 +59,26 @@
   .topImg {
     width: 100vw;
     height: 120.51vw;
-    background-image: url("/public/images/backImg.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position-x: center;
     background-size: 100vw 120.51vw;
-    overflow: hidden;
+  }
+
+  .homedesk {
+    width: 96.15vw;
+    margin-top: 113.59vw;
+    min-height: 113.59vw;
+    border-radius: $flexsize25px $flexsize25px 0px 0px;
+    padding-top: $flexsize15px;
+    padding-left: $flexsize15px;
+  }
+
+  .searchBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: $flexsize344px;
+    height: $flexsize20px;
+    border-radius: $flexsize12px;
+    padding: $flexsize8-5px $flexsize8px;
   }
 }
