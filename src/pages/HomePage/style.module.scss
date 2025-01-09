@@ -1,0 +1,41 @@
+.back {
+  display: flex;
+  flex-direction: column;
+  width: min(480px, 100vw);
+}
+
+.topImgBlock {
+  width: 480px;
+  height: 578.45px;
+
+  overflow: hidden;
+}
+
+.topImg {
+  width: 480px;
+  height: 578.45px;
+  background-image: url("/public/images/backImg.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-size: 480px 578.45px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+  .topImgBlock {
+    width: 100vw;
+    height: 120.51vw;
+  }
+
+  .topImg {
+    width: 100vw;
+    height: 120.51vw;
+    background-image: url("/public/images/backImg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-size: 100vw 120.51vw;
+    overflow: hidden;
+  }
+}
