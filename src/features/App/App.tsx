@@ -6,6 +6,9 @@ import { COMPONENTS, routes } from "../../shared/routes";
 const pages: { [key in COMPONENTS]: JSX.Element } = {
   [COMPONENTS.HOME]: <Pages.HomePage />,
   [COMPONENTS.EXAMPLES]: <Pages.ExamplesPage />,
+  [COMPONENTS.CATALOG]: <Pages.CatalogPage />,
+  [COMPONENTS.CART]: <Pages.CartPage />,
+  [COMPONENTS.PROFILE]: <Pages.ProfilePage />,
 };
 
 function App() {

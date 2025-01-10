@@ -35,6 +35,18 @@
       font-size: $size9px;
     }
   }
+
+  .activeBtn {
+    svg {
+      path {
+        fill: $color-blue;
+      }
+    }
+
+    h5 {
+      color: $color-blue;
+    }
+  }
 }
 
 @media screen and (max-width: 480px) {
