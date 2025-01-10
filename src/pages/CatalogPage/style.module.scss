@@ -1,0 +1,64 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.catalogDesk {
+  padding: $size15px;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  width: $size344px;
+  height: $size20px;
+  background-color: $color-grey;
+  color: $color-grey-text;
+  border-radius: $size12px;
+  padding: $size8-5px $size8px;
+
+  svg {
+    width: $size18px;
+    height: $size18px;
+    margin-right: $size4px;
+  }
+
+  .searchInput {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: $size14-5px;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .catalogDesk {
+    padding: $flexsize15px;
+  }
+  .searchBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: $flexsize344px;
+    height: $flexsize20px;
+    border-radius: $flexsize12px;
+    padding: $flexsize8-5px $flexsize8px;
+
+    svg {
+      width: $flexsize18px;
+      height: $flexsize18px;
+      margin-right: $flexsize4px;
+    }
+
+    .searchInput {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: $flexsize14-5px;
+    }
+  }
+}
