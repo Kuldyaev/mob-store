@@ -1,3 +1,4 @@
+import { SearchIcon } from "../../features/Icons";
 import s from "./style.module.scss";
 
 const HomePage = () => {
@@ -7,7 +8,10 @@ const HomePage = () => {
         <div className={s.topImg}></div>
       </div>
       <div className={s.homedesk}>
-        <div className={s.searchBar}>Товар, бренд или артикул</div>
+        <div className={s.searchBar}>
+          <SearchIcon />
+          <h6 className={s.searchInput}>Товар, бренд или артикул</h6>
+        </div>
         <h3>HomePage</h3>
       </div>
     </div>

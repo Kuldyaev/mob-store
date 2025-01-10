@@ -1,0 +1,54 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.bottomMenu {
+  width: calc(480px - $size30px - $size30px);
+  height: $size36px;
+  padding: $size11px $size30px;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-white;
+  margin-top: calc(100vh - $size58px);
+
+  .bottomMenuBtn {
+    padding: 0px;
+    height: 100%;
+    width: $size50px;
+    border: none;
+    display: block;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-white;
+
+    h5 {
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      color: $color-dark-grey;
+      font-weight: 500;
+      font-family: "Inter";
+      font-size: $size9px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bottomMenu {
+    width: calc(100vw - $flexsize30px - $flexsize30px);
+    height: $flexsize36px;
+    margin-top: calc(100vh - $flexsize58px);
+    padding: $flexsize11px $flexsize30px;
+
+    .bottomMenuBtn {
+      width: $flexsize50px;
+      h5 {
+        font-size: $flexsize9px;
+      }
+    }
+  }
+}
