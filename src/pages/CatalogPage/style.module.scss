@@ -5,6 +5,47 @@
   padding: $size15px;
 }
 
+.cardDesk {
+  margin-top: $size15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: $size15px;
+}
+
+.card {
+  width: 30%;
+  height: $size140px;
+  background-color: $color-grey;
+  border-radius: $size10px;
+  display: flex;
+  flex-direction: column;
+
+  .cardTitle {
+    width: calc(100% - $size20px);
+    height: $size32px;
+    margin: 0;
+    font-weight: 500;
+    line-height: $size16px;
+    font-size: $size14-5px;
+    padding: $size10px $size10px 0 $size10px;
+  }
+  .cardImgPlace {
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom right;
+    border-radius: 0 0 $size10px $size10px;
+  }
+}
+
+.cardDeskBottom {
+  width: 100%;
+  min-height: $size42px;
+}
+
 .searchBar {
   display: flex;
   flex-direction: row;
@@ -33,9 +74,37 @@
 }
 
 @media screen and (max-width: 480px) {
+  .cardDesk {
+    margin-top: $flexsize15px;
+    gap: $flexsize15px;
+  }
+
+  .card {
+    height: $flexsize140px;
+    border-radius: $flexsize10px;
+
+    .cardTitle {
+      width: calc(100% - $flexsize20px);
+      height: $flexsize32px;
+      color: $color-black;
+      font-size: $flexsize14-5px;
+      line-height: $flexsize16px;
+      padding: $flexsize10px $flexsize10px 0 $flexsize10px;
+    }
+
+    .cardImgPlace {
+      border-radius: 0 0 $flexsize10px $flexsize10px;
+    }
+  }
+
   .catalogDesk {
     padding: $flexsize15px;
   }
+
+  .cardDeskBottom {
+    min-height: $flexsize42px;
+  }
+
   .searchBar {
     display: flex;
     flex-direction: row;

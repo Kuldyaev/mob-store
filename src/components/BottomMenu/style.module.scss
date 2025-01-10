@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: $color-white;
-  margin-top: calc(100vh - $size58px);
+  margin-top: calc(100dvh - $size58px);
 
   .bottomMenuBtn {
     padding: 0px;
@@ -53,7 +53,7 @@
   .bottomMenu {
     width: calc(100vw - $flexsize30px - $flexsize30px);
     height: $flexsize36px;
-    margin-top: calc(100vh - $flexsize58px);
+    margin-top: calc(100dvh - $flexsize58px);
     padding: $flexsize11px $flexsize30px;
 
     .bottomMenuBtn {
