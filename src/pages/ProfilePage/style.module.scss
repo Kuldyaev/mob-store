@@ -1,0 +1,139 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.profileDesk {
+  background-color: $color-grey;
+  padding: 0px;
+  margin: 0px;
+
+  .profileDeskTop {
+    background-color: $color-white;
+    width: $size360px;
+    height: $size218px;
+    padding: $size15px;
+    border-radius: 0px 0px $size25px $size25px;
+    position: fixed;
+    margin-bottom: 10px;
+    top: 0;
+    z-index: 2;
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      font-weight: 700;
+      margin-top: $size20px;
+      font-size: $size24px;
+    }
+
+    .profileTopLine {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: $size15px;
+
+      .profileTopLineItem {
+        background-color: $color-grey;
+        height: $size90px;
+        width: $size176px;
+        border-radius: $size14px;
+        background-repeat: no-repeat;
+        background-size: auto 60%;
+        background-position: bottom right;
+
+        .profileItemTitlePlace {
+          padding: $size10px 0 0 $size10px;
+          width: calc(100% - $size10px);
+          height: $size35px;
+
+          h5,
+          h6 {
+            margin: 0;
+            padding: 0;
+          }
+
+          h5 {
+            font-size: $size14-5px;
+            line-height: $size17-5px;
+            color: $color-black;
+            font-weight: 500;
+          }
+
+          h6 {
+            font-size: $size12-5px;
+            line-height: $size15px;
+            color: $color-dark-grey;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+  .profileDeskMenu {
+    position: absolute;
+    z-index: 1;
+    background-color: $color-white;
+
+    min-height: $size550px;
+    margin-top: $size265px;
+    width: $size360px;
+    padding: $size15px;
+    border-radius: $size25px $size25px 0px 0px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profileDesk {
+    padding: 0px;
+    width: 100vw;
+
+    .profileDeskTop {
+      height: $flexsize218px;
+      width: $flexsize360px;
+      padding: $flexsize15px;
+      border-radius: 0px 0px $flexsize25px $flexsize25px;
+
+      h3 {
+        margin-top: $flexsize20px;
+        font-size: $flexsize24px;
+      }
+
+      .profileTopLine {
+        gap: $flexsize15px;
+
+        .profileTopLineItem {
+          height: $flexsize90px;
+          width: $flexsize176px;
+          border-radius: $flexsize14px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .profileItemTitlePlace {
+            padding: $flexsize10px 0 0 $flexsize10px;
+            width: calc(100% - $flexsize10px);
+            height: $flexsize35px;
+
+            h5 {
+              font-size: $flexsize14-5px;
+              line-height: $flexsize17-5px;
+            }
+
+            h6 {
+              font-size: $flexsize12-5px;
+              line-height: $flexsize15px;
+            }
+          }
+        }
+      }
+    }
+
+    .profileDeskMenu {
+      min-height: $flexsize550px;
+      margin-top: $flexsize265px;
+      width: $flexsize360px;
+      padding: $flexsize15px;
+      border-radius: $flexsize25px $flexsize25px 0px 0px;
+    }
+  }
+}

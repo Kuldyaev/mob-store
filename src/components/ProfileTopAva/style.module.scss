@@ -1,0 +1,76 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.profileTopAva {
+  margin-bottom: $size15px;
+  width: $size360px;
+  height: $size40px;
+  display: flex;
+  flex-direction: row;
+  gap: $size10px;
+
+  .profileAva {
+    width: $size40px;
+    height: $size40px;
+    border-radius: $size14px;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+  }
+
+  .profileTextBlock {
+    height: $size40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    h5,
+    h6 {
+      margin: 0;
+      padding: 0;
+    }
+
+    h5 {
+      color: $color-black;
+      font-weight: 500;
+      font-size: $size14-5px;
+      line-height: $size17-5px;
+    }
+
+    h6 {
+      font-size: $size12-5px;
+      line-height: $size15px;
+      color: $color-dark-grey;
+      font-weight: 400;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profileTopAva {
+    margin-bottom: $flexsize15px;
+    width: $flexsize360px;
+    height: $flexsize40px;
+    gap: $flexsize10px;
+
+    .profileAva {
+      width: $flexsize40px;
+      height: $flexsize40px;
+      border-radius: $flexsize14px;
+    }
+    .profileTextBlock {
+      height: $flexsize40px;
+
+      h5 {
+        font-size: $flexsize14-5px;
+        line-height: $flexsize17-5px;
+      }
+
+      h6 {
+        font-size: $flexsize12-5px;
+        line-height: $flexsize15px;
+      }
+    }
+  }
+}
