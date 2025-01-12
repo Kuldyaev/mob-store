@@ -73,12 +73,86 @@
     position: absolute;
     z-index: 1;
     background-color: $color-white;
+    display: flex;
+    flex-direction: column;
 
     min-height: $size550px;
     margin-top: $size265px;
     width: $size360px;
     padding: $size15px;
     border-radius: $size25px $size25px 0px 0px;
+
+    .profileDeskMenuItem {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: auto;
+      height: $size55px;
+
+      .profileDeskMenuIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .profileDeskMenuIconPlace {
+          background-color: $color-grey;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: $size29px;
+          height: $size29px;
+          border-radius: $size8px;
+        }
+      }
+
+      .profileDeskMenuInfo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: calc($size290px + $size30px);
+        height: 100%;
+        border-bottom: 0.25px solid #c7c5c5;
+
+        .profileDeskMenuText {
+          height: 100%;
+          max-width: $size290px;
+          width: $size290px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          h4,
+          h5 {
+            width: $size290px;
+            margin: 0;
+            border: none;
+            padding: 0;
+          }
+
+          h4 {
+            color: $color-super-black;
+            font-weight: 400;
+            font-size: $size14-5px;
+            line-height: $size17-5px;
+          }
+          h5 {
+            color: $color-dark-grey;
+            font-weight: 400;
+            font-size: $size11-5px;
+            line-height: $size14px;
+          }
+        }
+      }
+
+      button {
+        width: $size30px;
+        height: 96%;
+        border: none;
+        background-color: $color-white;
+        padding: 0;
+      }
+    }
   }
 }
 
@@ -134,6 +208,51 @@
       width: $flexsize360px;
       padding: $flexsize15px;
       border-radius: $flexsize25px $flexsize25px 0px 0px;
+
+      .profileDeskMenuItem {
+        height: $flexsize55px;
+
+        .profileDeskMenuIconPlace {
+          width: $flexsize29px;
+          height: $flexsize29px;
+          border-radius: $flexsize8px;
+        }
+
+        .profileDeskMenuInfo {
+          width: calc($flexsize290px + $flexsize30px);
+
+          .profileDeskMenuText {
+            max-width: $flexsize290px;
+            width: $flexsize290px;
+
+            h4,
+            h5 {
+              width: $flexsize290px;
+            }
+
+            h4 {
+              font-size: $flexsize14-5px;
+              line-height: $flexsize17-5px;
+            }
+            h5 {
+              font-size: $flexsize11-5px;
+              line-height: $flexsize14px;
+            }
+          }
+        }
+
+        button {
+          width: $size30px;
+          height: 96%;
+          border: none;
+          background-color: $color-white;
+          padding: 0;
+        }
+      }
+
+      button {
+        width: $flexsize30px;
+      }
     }
   }
 }
