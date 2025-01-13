@@ -1,3 +1,4 @@
+import PopularCategoties from "../../components/PopularCategoties";
 import { SearchIcon } from "../../features/Icons";
 import s from "./style.module.scss";
 
@@ -13,6 +14,7 @@ const HomePage = () => {
           <h6 className={s.searchInput}>Товар, бренд или артикул</h6>
         </div>
         <h3>HomePage</h3>
+        <PopularCategoties />
       </div>
     </div>
   );

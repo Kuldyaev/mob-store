@@ -102,6 +102,11 @@
           width: $size29px;
           height: $size29px;
           border-radius: $size8px;
+
+          img {
+            width: $size15px;
+            height: $size15px;
+          }
         }
       }
 
@@ -152,6 +157,17 @@
         border: none;
         background-color: $color-white;
         padding: 0;
+
+        svg {
+          width: $size6px;
+          height: $size10px;
+        }
+      }
+    }
+
+    .profileDeskMenuItem:last-child {
+      .profileDeskMenuInfo {
+        border-bottom: 0.25px solid $color-white;
       }
     }
   }
@@ -213,10 +229,17 @@
       .profileDeskMenuItem {
         height: $flexsize55px;
 
-        .profileDeskMenuIconPlace {
-          width: $flexsize29px;
-          height: $flexsize29px;
-          border-radius: $flexsize8px;
+        .profileDeskMenuIcon {
+          .profileDeskMenuIconPlace {
+            width: $flexsize29px;
+            height: $flexsize29px;
+            border-radius: $flexsize8px;
+
+            img {
+              width: $flexsize15px;
+              height: $flexsize15px;
+            }
+          }
         }
 
         .profileDeskMenuInfo {
@@ -248,6 +271,11 @@
           border: none;
           background-color: $color-white;
           padding: 0;
+
+          svg {
+            width: $flexsize6px;
+            height: $flexsize10px;
+          }
         }
       }
 
