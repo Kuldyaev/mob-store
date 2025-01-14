@@ -38,11 +38,16 @@
       line-height: $size17-5px;
     }
 
-    h6 {
-      font-size: $size12-5px;
-      line-height: $size15px;
-      color: $color-dark-grey;
-      font-weight: 400;
+    button {
+      border: none;
+      background-color: $color-white;
+      padding-left: 0px;
+      h6 {
+        font-size: $size12-5px;
+        line-height: $size15px;
+        color: $color-dark-grey;
+        font-weight: 400;
+      }
     }
   }
 }
