@@ -1,0 +1,35 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.examplesDesk {
+  padding: $size15px;
+  background-color: $color-white;
+  padding-bottom: $size44px;
+
+  h1 {
+    margin-bottom: $size15px;
+  }
+  section {
+    border: 1px solid silver;
+    margin-bottom: $size10px;
+
+    h4 {
+      padding: 5px 2px;
+      margin: 0px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .examplesDesk {
+    padding: $flexsize15px;
+    padding-bottom: $flexsize44px;
+
+    h1 {
+      margin-bottom: $flexsize15px;
+    }
+    section {
+      margin-bottom: $flexsize10px;
+    }
+  }
+}

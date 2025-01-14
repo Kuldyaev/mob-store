@@ -1,0 +1,19 @@
+@use "./../../../scss/colors.scss" as *;
+@use "./../../../scss/variabels.scss" as *;
+
+.paragraf1 {
+  margin: 0px;
+  padding: 0px;
+  user-select: none;
+
+  font-weight: 700;
+  font-size: $size24px;
+  line-height: $size24px;
+}
+
+@media screen and (max-width: 480px) {
+  .paragraf1 {
+    font-size: $flexsize24px;
+    line-height: $flexsize24px;
+  }
+}

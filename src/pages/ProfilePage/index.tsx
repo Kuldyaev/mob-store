@@ -1,4 +1,5 @@
 import ProfileTopAva from "../../components/ProfileTopAva";
+import { Paragraph1 } from "../../components/uikit";
 import {
   ArrowToRight,
   starIconSVG,
@@ -81,7 +82,7 @@ const ProfilePage = () => {
   return (
     <div className={s.profileDesk}>
       <div className={s.profileDeskTop}>
-        <h3>Профиль</h3>
+        <Paragraph1>Профиль</Paragraph1>
         <ProfileTopAva />
         <div className={s.profileTopLine}>
           <div
