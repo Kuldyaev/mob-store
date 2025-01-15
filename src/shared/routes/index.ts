@@ -4,6 +4,7 @@ export enum PATHS {
   CATALOG = "/catalog",
   CART = "/cart",
   PROFILE = "/profile",
+  DISCOUNTS = "/discounts",
 }
 export enum COMPONENTS {
   HOME = "HOME",
@@ -11,6 +12,7 @@ export enum COMPONENTS {
   CATALOG = "CATALOG ",
   CART = "CART",
   PROFILE = "PROFILE",
+  DISCOUNTS = "DISCOUNTS",
 }
 
 export const routes = [
@@ -19,4 +21,5 @@ export const routes = [
   { path: PATHS.CATALOG, componentName: COMPONENTS.CATALOG },
   { path: PATHS.CART, componentName: COMPONENTS.CART },
   { path: PATHS.PROFILE, componentName: COMPONENTS.PROFILE },
+  { path: PATHS.DISCOUNTS, componentName: COMPONENTS.DISCOUNTS },
 ];

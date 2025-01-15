@@ -9,6 +9,7 @@ const pages: { [key in COMPONENTS]: JSX.Element } = {
   [COMPONENTS.CATALOG]: <Pages.CatalogPage />,
   [COMPONENTS.CART]: <Pages.CartPage />,
   [COMPONENTS.PROFILE]: <Pages.ProfilePage />,
+  [COMPONENTS.DISCOUNTS]: <Pages.MonthDiskountPage />,
 };
 
 function App() {
