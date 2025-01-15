@@ -17,6 +17,8 @@ import inviteFrendIconSVG from "./inviteFrendIconSVG.svg";
 import promoCodesIconSVG from "./promoCodesIconSVG.svg";
 import telegramIconSVG from "./telegramIconSVG.svg";
 import documentIconSVG from "./documentIconSVG.svg";
+import TrashCanIcon from "./TrashCanIcon";
+import FavoriteIcon from "./FavoriteIcon";
 
 export {
   SearchIcon,
@@ -38,4 +40,6 @@ export {
   promoCodesIconSVG,
   telegramIconSVG,
   documentIconSVG,
+  TrashCanIcon,
+  FavoriteIcon,
 };
