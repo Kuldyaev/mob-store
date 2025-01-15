@@ -2,12 +2,14 @@ import { useState } from "react";
 import { Paragraph1, CheckBox } from "../../components/uikit";
 import ProfileTopAva from "../../components/ProfileTopAva";
 import { ItemCounter } from "../../components/ItemCounter";
+import { DeleteBtn, FavoriteBtn } from "../../components/uikit";
 import PopularCategoties from "../../components/PopularCategoties";
 import SearchBar from "../../components/SearchBar";
 import s from "./style.module.scss";
 
 const ExamplesPage = () => {
   const [checked, setChecked] = useState(false);
+  const [favorite, setFavorite] = useState(true);
   const [quantity, setQuantity] = useState(1);
 
   return (
@@ -22,7 +24,17 @@ const ExamplesPage = () => {
         <h4>ItemCounter </h4>
         <ItemCounter quantity={quantity} setQuantity={setQuantity} />
       </section>
-
+      <section>
+        <h4>Delete Button </h4>
+        <DeleteBtn deleteItem={() => console.log("Delete Item")} />
+      </section>
+      <section>
+        <h4>Favorite Button </h4>
+        <FavoriteBtn
+          isfavorite={favorite}
+          favoreItem={() => setFavorite(!favorite)}
+        />
+      </section>
       <section>
         <h4>Search bar</h4>
         <SearchBar />

@@ -3,6 +3,7 @@ import s from "./style.module.scss";
 import { useState } from "react";
 import { ItemCounter } from "../ItemCounter";
 import { CheckBox } from "../../components/uikit";
+import { DeleteBtn, FavoriteBtn } from "../../components/uikit";
 
 interface CartItemProps {
   good: {
@@ -18,6 +19,7 @@ interface CartItemProps {
 
 const CartItem: FC<CartItemProps> = ({ good }) => {
   const [checked, setChecked] = useState(false);
+  const [favorite, setFavorite] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
   return (
@@ -51,7 +53,11 @@ const CartItem: FC<CartItemProps> = ({ good }) => {
             <div className={s.price}>
               {good.price} <span>₽</span>
             </div>
-
+            <FavoriteBtn
+              isfavorite={favorite}
+              favoreItem={() => setFavorite(!favorite)}
+            />
+            <DeleteBtn deleteItem={() => console.log("Delete Item")} />
             <ItemCounter quantity={quantity} setQuantity={setQuantity} />
           </div>
         </div>
