@@ -1,0 +1,21 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.cartDesk {
+  padding: $size15px;
+  background-color: $color-white;
+  min-height: 90dvh;
+
+  h1 {
+    margin-bottom: $size15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cardDesk {
+    margin-top: $flexsize15px;
+    h1 {
+      margin-bottom: $flexsize15px;
+    }
+  }
+}

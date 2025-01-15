@@ -1,65 +1,70 @@
+import { FC } from "react";
 import s from "./style.module.scss";
 import { useState } from "react";
 import { CheckBox } from "../../components/uikit";
 
-const CartItem = ({ goods }) => {
+interface CartItemProps {
+  good: {
+    id: number;
+    img: string;
+    desc: string;
+    size: string;
+    delivery: string;
+    color: string;
+    price: string;
+  };
+}
+
+const CartItem: FC<CartItemProps> = ({ good }) => {
   const [checked, setChecked] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
   return (
-    <div>
-      {goods.map(({ id, img, desc, size, delivery, color, price }) => (
-        <div key={id}>
-          <div className={s.item}>
-            <div className={s.itemImg}>
-              <div
-                className={s.img}
-                style={{
-                  backgroundImage: "url('images/" + img + ".png')",
-                }}
-              ></div>
+    <div key={good.id}>
+      <div className={s.item}>
+        <div className={s.itemImg}>
+          <div
+            className={s.img}
+            style={{
+              backgroundImage: "url('images/" + good.img + ".png')",
+            }}
+          ></div>
+        </div>
+        <div className={s.textInfo}>
+          <div className={s.itemHeader}>
+            <div className={s.desc}>{good.desc}</div>
+            <CheckBox changeValue={setChecked} checked={checked} />
+          </div>
+          <div className={s.itemBody}>
+            <div className={s.bodySettings}>
+              Цвет: <span>{good.color}</span>
             </div>
-            <div className={s.textInfo}>
-              <div className={s.itemHeader}>
-                <div className={s.desc}>{desc}</div>
-                <CheckBox changeValue={setChecked} checked={checked} />
-              </div>
-              <div className={s.itemBody}>
-                <div className={s.bodySettings}>
-                  Цвет: <span>{color}</span>
-                </div>
-                <div className={s.bodySettings}>
-                  Размер:{" "}
-                  <span>
-                    {size} | {delivery} дней
-                  </span>
-                </div>
-              </div>
-              <div className={s.itemFooter}>
-                <div className={s.price}>
-                  {price} <span>₽</span>
-                </div>
-                {checked ? (
-                  <div className={s.counter}>
-                    <button
-                      className={s.dis}
-                      onClick={() => setQuantity((prev) => prev - 1)}
-                      disabled={quantity <= 1}
-                    >
-                      -
-                    </button>
-                    {quantity}
-                    <button onClick={() => setQuantity((prev) => prev + 1)}>
-                      +
-                    </button>
-                  </div>
-                ) : null}
-              </div>
+            <div className={s.bodySettings}>
+              Размер:{" "}
+              <span>
+                {good.size} | {good.delivery} дней
+              </span>
+            </div>
+          </div>
+          <div className={s.itemFooter}>
+            <div className={s.price}>
+              {good.price} <span>₽</span>
+            </div>
+
+            <div className={s.counter}>
+              <button
+                className={s.dis}
+                onClick={() => setQuantity((prev) => prev - 1)}
+                disabled={quantity <= 1}
+              >
+                -
+              </button>
+              {quantity}
+              <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
             </div>
           </div>
         </div>
-      ))}
-      ;
+      </div>
     </div>
   );
 };
