@@ -1,6 +1,7 @@
 import { FC } from "react";
 import s from "./style.module.scss";
 import { useState } from "react";
+import { ItemCounter } from "../ItemCounter";
 import { CheckBox } from "../../components/uikit";
 
 interface CartItemProps {
@@ -51,17 +52,7 @@ const CartItem: FC<CartItemProps> = ({ good }) => {
               {good.price} <span>₽</span>
             </div>
 
-            <div className={s.counter}>
-              <button
-                className={s.dis}
-                onClick={() => setQuantity((prev) => prev - 1)}
-                disabled={quantity <= 1}
-              >
-                -
-              </button>
-              {quantity}
-              <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
-            </div>
+            <ItemCounter quantity={quantity} setQuantity={setQuantity} />
           </div>
         </div>
       </div>

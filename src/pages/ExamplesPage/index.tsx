@@ -1,20 +1,26 @@
 import { useState } from "react";
 import { Paragraph1, CheckBox } from "../../components/uikit";
 import ProfileTopAva from "../../components/ProfileTopAva";
+import { ItemCounter } from "../../components/ItemCounter";
 import PopularCategoties from "../../components/PopularCategoties";
 import SearchBar from "../../components/SearchBar";
 import s from "./style.module.scss";
 
 const ExamplesPage = () => {
   const [checked, setChecked] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <div className={s.examplesDesk}>
       <Paragraph1>ExamplesPage</Paragraph1>
       <br />
       <section>
-        <h4>CheckBox {checked ? "vv" : "xx"}</h4>
+        <h4>CheckBox </h4>
         <CheckBox changeValue={setChecked} checked={checked} />
+      </section>
+      <section>
+        <h4>ItemCounter </h4>
+        <ItemCounter quantity={quantity} setQuantity={setQuantity} />
       </section>
 
       <section>

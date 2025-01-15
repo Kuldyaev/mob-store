@@ -24,6 +24,16 @@ const CartPage = () => {
       color: "Красный",
       price: "24 690",
     },
+    {
+      id: 3,
+      type: "shoes",
+      img: "nike",
+      desc: "Кроссовки The Powerpuff Girls x Nike SB Dunk Low «Buttercup»",
+      size: "43 EU",
+      delivery: "5-10",
+      color: "Синий",
+      price: "24 690",
+    },
   ];
   return (
     <div className={s.cartDesk}>

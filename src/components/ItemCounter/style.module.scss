@@ -1,0 +1,49 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.counter {
+  background-color: $color-grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: $size8px;
+  width: $size80px;
+  height: $size28px;
+  font-size: $size12-5px;
+  color: $color-black;
+  font-weight: 600;
+  user-select: none;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: $color-grey;
+    border: none;
+    color: $color-black;
+    border-radius: $size8px;
+    font-size: $size20px;
+    width: $size28px;
+    height: $size28px;
+  }
+  .dis {
+    color: $color-grey-text;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .counter {
+    border-radius: $flexsize8px;
+    width: $flexsize80px;
+    height: $flexsize28px;
+    font-size: $flexsize12-5px;
+
+    button {
+      border-radius: $flexsize8px;
+      font-size: $flexsize20px;
+      width: $flexsize28px;
+      height: $flexsize28px;
+    }
+  }
+}
