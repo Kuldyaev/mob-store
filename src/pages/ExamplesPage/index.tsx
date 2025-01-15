@@ -1,14 +1,22 @@
-import { Paragraph1 } from "../../components/uikit";
+import { useState } from "react";
+import { Paragraph1, CheckBox } from "../../components/uikit";
 import ProfileTopAva from "../../components/ProfileTopAva";
 import PopularCategoties from "../../components/PopularCategoties";
 import SearchBar from "../../components/SearchBar";
 import s from "./style.module.scss";
 
 const ExamplesPage = () => {
+  const [checked, setChecked] = useState(false);
+
   return (
     <div className={s.examplesDesk}>
       <Paragraph1>ExamplesPage</Paragraph1>
       <br />
+      <section>
+        <h4>CheckBox {checked ? "vv" : "xx"}</h4>
+        <CheckBox changeValue={setChecked} checked={checked} />
+      </section>
+
       <section>
         <h4>Search bar</h4>
         <SearchBar />

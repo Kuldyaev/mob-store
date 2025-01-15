@@ -1,0 +1,92 @@
+@use "./../../../scss/colors.scss" as *;
+@use "./../../../scss/variabels.scss" as *;
+
+.checkboxcontainer {
+  margin: 0px;
+  padding: 0px;
+  width: $size22px;
+  height: $size22px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: $size22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $size22px;
+    height: $size22px;
+    border-radius: $size6px;
+    background-color: $color-white;
+    border: 1px solid $color-dark-grey;
+
+    svg {
+      display: none;
+      width: $size10px;
+      height: $size10px;
+    }
+  }
+}
+
+.checkboxcontainer:hover input ~ .checkmark {
+  background-color: #fdfdfd;
+}
+
+.checkboxcontainer input:checked ~ .checkmark {
+  background-color: $color-blue;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkboxcontainer input:checked ~ .checkmark:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $size22px;
+  height: $size22px;
+}
+
+.checkboxcontainer input:checked ~ .checkmark > svg {
+  display: block;
+}
+
+@media screen and (max-width: 480px) {
+  .checkboxcontainer {
+    width: $flexsize22px;
+    height: $flexsize22px;
+    border-radius: $flexsize6px;
+    font-size: $flexsize22px;
+
+    .checkmark {
+      width: $flexsize22px;
+      height: $flexsize22px;
+      border-radius: $flexsize6px;
+
+      svg {
+        width: $flexsize10px;
+        height: $flexsize10px;
+      }
+    }
+  }
+}
