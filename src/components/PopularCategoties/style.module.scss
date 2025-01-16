@@ -5,6 +5,7 @@
   width: 480px;
   margin-left: -$size15px;
   overflow: hidden;
+  overflow-x: auto;
 
   .popcatTitle {
     width: 480px;
@@ -67,6 +68,10 @@
     width: 100%;
     min-height: $size42px;
   }
+}
+
+.popcat::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (max-width: 480px) {

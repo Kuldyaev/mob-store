@@ -54,6 +54,7 @@
 @media screen and (max-width: 480px) {
   .cardDesk {
     margin-top: $flexsize15px;
+    gap: $flexsize15px;
   }
 
   .card {

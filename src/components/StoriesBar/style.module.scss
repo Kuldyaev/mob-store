@@ -1,0 +1,174 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.stories {
+  width: 480px;
+  margin-top: $size21px;
+  margin-left: -$size15px;
+  overflow: hidden;
+  overflow-x: auto;
+
+  .storiesLine {
+    min-height: $size89px;
+    width: $size410px;
+    padding-left: $size15px;
+    display: flex;
+    flex-direction: row;
+    gap: $size16px;
+
+    .storiesLineItem {
+      width: $size69px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      .storiesImgPlace {
+        width: $size69px;
+        height: $size69px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+
+        .whiteCircle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $color-white;
+          width: $size65px;
+          height: $size65px;
+          border-radius: 100%;
+
+          .imgCircle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: $size59px;
+            height: $size59px;
+            border-radius: 100%;
+            background-size: contain;
+          }
+        }
+      }
+
+      h6 {
+        margin: 0px;
+        padding: 0px;
+        font-weight: 500;
+        font-size: $size12px;
+        line-height: $size14-5px;
+        color: $color-black;
+      }
+    }
+
+    .storiesLineItem:nth-child(1) {
+      .storiesImgPlace {
+        background-image: linear-gradient(
+            390deg,
+            transparent 50%,
+            $color-black 50%
+          ),
+          linear-gradient(70deg, $color-black 50%, transparent 50%);
+      }
+    }
+
+    .storiesLineItem:nth-child(2) {
+      .storiesImgPlace {
+        background-image: linear-gradient(
+            200deg,
+            transparent 50%,
+            $color-blue 50%
+          ),
+          linear-gradient(240deg, $color-blue 50%, transparent 50%);
+      }
+      h6 {
+        color: $color-blue;
+      }
+    }
+
+    .storiesLineItem:nth-child(3) {
+      .storiesImgPlace {
+        background-image: linear-gradient(
+            200deg,
+            transparent 50%,
+            $color-black 50%
+          ),
+          linear-gradient(240deg, $color-black 50%, transparent 50%);
+      }
+    }
+    .storiesLineItem:nth-child(4) {
+      .storiesImgPlace {
+        background-image: linear-gradient(
+            320deg,
+            transparent 50%,
+            $color-black 50%
+          ),
+          linear-gradient(280deg, $color-black 50%, transparent 50%);
+      }
+    }
+    .storiesLineItem:nth-child(5) {
+      .storiesImgPlace {
+        background-image: linear-gradient(
+            180deg,
+            transparent 50%,
+            $color-black 50%
+          ),
+          linear-gradient(135deg, $color-black 50%, transparent 50%);
+      }
+    }
+  }
+
+  .storiesBottom {
+    width: 100%;
+    min-height: $size20px;
+  }
+}
+
+.stories::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .stories {
+    width: 100vw;
+    margin-left: -$flexsize15px;
+    margin-top: $flexsize21px;
+
+    .storiesLine {
+      min-height: $flexsize89px;
+      width: $flexsize410px;
+      padding-left: $flexsize15px;
+      gap: $flexsize16px;
+
+      .storiesLineItem {
+        width: $flexsize69px;
+
+        .storiesImgPlace {
+          width: $flexsize69px;
+          height: $flexsize69px;
+
+          .whiteCircle {
+            width: $flexsize65px;
+            height: $flexsize65px;
+
+            .imgCircle {
+              width: $flexsize59px;
+              height: $flexsize59px;
+            }
+          }
+        }
+
+        h6 {
+          font-size: $flexsize12px;
+          line-height: $flexsize14-5px;
+        }
+      }
+    }
+
+    .storiesBottom {
+      min-height: $flexsize20px;
+    }
+  }
+}

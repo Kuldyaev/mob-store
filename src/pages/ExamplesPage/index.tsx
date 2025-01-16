@@ -11,6 +11,7 @@ import {
 import ProfileTopAva from "../../components/ProfileTopAva";
 import { ItemCounter } from "../../components/ItemCounter";
 import { DeleteBtn, FavoriteBtn } from "../../components/uikit";
+import CartItem from "../../components/CarItem";
 import PopularCategoties from "../../components/PopularCategoties";
 import SearchBar from "../../components/SearchBar";
 import s from "./style.module.scss";
@@ -43,6 +44,22 @@ const ExamplesPage = () => {
           favoreItem={() => setFavorite(!favorite)}
         />
       </section>
+      <section>
+        <h4>Cart Item </h4>
+        <CartItem
+          item={{
+            id: 1,
+            brand: "Nike",
+            img: "nike",
+            desc: "Кроссовки The Powerpuff Girls x Nike SB Dunk Low «Buttercup»",
+            size: "43 EU",
+            delivery: "5-10",
+            color: "Зеленый",
+            price: "24 690",
+          }}
+        />
+      </section>
+
       <section>
         <h4>Search bar</h4>
         <SearchBar />

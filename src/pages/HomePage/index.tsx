@@ -1,4 +1,5 @@
 import PopularCategoties from "../../components/PopularCategoties";
+import StoriesBar from "../../components/StoriesBar";
 import SearchBar from "../../components/SearchBar";
 import s from "./style.module.scss";
 
@@ -10,6 +11,7 @@ const HomePage = () => {
       </div>
       <div className={s.homedesk}>
         <SearchBar />
+        <StoriesBar />
         <PopularCategoties />
       </div>
     </div>
