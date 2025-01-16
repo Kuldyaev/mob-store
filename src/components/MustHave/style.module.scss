@@ -23,7 +23,7 @@
   }
 
   .popcatLine {
-    min-height: $size255px;
+    min-height: $size265px;
     width: $size592px;
     padding-left: $size15px;
     display: flex;
@@ -47,19 +47,24 @@
       }
 
       .image1 {
-        background-image: url("/images/football.png");
+        background-image: url("/images/musthave1.jpeg");
       }
       .image2 {
-        background-image: url("/images/basketball.png");
+        background-image: url("/images/musthave2.jpeg");
       }
-      h5 {
-        user-select: none;
-        padding: 0;
-        margin: 0;
-        font-weight: 600;
-        font-size: $size14px;
-        line-height: $size16px;
-        margin-top: $size8px;
+
+      button {
+        position: absolute;
+        z-index: 3;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: $size5px;
+        font-size: $size12-5px;
+        padding: $size7px $size12px;
+        margin-left: $size8px;
+        margin-top: $size163px;
       }
     }
   }
@@ -93,7 +98,7 @@
     }
 
     .popcatLine {
-      min-height: $flexsize255px;
+      min-height: $flexsize265px;
       width: $flexsize592px;
       padding-left: $flexsize15px;
       gap: $flexsize7px;
@@ -107,10 +112,12 @@
           border-radius: $flexsize10px;
         }
 
-        h5 {
-          font-size: $flexsize14px;
-          line-height: $flexsize16px;
-          margin-top: $flexsize8px;
+        button {
+          border-radius: $flexsize5px;
+          font-size: $flexsize12-5px;
+          padding: $flexsize7px $flexsize12px;
+          margin-left: $flexsize8px;
+          margin-top: $flexsize163px;
         }
       }
     }
