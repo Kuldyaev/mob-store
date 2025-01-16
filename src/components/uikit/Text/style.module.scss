@@ -1,19 +1,83 @@
 @use "./../../../scss/colors.scss" as *;
 @use "./../../../scss/variabels.scss" as *;
 
-.paragraf1 {
+.paragraf1,
+.paragraf2,
+.paragraf3,
+.paragraf4,
+.paragraf5_b,
+.paragraf5_g {
   margin: 0px;
   padding: 0px;
   user-select: none;
+}
 
+.paragraf1 {
   font-weight: 700;
   font-size: $size24px;
   line-height: $size24px;
+}
+
+.paragraf2 {
+  font-weight: 600;
+  font-size: $size12-5px;
+  line-height: $size16px;
+}
+
+.paragraf3 {
+  font-weight: 400;
+  font-size: $size12-5px;
+  line-height: $size15px;
+}
+
+.paragraf4 {
+  font-weight: 600;
+  font-size: $size14-5px;
+  line-height: $size17-5px;
+}
+
+.paragraf5_b {
+  font-weight: 400;
+  font-size: $size12-5px;
+  line-height: $size16px;
+  color: $color-black;
+}
+
+.paragraf5_g {
+  font-weight: 400;
+  font-size: $size12-5px;
+  line-height: $size16px;
+  color: $color-grey-text;
 }
 
 @media screen and (max-width: 480px) {
   .paragraf1 {
     font-size: $flexsize24px;
     line-height: $flexsize24px;
+  }
+
+  .paragraf2 {
+    font-size: $flexsize12-5px;
+    line-height: $flexsize16px;
+  }
+
+  .paragraf3 {
+    font-size: $flexsize12-5px;
+    line-height: $flexsize15px;
+  }
+
+  .paragraf4 {
+    font-size: $flexsize14-5px;
+    line-height: $flexsize17-5px;
+  }
+
+  .paragraf5_b {
+    font-size: $flexsize12-5px;
+    line-height: $flexsize16px;
+  }
+
+  .paragraf5_g {
+    font-size: $flexsize12-5px;
+    line-height: $flexsize16px;
   }
 }
