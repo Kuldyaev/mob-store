@@ -9,12 +9,14 @@ const MustHave = () => {
       </div>
       <div className={s.popcatLine}>
         <div className={s.popcatLineItem}>
-          <button>Кухня →</button>
-          <div className={cn(s.popcatLineItemImg, s.image1)}></div>
+          <div className={cn(s.popcatLineItemImg, s.image1)}>
+            <button>Кухня →</button>
+          </div>
         </div>
         <div className={s.popcatLineItem}>
-          <button>Прихожая</button>
-          <div className={cn(s.popcatLineItemImg, s.image2)}></div>
+          <div className={cn(s.popcatLineItemImg, s.image2)}>
+            <button>Прихожая</button>
+          </div>
         </div>
       </div>
     </div>
