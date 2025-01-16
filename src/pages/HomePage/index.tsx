@@ -2,6 +2,7 @@ import PopularCategoties from "../../components/PopularCategoties";
 import StoriesBar from "../../components/StoriesBar";
 import SearchBar from "../../components/SearchBar";
 import SportsParts from "../../components/SportsParts";
+import MustHave from "../../components/MustHave";
 import s from "./style.module.scss";
 
 const HomePage = () => {
@@ -15,6 +16,7 @@ const HomePage = () => {
         <StoriesBar />
         <PopularCategoties />
         <SportsParts />
+        <MustHave />
       </div>
     </div>
   );
