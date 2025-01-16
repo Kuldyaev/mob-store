@@ -1,0 +1,121 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.popcat {
+  width: 480px;
+  margin-left: -$size15px;
+  overflow: hidden;
+  overflow-x: auto;
+
+  .popcatTitle {
+    width: 480px;
+    height: $size23px;
+    margin-bottom: $size12px;
+
+    h4 {
+      margin: 0;
+      padding: 0;
+      font-weight: 700;
+      font-size: $size19px;
+      line-height: $size23px;
+    }
+  }
+
+  .popcatLine {
+    min-height: $size410px;
+    width: $size592px;
+    padding-left: $size15px;
+    display: flex;
+    flex-direction: row;
+    gap: $size7px;
+
+    .popcatLineItem {
+      width: $size285px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .popcatLineItemImg {
+        width: $size285px;
+        height: $size200px;
+
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: auto 100%;
+        border-radius: $size10px;
+      }
+
+      .image1 {
+        background-image: url("/images/football.png");
+      }
+      .image2 {
+        background-image: url("/images/basketball.png");
+      }
+      h5 {
+        user-select: none;
+        padding: 0;
+        margin: 0;
+        font-weight: 600;
+        font-size: $size14px;
+        line-height: $size16px;
+        margin-top: $size8px;
+      }
+    }
+  }
+
+  .popBottom {
+    width: 100%;
+    min-height: $size42px;
+  }
+}
+
+.popcat::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .popcat {
+    width: 100vw;
+    margin-left: -$flexsize15px;
+
+    .popcatTitle {
+      width: 100vw;
+      height: $flexsize23px;
+      margin-bottom: $flexsize12px;
+
+      h4 {
+        margin-left: $flexsize15px;
+        font-size: $flexsize19px;
+        line-height: $flexsize23px;
+        margin-top: $flexsize8px;
+      }
+    }
+
+    .popcatLine {
+      min-height: $flexsize410px;
+      width: $flexsize592px;
+      padding-left: $flexsize15px;
+      gap: $flexsize7px;
+
+      .popcatLineItem {
+        width: $flexsize285px;
+
+        .popcatLineItemImg {
+          width: $flexsize285px;
+          height: $flexsize200px;
+          border-radius: $flexsize10px;
+        }
+
+        h5 {
+          font-size: $flexsize14px;
+          line-height: $flexsize16px;
+          margin-top: $flexsize8px;
+        }
+      }
+    }
+
+    .popBottom {
+      min-height: $flexsize42px;
+    }
+  }
+}
