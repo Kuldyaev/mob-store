@@ -6,6 +6,7 @@ const CartPage = () => {
   const goods = [
     {
       id: 1,
+      brand: "Nike",
       type: "shoes",
       img: "nike",
       desc: "Кроссовки The Powerpuff Girls x Nike SB Dunk Low «Buttercup»",
@@ -16,6 +17,7 @@ const CartPage = () => {
     },
     {
       id: 2,
+      brand: "Nike",
       type: "shoes",
       img: "nike",
       desc: "Кроссовки The Powerpuff Girls x Nike SB Dunk Low «Buttercup»",
@@ -26,6 +28,7 @@ const CartPage = () => {
     },
     {
       id: 3,
+      brand: "Nike",
       type: "shoes",
       img: "nike",
       desc: "Кроссовки The Powerpuff Girls x Nike SB Dunk Low «Buttercup»",
@@ -40,7 +43,7 @@ const CartPage = () => {
       <Paragraph1>Корзина</Paragraph1>
       <div>
         {goods.map((item) => (
-          <CartItem good={item} />
+          <CartItem item={item} key={item.id} />
         ))}
       </div>
     </div>
