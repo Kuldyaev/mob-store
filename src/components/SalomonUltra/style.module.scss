@@ -1,0 +1,217 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.category {
+  width: 480px;
+  margin-left: -$size15px;
+  overflow: hidden;
+  overflow-x: auto;
+
+  .popcatLine {
+    min-height: $size272px;
+    width: $size592px;
+    padding-left: $size15px;
+    display: flex;
+    flex-direction: row;
+    gap: $size7px;
+
+    .popcatLineItem {
+      width: $size139px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: $size2px;
+
+      .popcatLineItemImg {
+        position: relative;
+        width: $size139px;
+        height: $size175px;
+        background-color: $color-grey;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% auto;
+        border-radius: $size14px;
+        margin-bottom: $size8px;
+
+        button {
+          position: absolute;
+          margin-top: $size7px;
+          margin-left: $size115px;
+          background-color: $color-grey !important;
+        }
+
+        .colors {
+          background-color: $color-white;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          width: $size35px;
+          height: $size14px;
+          border-radius: $size9px;
+          padding: $size3px $size5px;
+          margin-left: $size5px;
+          margin-top: $size139px;
+
+          .colorCircles {
+            margin: 0px;
+            padding: 0px;
+            height: $size14px;
+            width: $size23px;
+            display: flex;
+            flex-direction: row;
+
+            .colorCircle {
+              border: $size2px solid $color-white;
+              border-radius: 100%;
+              height: $size10px;
+              width: $size10px;
+              z-index: 6;
+            }
+
+            .colorCircleSecond {
+              margin-left: -$size7px;
+              z-index: 1;
+            }
+          }
+
+          h6 {
+            font-size: 500;
+            margin: 0px;
+            padding: 0px;
+            user-select: none;
+            font-size: $size11-5px;
+            line-height: $size14px;
+          }
+        }
+      }
+
+      h2 {
+        margin-top: $size10px;
+
+        span {
+          font-weight: 600;
+          font-size: $size12px;
+          line-height: $size14-5px;
+        }
+      }
+
+      .infoline {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: $size2px;
+
+        svg {
+          width: $size12px;
+          height: $size12px;
+        }
+
+        .infolineText {
+          padding: 0px;
+          margin: 0px;
+          font-size: $size10px;
+          line-height: $size12px;
+          font-weight: 400;
+          color: $color-grey-text;
+        }
+      }
+    }
+  }
+
+  .popBottom {
+    width: 100%;
+    min-height: $size25px;
+  }
+}
+
+.category::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .category {
+    width: 100vw;
+    margin-left: -$flexsize15px;
+
+    .popcatLine {
+      min-height: $flexsize272px;
+      width: $flexsize592px;
+      padding-left: $flexsize15px;
+      gap: $flexsize7px;
+
+      .popcatLineItem {
+        width: $flexsize139px;
+        gap: $flexsize2px;
+
+        .popcatLineItemImg {
+          width: $flexsize139px;
+          height: $flexsize175px;
+          border-radius: $flexsize14px;
+          margin-bottom: $flexsize8px;
+
+          button {
+            margin-top: $flexsize7px;
+            margin-left: $flexsize115px;
+          }
+
+          .colors {
+            width: $flexsize35px;
+            height: $flexsize14px;
+            border-radius: $flexsize9px;
+            padding: $flexsize3px $flexsize5px;
+            margin-left: $flexsize5px;
+            margin-top: $flexsize150px;
+
+            .colorCircles {
+              height: $flexsize14px;
+              width: $flexsize23px;
+
+              .colorCircle {
+                border: $flexsize2px solid $color-white;
+                height: $flexsize10px;
+                width: $flexsize10px;
+              }
+
+              .colorCircleSecond {
+                margin-left: -$flexsize7px;
+              }
+            }
+
+            h6 {
+              font-size: $flexsize11-5px;
+              line-height: $flexsize14px;
+            }
+          }
+        }
+
+        h2 {
+          margin-top: $flexsize10px;
+          span {
+            font-size: $flexsize12px;
+            line-height: $flexsize14-5px;
+          }
+        }
+
+        .infoline {
+          gap: $flexsize2px;
+
+          svg {
+            width: $flexsize12px;
+            height: $flexsize12px;
+          }
+
+          .infolineText {
+            font-size: $flexsize10px;
+            line-height: $flexsize12px;
+          }
+        }
+      }
+    }
+
+    .popBottom {
+      min-height: $flexsize25px;
+    }
+  }
+}

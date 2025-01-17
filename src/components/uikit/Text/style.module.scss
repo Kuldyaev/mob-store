@@ -7,7 +7,9 @@
 .paragraf4,
 .paragraf5_b,
 .paragraf5_g,
-.paragraf6 {
+.paragraf6,
+.paragraf7,
+.paragraf8 {
   margin: 0px;
   padding: 0px;
   user-select: none;
@@ -58,6 +60,21 @@
   color: $color-black;
 }
 
+.paragraf7 {
+  font-weight: 600;
+  font-size: $size12px;
+  line-height: $size14-5px;
+  color: $color-black;
+}
+
+.paragraf8 {
+  font-weight: 400;
+  font-size: $size12px;
+  line-height: $size14-5px;
+  letter-spacing: -4%;
+  color: $color-black;
+}
+
 @media screen and (max-width: 480px) {
   .paragraf1 {
     font-size: $flexsize24px;
@@ -87,5 +104,16 @@
   .paragraf5_g {
     font-size: $flexsize12-5px;
     line-height: $flexsize16px;
+  }
+
+  .paragraf6 {
+    font-size: $flexsize19px;
+    line-height: $flexsize23px;
+  }
+
+  .paragraf7,
+  .paragraf8 {
+    font-size: $flexsize12px;
+    line-height: $flexsize14-5px;
   }
 }

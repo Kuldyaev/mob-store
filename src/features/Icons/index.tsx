@@ -19,6 +19,7 @@ import telegramIconSVG from "./telegramIconSVG.svg";
 import documentIconSVG from "./documentIconSVG.svg";
 import TrashCanIcon from "./TrashCanIcon";
 import FavoriteIcon from "./FavoriteIcon";
+import ClockIcon from "./ClockIcon";
 
 export {
   SearchIcon,
@@ -42,4 +43,5 @@ export {
   documentIconSVG,
   TrashCanIcon,
   FavoriteIcon,
+  ClockIcon,
 };

@@ -4,6 +4,8 @@ import { Paragraph3 } from "./Text/Paragraph3";
 import { Paragraph4 } from "./Text/Paragraph4";
 import { Paragraph5_b, Paragraph5_g } from "./Text/Paragraph5";
 import { Paragraph6 } from "./Text/Paragraph6";
+import { Paragraph7 } from "./Text/Paragraph7";
+import { Paragraph8 } from "./Text/Paragraph8";
 import { CheckBox } from "./Checkbox";
 import { DeleteBtn } from "./Buttons/DeleteBtn";
 import { FavoriteBtn } from "./Buttons/FavoriteBtn";
@@ -16,6 +18,8 @@ export {
   Paragraph5_b,
   Paragraph5_g,
   Paragraph6,
+  Paragraph7,
+  Paragraph8,
   CheckBox,
   DeleteBtn,
   FavoriteBtn,

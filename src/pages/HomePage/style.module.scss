@@ -24,6 +24,32 @@
   background-position-x: center;
   background-size: 480px 578.45px;
   overflow: hidden;
+
+  .topImgTextBlock {
+    color: $color-white;
+    height: $size80px;
+    width: $size360px;
+    margin-left: $size15px;
+    margin-top: $size347px;
+
+    h4,
+    h5 {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    h4 {
+      font-weight: 700;
+      font-size: $size24px;
+      line-height: $size29px;
+      margin-bottom: $size5px;
+    }
+    h5 {
+      font-weight: 400;
+      font-size: $size14-5px;
+      line-height: $size17-5px;
+    }
+  }
 }
 
 .homedesk {
@@ -40,7 +66,25 @@
   padding-left: $size15px;
 
   .blockTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: $size12px;
+    width: 96%;
+
+    .toAllBtn {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-grey;
+      font-weight: 500;
+      width: $size55px;
+      height: $size23px;
+      border-radius: $size22px;
+      font-size: $size12px;
+    }
   }
 }
 
@@ -58,6 +102,23 @@
     width: 100vw;
     height: 120.51vw;
     background-size: 100vw 120.51vw;
+
+    .topImgTextBlock {
+      height: $flexsize80px;
+      width: $flexsize360px;
+      margin-left: $flexsize15px;
+      margin-top: $flexsize347px;
+
+      h4 {
+        font-size: $flexsize24px;
+        line-height: $flexsize29px;
+        margin-bottom: $flexsize5px;
+      }
+      h5 {
+        font-size: $flexsize14-5px;
+        line-height: $flexsize17-5px;
+      }
+    }
   }
 
   .homedesk {
@@ -70,6 +131,13 @@
 
     .blockTitle {
       margin-bottom: $flexsize12px;
+
+      .toAllBtn {
+        width: $flexsize55px;
+        height: $flexsize23px;
+        border-radius: $flexsize22px;
+        font-size: $flexsize12px;
+      }
     }
   }
 }
