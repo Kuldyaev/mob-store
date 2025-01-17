@@ -1,0 +1,92 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.forEach {
+  width: 480px;
+  margin-left: -$size15px;
+  overflow: hidden;
+  overflow-x: auto;
+
+  .popcatLine {
+    min-height: $size390px;
+    width: $size592px;
+    padding-left: $size15px;
+    display: flex;
+    flex-direction: row;
+    gap: $size8px;
+
+    .popcatLineItem {
+      width: $size285px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .popcatLineItemImg {
+        width: $size285px;
+        height: $size350px;
+
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: 100% auto;
+        border-radius: $size10px;
+      }
+
+      .image1 {
+        background-image: url("/images/man.png");
+      }
+      .image2 {
+        background-image: url("/images/wiman.png");
+      }
+
+      button {
+        position: relative;
+        z-index: 3;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: $size5px;
+        font-size: $size12-5px;
+        padding: $size7px $size12px;
+        margin-left: $size8px;
+        margin-top: $size313px;
+      }
+    }
+  }
+}
+
+.forEach::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .forEach {
+    width: 100vw;
+    margin-left: -$flexsize15px;
+
+    .popcatLine {
+      min-height: $flexsize390px;
+      width: $flexsize592px;
+      padding-left: $flexsize15px;
+      gap: $flexsize8px;
+
+      .popcatLineItem {
+        width: $flexsize285px;
+
+        .popcatLineItemImg {
+          width: $flexsize285px;
+          height: $flexsize350px;
+          border-radius: $flexsize10px;
+        }
+
+        button {
+          border-radius: $flexsize5px;
+          font-size: $flexsize12-5px;
+          padding: $flexsize7px $flexsize12px;
+          margin-left: $flexsize8px;
+          margin-top: $flexsize313px;
+        }
+      }
+    }
+  }
+}
