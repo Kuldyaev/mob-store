@@ -7,21 +7,6 @@
   overflow: hidden;
   overflow-x: auto;
 
-  .popcatTitle {
-    width: 480px;
-    height: $size23px;
-    margin-left: $size15px;
-    margin-bottom: $size12px;
-
-    h4 {
-      margin: 0;
-      padding: 0;
-      font-weight: 700;
-      font-size: $size19px;
-      line-height: $size23px;
-    }
-  }
-
   .popcatLine {
     min-height: $size265px;
     width: $size592px;
@@ -83,19 +68,6 @@
   .popcat {
     width: 100vw;
     margin-left: -$flexsize15px;
-
-    .popcatTitle {
-      width: 100vw;
-      height: $flexsize23px;
-      margin-left: $flexsize15px;
-      margin-bottom: $flexsize12px;
-
-      h4 {
-        font-size: $flexsize19px;
-        line-height: $flexsize23px;
-        margin-top: $flexsize8px;
-      }
-    }
 
     .popcatLine {
       min-height: $flexsize265px;

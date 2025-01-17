@@ -38,6 +38,10 @@
   border-radius: $size25px $size25px 0px 0px;
   padding-top: $size15px;
   padding-left: $size15px;
+
+  .blockTitle {
+    margin-bottom: $size12px;
+  }
 }
 
 .homedeskbody::-webkit-scrollbar {
@@ -63,5 +67,9 @@
     border-radius: $flexsize25px $flexsize25px 0px 0px;
     padding-top: $flexsize15px;
     padding-left: $flexsize15px;
+
+    .blockTitle {
+      margin-bottom: $flexsize12px;
+    }
   }
 }

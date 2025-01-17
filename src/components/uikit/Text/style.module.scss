@@ -6,7 +6,8 @@
 .paragraf3,
 .paragraf4,
 .paragraf5_b,
-.paragraf5_g {
+.paragraf5_g,
+.paragraf6 {
   margin: 0px;
   padding: 0px;
   user-select: none;
@@ -48,6 +49,13 @@
   font-size: $size12-5px;
   line-height: $size16px;
   color: $color-grey-text;
+}
+
+.paragraf6 {
+  font-weight: 700;
+  font-size: $size19px;
+  line-height: $size23px;
+  color: $color-black;
 }
 
 @media screen and (max-width: 480px) {

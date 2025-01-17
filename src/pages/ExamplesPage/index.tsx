@@ -6,6 +6,7 @@ import {
   Paragraph4,
   Paragraph5_b,
   Paragraph5_g,
+  Paragraph6,
   CheckBox,
 } from "../../components/uikit";
 import ProfileTopAva from "../../components/ProfileTopAva";
@@ -91,12 +92,16 @@ const ExamplesPage = () => {
         <Paragraph4> Пример </Paragraph4>
       </section>
       <section>
-        <h5>Paragraph font-size 12.5px w400 black</h5>
+        <h5>Paragraph5_b font-size 12.5px w400 black</h5>
         <Paragraph5_b> Пример </Paragraph5_b>
       </section>
       <section>
-        <h5>Paragraph font-size 12.5px w400 grey</h5>
+        <h5>Paragraph5_g font-size 12.5px w400 grey</h5>
         <Paragraph5_g> Пример </Paragraph5_g>
+      </section>
+      <section>
+        <h5>Paragraph6 font-size 19px w700</h5>
+        <Paragraph6> Пример </Paragraph6>
       </section>
     </div>
   );

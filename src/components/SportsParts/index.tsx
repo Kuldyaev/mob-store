@@ -4,9 +4,6 @@ import s from "./style.module.scss";
 const SportsParts = () => {
   return (
     <div className={s.popcat}>
-      <div className={s.popcatTitle}>
-        <h4>Виды спорта</h4>
-      </div>
       <div className={s.popcatLine}>
         <div className={s.popcatLineItem}>
           <div className={cn(s.popcatLineItemImg, s.image1)}></div>
