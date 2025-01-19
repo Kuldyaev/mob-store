@@ -81,54 +81,57 @@ const menu = [
 const ProfilePage = () => {
   return (
     <div className={s.profileDesk}>
-      <div className={s.profileDeskTop}>
-        <Paragraph1>Профиль</Paragraph1>
-        <ProfileTopAva />
-        <div className={s.profileTopLine}>
-          <div
-            className={s.profileTopLineItem}
-            style={{
-              backgroundImage: "url('images/liked.png')",
-            }}
-          >
-            <div className={s.profileItemTitlePlace}>
-              <h5>Избранное</h5>
-              <h6>12 товаров</h6>
+      <div className={s.mainDesk}>
+        <div className={s.profileDeskTop}>
+          <Paragraph1>Профиль</Paragraph1>
+          <ProfileTopAva />
+          <div className={s.profileTopLine}>
+            <div
+              className={s.profileTopLineItem}
+              style={{
+                backgroundImage: "url('images/liked.png')",
+              }}
+            >
+              <div className={s.profileItemTitlePlace}>
+                <h5>Избранное</h5>
+                <h6>12 товаров</h6>
+              </div>
             </div>
-          </div>
-          <div
-            className={s.profileTopLineItem}
-            style={{
-              backgroundImage: "url('images/viewed.png')",
-            }}
-          >
-            <div className={s.profileItemTitlePlace}>
-              <h5>Просмотренное</h5>
-              <h6>35 товаров</h6>
+            <div
+              className={s.profileTopLineItem}
+              style={{
+                backgroundImage: "url('images/viewed.png')",
+              }}
+            >
+              <div className={s.profileItemTitlePlace}>
+                <h5>Просмотренное</h5>
+                <h6>35 товаров</h6>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className={s.profileDeskMenu}>
-        {menu.map((item) => (
-          <div className={s.profileDeskMenuItem}>
-            <div className={s.profileDeskMenuIcon}>
-              <div className={s.profileDeskMenuIconPlace}>
-                <img src={item.icon} alt="DeliveryIcon" />
+        <div className={s.profileDeskMenu}>
+          {menu.map((item) => (
+            <div className={s.profileDeskMenuItem}>
+              <div className={s.profileDeskMenuIcon}>
+                <div className={s.profileDeskMenuIconPlace}>
+                  <img src={item.icon} alt="DeliveryIcon" />
+                </div>
+              </div>
+              <div className={s.profileDeskMenuInfo}>
+                <div className={s.profileDeskMenuText}>
+                  <h4>{item.title}</h4>
+                  <h5>{item.info}</h5>
+                </div>
+                <button>
+                  <ArrowToRight />
+                </button>
               </div>
             </div>
-            <div className={s.profileDeskMenuInfo}>
-              <div className={s.profileDeskMenuText}>
-                <h4>{item.title}</h4>
-                <h5>{item.info}</h5>
-              </div>
-              <button>
-                <ArrowToRight />
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+      <div className={s.secondDesk}></div>
     </div>
   );
 };
