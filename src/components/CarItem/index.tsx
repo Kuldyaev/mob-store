@@ -72,7 +72,7 @@ const CartItem: FC<CartItemProps> = ({ item }) => {
               isfavorite={favorite}
               favoreItem={() => setFavorite(!favorite)}
             />
-            <DeleteBtn deleteItem={() => console.log("Delete Item")} />
+            <DeleteBtn onClick={() => console.log("Delete Item")} />
           </div>
           <ItemCounter quantity={quantity} setQuantity={setQuantity} />
         </div>
