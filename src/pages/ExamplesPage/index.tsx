@@ -37,7 +37,7 @@ const ExamplesPage = () => {
       </section>
       <section>
         <h4>Delete Button </h4>
-        <DeleteBtn deleteItem={() => console.log("Delete Item")} />
+        <DeleteBtn onClick={() => console.log("Delete Item")} />
       </section>
       <section>
         <h4>Favorite Button </h4>

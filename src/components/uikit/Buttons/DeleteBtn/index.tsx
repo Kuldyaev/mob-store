@@ -3,14 +3,14 @@ import { TrashCanIcon } from "./../../../../features/Icons";
 import s from "./style.module.scss";
 
 interface DeleteBtnProps {
-  deleteItem: () => void;
+  onClick?: () => void;
 }
 
-export const DeleteBtn: FC<DeleteBtnProps> = ({ deleteItem }) => {
+export const DeleteBtn: FC<DeleteBtnProps> = ({ onClick }) => {
   return (
     <button
       className={s.deleteBtn}
-      onClick={deleteItem}
+      onClick={onClick}
       style={{ backgroundColor: "white" }}
     >
       <TrashCanIcon />
