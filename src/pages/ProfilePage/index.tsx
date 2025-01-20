@@ -1,5 +1,6 @@
-import ProfileTopAva from "../../components/ProfileTopAva";
-import { Paragraph1 } from "../../components/uikit";
+import ProfileTopAva from "@/components/ProfileTopAva";
+import { Paragraph1 } from "@/components/uikit";
+
 import {
   ArrowToRight,
   starIconSVG,

@@ -9,13 +9,13 @@ import {
   Paragraph6,
   Paragraph7,
   CheckBox,
-} from "../../components/uikit";
-import ProfileTopAva from "../../components/ProfileTopAva";
-import { ItemCounter } from "../../components/ItemCounter";
-import { DeleteBtn, FavoriteBtn } from "../../components/uikit";
-import CartItem from "../../components/CarItem";
-import PopularCategoties from "../../components/PopularCategoties";
-import SearchBar from "../../components/SearchBar";
+} from "@/components/uikit";
+import ProfileTopAva from "@/components/ProfileTopAva";
+import { ItemCounter } from "@/components/ItemCounter";
+import { DeleteBtn, FavoriteBtn } from "@/components/uikit";
+import CartItem from "@/components/CarItem";
+import PopularCategoties from "@/components/PopularCategoties";
+import SearchBar from "@/components/SearchBar";
 import s from "./style.module.scss";
 
 const ExamplesPage = () => {

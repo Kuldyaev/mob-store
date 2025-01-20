@@ -1,12 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "checkJs": false,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@types/*": ["src/shared/types/*"]
-    }
+    "checkJs": false
   },
   "files": [],
   "references": [

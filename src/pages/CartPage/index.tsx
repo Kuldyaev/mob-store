@@ -1,5 +1,5 @@
-import CartItem from "../../components/CarItem";
-import { Paragraph1 } from "../../components/uikit";
+import CartItem from "@/components/CarItem";
+import { Paragraph1 } from "@/components/uikit";
 import s from "./style.module.scss";
 
 const CartPage = () => {

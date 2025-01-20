@@ -1,11 +1,11 @@
-import PopularCategoties from "../../components/PopularCategoties";
-import StoriesBar from "../../components/StoriesBar";
-import SearchBar from "../../components/SearchBar";
-import SportsParts from "../../components/SportsParts";
-import SalomonUltra from "../../components/SalomonUltra";
-import ForEach from "../../components/ForEach";
-import MustHave from "../../components/MustHave";
-import { Paragraph6 } from "../../components/uikit";
+import PopularCategoties from "@/components/PopularCategoties";
+import StoriesBar from "@/components/StoriesBar";
+import SearchBar from "@/components/SearchBar";
+import SportsParts from "@/components/SportsParts";
+import SalomonUltra from "@/components/SalomonUltra";
+import ForEach from "@/components/ForEach";
+import MustHave from "@/components/MustHave";
+import { Paragraph6 } from "@/components/uikit";
 import s from "./style.module.scss";
 
 const HomePage = () => {

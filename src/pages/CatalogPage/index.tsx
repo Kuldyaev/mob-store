@@ -1,5 +1,5 @@
-import SearchBar from "../../components/SearchBar";
-import { Paragraph1 } from "../../components/uikit";
+import SearchBar from "@/components/SearchBar";
+import { Paragraph1 } from "@/components/uikit";
 import s from "./style.module.scss";
 
 const catalog = [

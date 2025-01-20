@@ -1,4 +1,4 @@
-import { Paragraph1 } from "../../components/uikit";
+import { Paragraph1 } from "@/components/uikit";
 import s from "./style.module.scss";
 
 const MonthDiskountPage = () => {
