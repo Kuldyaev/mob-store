@@ -9,7 +9,8 @@
 .paragraf5_g,
 .paragraf6,
 .paragraf7,
-.paragraf8 {
+.paragraf8,
+.paragraf9 {
   margin: 0px;
   padding: 0px;
   user-select: none;
@@ -75,6 +76,14 @@
   color: $color-black;
 }
 
+.paragraf9 {
+  font-weight: 600;
+  font-size: $size15-5px;
+  line-height: $size16px;
+  letter-spacing: -4%;
+  color: $color-black;
+}
+
 @media screen and (max-width: 480px) {
   .paragraf1 {
     font-size: $flexsize24px;
@@ -115,5 +124,10 @@
   .paragraf8 {
     font-size: $flexsize12px;
     line-height: $flexsize14-5px;
+  }
+
+  .paragraf9 {
+    font-size: $flexsize15-5px;
+    line-height: $flexsize16px;
   }
 }

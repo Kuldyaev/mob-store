@@ -1,0 +1,30 @@
+@use "./../../../../scss/colors.scss" as *;
+@use "./../../../../scss/variabels.scss" as *;
+
+.backBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  width: $size30px;
+  height: $size30px;
+  padding: 0px;
+  margin: 0px;
+
+  svg {
+    width: $size11px;
+    height: $size19px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .backBtn {
+    width: $flexsize30px;
+    height: $flexsize30px;
+    svg {
+      width: $flexsize11px;
+      height: $flexsize19px;
+    }
+  }
+}

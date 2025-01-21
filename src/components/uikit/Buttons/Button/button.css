@@ -1,0 +1,51 @@
+/* .storybook-button {
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  border-radius: 3em;
+  font-weight: 700;
+  line-height: 1;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+} */
+/* .storybook-button--primary {
+  background-color: #555ab9;
+  color: white;
+} */
+
+.btn--primary {
+  background-color: #2e87ec;
+  color: white;
+}
+.btn--secondary {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  background-color: #f3f4f5;
+  color: #050505;
+}
+
+.btn--warning {
+  background-color: rgba(255, 40, 84, 0.07);
+  color: #ff2854;
+}
+
+.btn--disabled {
+  background-color: rgba(46, 135, 236, 0.4);
+  color: #ffffff;
+}
+
+.btn--incart {
+  background-color: #f3f4f5;
+  color: #2e87ec;
+}
+
+.btn--small {
+  padding: 10px 16px;
+  font-size: 12px;
+}
+.btn--medium {
+  padding: 11px 20px;
+  font-size: 14px;
+}
+.btn--large {
+  padding: 12px 24px;
+  font-size: 16px;
+}

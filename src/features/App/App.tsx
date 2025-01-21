@@ -1,14 +1,17 @@
+import { lazy } from "react";
 import { MainLayout } from "../Layouts/MainLayout";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Pages } from "../../pages";
 import { COMPONENTS, routes } from "../../shared/routes";
+
+const ProfilePage = lazy(() => import("@/pages/ProfilePage"));
 
 const pages: { [key in COMPONENTS]: JSX.Element } = {
   [COMPONENTS.HOME]: <Pages.HomePage />,
   [COMPONENTS.EXAMPLES]: <Pages.ExamplesPage />,
   [COMPONENTS.CATALOG]: <Pages.CatalogPage />,
   [COMPONENTS.CART]: <Pages.CartPage />,
-  [COMPONENTS.PROFILE]: <Pages.ProfilePage />,
+  [COMPONENTS.PROFILE]: <ProfilePage />,
   [COMPONENTS.DISCOUNTS]: <Pages.MonthDiskountPage />,
 };
 

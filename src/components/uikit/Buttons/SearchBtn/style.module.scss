@@ -1,0 +1,30 @@
+@use "./../../../../scss/colors.scss" as *;
+@use "./../../../../scss/variabels.scss" as *;
+
+.searchBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  width: $size20px;
+  height: $size20px;
+  padding: 0px;
+  margin: 0px;
+
+  svg {
+    width: $size20px;
+    height: $size20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .searchBtn {
+    width: $flexsize20px;
+    height: $flexsize20px;
+    svg {
+      width: $flexsize20px;
+      height: $flexsize20px;
+    }
+  }
+}
