@@ -1,0 +1,59 @@
+@use "./../../../scss/colors.scss" as *;
+@use "./../../../scss/variabels.scss" as *;
+
+.profileDeliveries {
+  display: flex;
+  flex-direction: row;
+  width: min(480px, 100vw);
+  min-height: 99dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-grey;
+
+  .header {
+    width: 92%;
+    padding: 0px 4%;
+    background-color: $color-white;
+    min-height: $size51px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0px 0px $size25px $size25px;
+  }
+
+  .body {
+    margin-top: $size8px;
+
+    width: 100%;
+    padding: 0px 0%;
+    gap: $size8px;
+    display: flex;
+    flex-direction: column;
+
+    .deliveryCard {
+      width: 100%;
+      min-height: $size40px;
+      background-color: $color-white;
+      border-radius: $size25px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profileDeliveries {
+    .header {
+      min-height: $flexsize51px;
+      border-radius: 0px 0px $flexsize25px $flexsize25px;
+    }
+
+    .body {
+      margin-top: $flexsize8px;
+      gap: $flexsize8px;
+      .deliveryCard {
+        min-height: $flexsize40px;
+        border-radius: $flexsize25px;
+      }
+    }
+  }
+}

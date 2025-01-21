@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProfileTopAva from "@/components/ProfileTopAva";
 import { Paragraph1 } from "@/components/uikit";
 import ProfileBrands from "@/components/ProfileMenuItems/ProfileBrands";
+import ProfileDeliveries from "@/components/ProfileMenuItems/ProfileDeliveries";
 
 import {
   ArrowToRight,
@@ -176,7 +177,9 @@ const ProfilePage = () => {
           />
         )}
         {activeMenuScreen === "shopping" && <div>Покупки</div>}
-        {activeMenuScreen === "deliveries" && <div>Доставки</div>}
+        {activeMenuScreen === "deliveries" && (
+          <ProfileDeliveries title="Доставки" onClickBack={hideMenuItem} />
+        )}
         {activeMenuScreen === "promo" && <div>Промокоды</div>}
         {activeMenuScreen === "about" && <div>О сервисе</div>}
         {activeMenuScreen === "adress" && <div>Мои адреса</div>}
