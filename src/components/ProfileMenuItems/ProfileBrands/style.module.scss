@@ -9,16 +9,90 @@
   flex-direction: column;
 
   .profileBrandsHeader {
-    width: 100%;
+    width: 92%;
+    padding: 0px 4%;
+    height: $size43px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
+
+  .profileBrandsBody {
+    margin-top: $size10px;
+    width: 92%;
+    padding: 0px 4%;
+    gap: $size15px;
+    display: flex;
+    flex-direction: column;
+
+    .subscribeItem {
+      width: 100%;
+      height: $size40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .subscribeItemInfo {
+        height: 100%;
+        width: 87%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: $size12px;
+
+        .subscribeItemImg {
+          height: $size40px;
+          width: $size40px;
+          border-radius: $size16px;
+          background-color: $color-grey;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 60% auto;
+        }
+
+        .subscribeItemTexts {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+
+          h2:first-child {
+            font-weight: 500 !important;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 480px) {
   .profileBrands {
-    width: $flexsize344px;
+    .profileBrandsHeader {
+      height: $flexsize43px;
+    }
+
+    .profileBrandsBody {
+      margin-top: $flexsize10px;
+      gap: $flexsize15px;
+      .subscribeItem {
+        height: $flexsize40px;
+        .subscribeItemInfo {
+          gap: $flexsize12px;
+          .subscribeItemImg {
+            height: $flexsize40px;
+            width: $flexsize40px;
+            border-radius: $flexsize16px;
+          }
+        }
+      }
+    }
   }
 }

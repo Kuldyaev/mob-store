@@ -1,9 +1,9 @@
 @use "./../../../../scss/colors.scss" as *;
 @use "./../../../../scss/variabels.scss" as *;
 
-.backBtn {
+.contextMenuBtn {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
   border: none;
   cursor: pointer;
@@ -13,18 +13,18 @@
   margin: 0px;
 
   svg {
-    width: $size11px;
-    height: $size19px;
+    width: $size16px;
+    height: $size4px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .backBtn {
+  .contextMenuBtn {
     width: $flexsize30px;
     height: $flexsize30px;
     svg {
-      width: $flexsize11px;
-      height: $flexsize19px;
+      width: $flexsize16px;
+      height: $flexsize4px;
     }
   }
 }

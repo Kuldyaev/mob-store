@@ -139,7 +139,10 @@ const ProfilePage = () => {
             </div>
           </div>
         </div>
-        <div className={s.profileDeskMenu}>
+        <div
+          className={s.profileDeskMenu}
+          style={{ display: activeMenuScreen === "main" ? "flex" : "none" }}
+        >
           {menu.map((item) => (
             <div className={s.profileDeskMenuItem} key={item.id}>
               <div className={s.profileDeskMenuIcon}>
@@ -166,7 +169,6 @@ const ProfilePage = () => {
           activeMenuScreen === "main" ? s.hidden : s.showed
         )}
       >
-        <button onClick={hideMenuItem}>назад</button>
         {activeMenuScreen === "brands" && (
           <ProfileBrands
             title="Подписки на бренды"

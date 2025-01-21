@@ -1,5 +1,11 @@
 import { FC } from "react";
-import { Paragraph9, BackBtn } from "@/components/uikit";
+import {
+  Paragraph9,
+  BackBtn,
+  ContextMenuBtn,
+  Paragraph4,
+  Paragraph5_g,
+} from "@/components/uikit";
 import s from "./style.module.scss";
 
 interface ProfileBrandsProps {
@@ -16,7 +22,39 @@ const ProfileBrands: FC<ProfileBrandsProps> = ({ title, onClickBack }) => {
         <div>{}</div>
       </div>
 
-      <div className={s.profileBrandsBody}>fergeergerg</div>
+      <div className={s.profileBrandsBody}>
+        <div className={s.subscribeItem}>
+          <div className={s.subscribeItemInfo}>
+            <div
+              className={s.subscribeItemImg}
+              style={{
+                backgroundImage: "url('images/" + "brandNike" + ".png')",
+              }}
+            ></div>
+            <div className={s.subscribeItemTexts}>
+              <Paragraph4>Nike</Paragraph4>
+              <Paragraph5_g>2 478 товаров</Paragraph5_g>
+            </div>
+          </div>
+          <ContextMenuBtn />
+        </div>
+
+        <div className={s.subscribeItem}>
+          <div className={s.subscribeItemInfo}>
+            <div
+              className={s.subscribeItemImg}
+              style={{
+                backgroundImage: "url('images/" + "brandNike" + ".png')",
+              }}
+            ></div>
+            <div className={s.subscribeItemTexts}>
+              <Paragraph4>Nike</Paragraph4>
+              <Paragraph5_g>2 478 товаров</Paragraph5_g>
+            </div>
+          </div>
+          <ContextMenuBtn />
+        </div>
+      </div>
     </div>
   );
 };

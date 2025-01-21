@@ -22,6 +22,7 @@ import TrashCanIcon from "./TrashCanIcon";
 import FavoriteIcon from "./FavoriteIcon";
 import ClockIcon from "./ClockIcon";
 import BackIcon from "./BackIcon";
+import ContextMenuIcon from "./ContextMenuIcon";
 
 export {
   SearchIcon,
@@ -48,4 +49,5 @@ export {
   FavoriteIcon,
   ClockIcon,
   BackIcon,
+  ContextMenuIcon,
 };

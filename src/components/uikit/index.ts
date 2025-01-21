@@ -12,6 +12,7 @@ import { DeleteBtn } from "./Buttons/DeleteBtn";
 import { FavoriteBtn } from "./Buttons/FavoriteBtn";
 import { SearchBtn } from "./Buttons/SearchBtn";
 import { BackBtn } from "./Buttons/BackBtn";
+import { ContextMenuBtn } from "./Buttons/ContextMenuBtn";
 import { Button } from "./Buttons/Button";
 
 export {
@@ -31,4 +32,5 @@ export {
   FavoriteBtn,
   SearchBtn,
   BackBtn,
+  ContextMenuBtn,
 };
