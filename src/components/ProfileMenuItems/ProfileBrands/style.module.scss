@@ -1,0 +1,24 @@
+@use "./../../../scss/colors.scss" as *;
+@use "./../../../scss/variabels.scss" as *;
+
+.profileBrands {
+  display: flex;
+  flex-direction: row;
+  width: min(480px, 100vw);
+  display: flex;
+  flex-direction: column;
+
+  .profileBrandsHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profileBrands {
+    width: $flexsize344px;
+  }
+}

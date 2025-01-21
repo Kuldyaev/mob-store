@@ -10,8 +10,8 @@ const ArrowToRight = () => {
       <path
         d="M1 9L5 5L1 1"
         stroke="#9FA3A9"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

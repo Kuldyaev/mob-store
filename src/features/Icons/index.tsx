@@ -1,4 +1,5 @@
 import SearchIcon from "./SearchIcon";
+import SeacrhIconBlue from "./SearchIconBlue";
 import ProfileIcon from "./ProfileIcon";
 import CatalogIcon from "./CatalogIcon";
 import MainPageIcon from "./MainPageIcon";
@@ -20,9 +21,11 @@ import documentIconSVG from "./documentIconSVG.svg";
 import TrashCanIcon from "./TrashCanIcon";
 import FavoriteIcon from "./FavoriteIcon";
 import ClockIcon from "./ClockIcon";
+import BackIcon from "./BackIcon";
 
 export {
   SearchIcon,
+  SeacrhIconBlue,
   ProfileIcon,
   CatalogIcon,
   MainPageIcon,
@@ -44,4 +47,5 @@ export {
   TrashCanIcon,
   FavoriteIcon,
   ClockIcon,
+  BackIcon,
 };

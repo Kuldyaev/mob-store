@@ -2,19 +2,29 @@
 @use "./../../../../scss/variabels.scss" as *;
 
 .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  height: $size20px;
-  padding: 0px;
-  margin: 0px;
-  background-color: $color-blue !important;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // border: none;
+  // cursor: pointer;
+  // height: $size20px;
+  // padding: 0px;
+  // margin: 0px;
+  // background-color: $color-blue !important;
 }
 
 @media screen and (max-width: 480px) {
   .btn {
     height: $flexsize20px;
   }
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  border-radius: 3em;
+  font-weight: 700;
+  line-height: 1;
+  font-family: Inter;
 }
