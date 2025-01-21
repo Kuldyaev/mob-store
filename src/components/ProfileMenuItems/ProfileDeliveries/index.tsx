@@ -1,11 +1,6 @@
 import { FC } from "react";
-import {
-  Paragraph9,
-  BackBtn,
-  ContextMenuBtn,
-  Paragraph4,
-  Paragraph5_g,
-} from "@/components/uikit";
+import DeliveryCard from "@/components/Cards/DeliveryCard";
+import { Paragraph9, BackBtn } from "@/components/uikit";
 import s from "./style.module.scss";
 
 interface ProfileDeliveriesProps {
@@ -26,8 +21,25 @@ const ProfileDeliveries: FC<ProfileDeliveriesProps> = ({
       </div>
 
       <div className={s.body}>
-        <div className={s.deliveryCard}>bfdb</div>
-        <div className={s.deliveryCard}>rgerg</div>
+        <DeliveryCard
+          title="Собираем и готовим к отправке"
+          details="Будет в пункте выдачи 28 декабря"
+          img="nike"
+          brand="Nike"
+          description="Кроссовки The Powerpuff Girls x Nike SB
+Dunk Low «Buttercup»"
+          size="Размер 43 EU"
+          price="24 690₽"
+        />
+        <DeliveryCard
+          title="Уже у вас"
+          details="Доставлено 12 октября"
+          img="vans"
+          brand="Vans"
+          description="Кроссовки Peaches x Vans Knu Skool «Black Pink»"
+          size="Размер 38 EU"
+          price="15 390₽"
+        />
       </div>
     </div>
   );
