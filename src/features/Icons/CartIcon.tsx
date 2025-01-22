@@ -1,6 +1,12 @@
 const CartIcon = () => {
   return (
-    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+    >
       <g>
         <title>Layer 1</title>
         <path
