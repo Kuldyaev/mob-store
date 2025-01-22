@@ -17,7 +17,7 @@
   height: 578.45px;
   overflow: hidden;
   z-index: 1;
-  position: fixed;
+  position: relative;
 }
 
 .topImgBlock::-webkit-scrollbar {
@@ -27,19 +27,20 @@
 .topImg {
   width: 480px;
   height: 578.45px;
-  background-image: url("/images/frame.png");
+
+  // background-image: url("/images/frame.png");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 67.91%, #000000 106.92%),
+    url("/images/frame.png");
   background-position-x: center;
   background-size: 480px 578.45px;
-  overflow: hidden;
 }
 
 .desk {
   display: flex;
   flex-direction: column;
   width: min(480px, 100vw);
-  margin-top: $size347px;
+  margin-top: -$size104px;
   overflow: hidden;
 
   .topImgTextBlock {
@@ -123,7 +124,7 @@
   }
 
   .desk {
-    margin-top: $flexsize347px;
+    margin-top: -$flexsize104px;
     .topImgTextBlock {
       height: $flexsize80px;
       width: $flexsize360px;
