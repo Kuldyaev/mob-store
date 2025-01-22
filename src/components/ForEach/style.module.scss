@@ -6,9 +6,10 @@
   margin-left: -$size15px;
   overflow: hidden;
   overflow-x: auto;
+  margin-bottom: $size40px;
 
   .popcatLine {
-    min-height: $size390px;
+    min-height: $size350px;
     width: $size592px;
     padding-left: $size15px;
     display: flex;
@@ -63,9 +64,10 @@
   .forEach {
     width: 100vw;
     margin-left: -$flexsize15px;
+    margin-bottom: $flexsize40px;
 
     .popcatLine {
-      min-height: $flexsize390px;
+      min-height: $flexsize350px;
       width: $flexsize592px;
       padding-left: $flexsize15px;
       gap: $flexsize8px;

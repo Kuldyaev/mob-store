@@ -5,6 +5,11 @@
   display: flex;
   flex-direction: column;
   width: min(480px, 100vw);
+  overflow: hidden;
+}
+
+.back::-webkit-scrollbar {
+  display: none;
 }
 
 .topImgBlock {
@@ -13,6 +18,10 @@
   overflow: hidden;
   z-index: 1;
   position: fixed;
+}
+
+.topImgBlock::-webkit-scrollbar {
+  display: none;
 }
 
 .topImg {
@@ -24,13 +33,21 @@
   background-position-x: center;
   background-size: 480px 578.45px;
   overflow: hidden;
+}
+
+.desk {
+  display: flex;
+  flex-direction: column;
+  width: min(480px, 100vw);
+  margin-top: $size347px;
+  overflow: hidden;
 
   .topImgTextBlock {
     color: $color-white;
     height: $size80px;
     width: $size360px;
     margin-left: $size15px;
-    margin-top: $size347px;
+    z-index: 3;
 
     h4,
     h5 {
@@ -50,49 +67,50 @@
       line-height: $size17-5px;
     }
   }
-}
 
-.homedesk {
-  display: flex;
-  flex-direction: column;
-  width: 461.54px;
-  z-index: 2;
-  margin-top: 443px;
-  min-height: 443px;
-  background-color: $color-white;
-  border: 1px solid $color-white;
-  border-radius: $size25px $size25px 0px 0px;
-  padding-top: $size15px;
-  padding-left: $size15px;
-
-  .blockTitle {
+  .homedesk {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: $size12px;
-    width: 96%;
+    flex-direction: column;
+    width: 461.54px;
+    z-index: 2;
+    min-height: 443px;
+    background-color: $color-white;
+    border: 1px solid $color-white;
+    border-radius: $size25px $size25px 0px 0px;
+    padding-top: $size15px;
+    padding-left: $size15px;
 
-    .toAllBtn {
+    .blockTitle {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      background-color: $color-grey;
-      font-weight: 500;
-      width: $size55px;
-      height: $size23px;
-      border-radius: $size22px;
-      font-size: $size12px;
+      margin-bottom: $size12px;
+      width: 96%;
+
+      .toAllBtn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-grey;
+        font-weight: 500;
+        width: $size55px;
+        height: $size23px;
+        border-radius: $size22px;
+        font-size: $size12px;
+      }
     }
   }
 }
 
+.desk::-webkit-scrollbar,
+.homedesk::-webkit-scrollbar,
 .homedeskbody::-webkit-scrollbar {
   display: none;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 479px) {
   .topImgBlock {
     width: 100vw;
     height: 120.51vw;
@@ -102,12 +120,14 @@
     width: 100vw;
     height: 120.51vw;
     background-size: 100vw 120.51vw;
+  }
 
+  .desk {
+    margin-top: $flexsize347px;
     .topImgTextBlock {
       height: $flexsize80px;
       width: $flexsize360px;
       margin-left: $flexsize15px;
-      margin-top: $flexsize347px;
 
       h4 {
         font-size: $flexsize24px;
@@ -119,24 +139,23 @@
         line-height: $flexsize17-5px;
       }
     }
-  }
 
-  .homedesk {
-    width: 96.15vw;
-    margin-top: 113.59vw;
-    min-height: 113.59vw;
-    border-radius: $flexsize25px $flexsize25px 0px 0px;
-    padding-top: $flexsize15px;
-    padding-left: $flexsize15px;
+    .homedesk {
+      width: 96.15vw;
+      min-height: 113.59vw;
+      border-radius: $flexsize25px $flexsize25px 0px 0px;
+      padding-top: $flexsize15px;
+      padding-left: $flexsize15px;
 
-    .blockTitle {
-      margin-bottom: $flexsize12px;
+      .blockTitle {
+        margin-bottom: $flexsize12px;
 
-      .toAllBtn {
-        width: $flexsize55px;
-        height: $flexsize23px;
-        border-radius: $flexsize22px;
-        font-size: $flexsize12px;
+        .toAllBtn {
+          width: $flexsize55px;
+          height: $flexsize23px;
+          border-radius: $flexsize22px;
+          font-size: $flexsize12px;
+        }
       }
     }
   }

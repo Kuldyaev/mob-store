@@ -1,8 +1,12 @@
 @use "./../../scss/colors.scss" as *;
 @use "./../../scss/variabels.scss" as *;
 
+.bottomMenu::-webkit-scrollbar {
+  display: none;
+}
+
 .bottomMenu {
-  width: calc(480px - $size30px - $size30px);
+  width: min(406.15px, 84.615vw);
   height: $size36px;
   padding: $size11px $size30px;
   position: fixed;
@@ -12,14 +16,15 @@
   justify-content: space-between;
   align-items: center;
   background-color: $color-white;
-  margin-top: calc(100dvh - $size58px);
+  bottom: 0px;
+  // margin-top: calc(100dvh - $size58px);
 
   .bottomMenuBtn {
     padding: 0px;
     height: 100%;
     width: $size50px;
     border: none;
-    display: block;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -33,6 +38,7 @@
       font-weight: 500;
       font-family: "Inter";
       font-size: $size9px;
+      letter-spacing: 0.18px;
     }
   }
 
@@ -79,7 +85,6 @@
 
 @media screen and (max-width: 480px) {
   .bottomMenu {
-    width: calc(100vw - $flexsize30px - $flexsize30px);
     height: $flexsize36px;
     margin-top: calc(100dvh - $flexsize58px);
     padding: $flexsize11px $flexsize30px;

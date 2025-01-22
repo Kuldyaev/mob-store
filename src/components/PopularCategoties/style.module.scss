@@ -2,28 +2,14 @@
 @use "./../../scss/variabels.scss" as *;
 
 .popcat {
-  width: 480px;
+  width: min(480px, 100vw);
   margin-left: -$size15px;
   overflow: hidden;
   overflow-x: auto;
-
-  .popcatTitle {
-    width: 480px;
-    height: $size23px;
-    margin-left: $size15px;
-    margin-bottom: $size12px;
-
-    h4 {
-      margin: 0;
-      padding: 0;
-      font-weight: 700;
-      font-size: $size19px;
-      line-height: $size23px;
-    }
-  }
+  margin-bottom: $size40px;
 
   .popcatLine {
-    min-height: $size410px;
+    min-height: $size375px;
     width: $size550px;
     padding-left: $size15px;
     display: flex;
@@ -63,37 +49,19 @@
       }
     }
   }
-
-  .popBottom {
-    width: 100%;
-    min-height: $size42px;
-  }
 }
 
 .popcat::-webkit-scrollbar {
   display: none;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 479px) {
   .popcat {
-    width: 100vw;
     margin-left: -$flexsize15px;
-
-    .popcatTitle {
-      width: 100vw;
-      height: $flexsize23px;
-      margin-left: $flexsize15px;
-      margin-bottom: $flexsize12px;
-
-      h4 {
-        font-size: $flexsize19px;
-        line-height: $flexsize23px;
-        margin-top: $flexsize8px;
-      }
-    }
+    margin-bottom: $flexsize40px;
 
     .popcatLine {
-      min-height: $flexsize410px;
+      min-height: $flexsize375px;
       width: $flexsize550px;
       padding-left: $flexsize15px;
       gap: $flexsize7px;
@@ -114,10 +82,6 @@
           margin-top: $flexsize8px;
         }
       }
-    }
-
-    .popBottom {
-      min-height: $flexsize42px;
     }
   }
 }

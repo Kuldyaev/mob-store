@@ -6,6 +6,7 @@
   margin-left: -$size15px;
   overflow: hidden;
   overflow-x: auto;
+  margin-bottom: $size40px;
 
   .popcatLine {
     min-height: $size272px;
@@ -119,11 +120,6 @@
       }
     }
   }
-
-  .popBottom {
-    width: 100%;
-    min-height: $size25px;
-  }
 }
 
 .category::-webkit-scrollbar {
@@ -134,6 +130,7 @@
   .category {
     width: 100vw;
     margin-left: -$flexsize15px;
+    margin-bottom: $flexsize40px;
 
     .popcatLine {
       min-height: $flexsize272px;
@@ -208,10 +205,6 @@
           }
         }
       }
-    }
-
-    .popBottom {
-      min-height: $flexsize25px;
     }
   }
 }
