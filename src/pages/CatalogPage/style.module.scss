@@ -15,11 +15,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: $size15px;
+  gap: $size8px;
 }
 
 .card {
-  width: 30%;
+  width: min($size114px, $flexsize114px);
   height: $size140px;
   background-color: $color-grey;
   border-radius: $size10px;
@@ -54,7 +54,7 @@
 @media screen and (max-width: 480px) {
   .cardDesk {
     margin-top: $flexsize15px;
-    gap: $flexsize15px;
+    gap: $flexsize8px;
   }
 
   .card {

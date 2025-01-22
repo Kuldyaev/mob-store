@@ -14,7 +14,6 @@ const SportsParts = () => {
           <h5>Баскетбол</h5>
         </div>
       </div>
-      <div className={s.popBottom}></div>
     </div>
   );
 };

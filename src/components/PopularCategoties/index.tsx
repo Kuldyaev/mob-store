@@ -14,7 +14,6 @@ const PopularCategoties = () => {
           <h5>Название категории</h5>
         </div>
       </div>
-      <div className={s.popBottom}></div>
     </div>
   );
 };
