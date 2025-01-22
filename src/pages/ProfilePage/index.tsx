@@ -1,8 +1,6 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import ProfileTopAva from "@/components/ProfileTopAva";
 import { Paragraph1 } from "@/components/uikit";
-import ProfileBrands from "@/components/ProfileMenuItems/ProfileBrands";
-import ProfileDeliveries from "@/components/ProfileMenuItems/ProfileDeliveries";
 
 import {
   ArrowToRight,
@@ -19,6 +17,18 @@ import {
 } from "../../features/Icons";
 import cn from "classnames";
 import s from "./style.module.scss";
+
+const ProfileBrands = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileBrands")
+);
+
+const ProfileDeliveries = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileDeliveries")
+);
+
+const ProfileOrders = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileOrders")
+);
 
 const menu = [
   {
@@ -171,14 +181,22 @@ const ProfilePage = () => {
         )}
       >
         {activeMenuScreen === "brands" && (
-          <ProfileBrands
-            title="Подписки на бренды"
-            onClickBack={hideMenuItem}
-          />
+          <Suspense fallback={<div>Loading...</div>}>
+            <ProfileBrands
+              title="Подписки на бренды"
+              onClickBack={hideMenuItem}
+            />
+          </Suspense>
         )}
-        {activeMenuScreen === "shopping" && <div>Покупки</div>}
+        {activeMenuScreen === "shopping" && (
+          <Suspense fallback={<div>Loading...</div>}>
+            <ProfileOrders title="Покупки" onClickBack={hideMenuItem} />
+          </Suspense>
+        )}
         {activeMenuScreen === "deliveries" && (
-          <ProfileDeliveries title="Доставки" onClickBack={hideMenuItem} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <ProfileDeliveries title="Доставки" onClickBack={hideMenuItem} />
+          </Suspense>
         )}
         {activeMenuScreen === "promo" && <div>Промокоды</div>}
         {activeMenuScreen === "about" && <div>О сервисе</div>}

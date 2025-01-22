@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { MainLayout } from "../Layouts/MainLayout";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Pages } from "../../pages";
@@ -11,7 +11,11 @@ const pages: { [key in COMPONENTS]: JSX.Element } = {
   [COMPONENTS.EXAMPLES]: <Pages.ExamplesPage />,
   [COMPONENTS.CATALOG]: <Pages.CatalogPage />,
   [COMPONENTS.CART]: <Pages.CartPage />,
-  [COMPONENTS.PROFILE]: <ProfilePage />,
+  [COMPONENTS.PROFILE]: (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProfilePage />
+    </Suspense>
+  ),
   [COMPONENTS.DISCOUNTS]: <Pages.MonthDiskountPage />,
 };
 

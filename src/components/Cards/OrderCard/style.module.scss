@@ -1,0 +1,217 @@
+@use "./../../../scss/colors.scss" as *;
+@use "./../../../scss/variabels.scss" as *;
+
+.orderCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: $size176px;
+  height: $size333px;
+
+  .favorited {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $size20px;
+    height: $size20px;
+    margin-top: $size5px;
+    margin-left: $size151px;
+  }
+  .favoritedPositive {
+    img {
+      width: $size20px;
+      height: $size20px;
+    }
+  }
+  .favoritedNegative {
+    img {
+      width: $size16px;
+      height: $size16px;
+    }
+  }
+
+  .colors {
+    position: absolute;
+    background-color: $color-white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: $size35px;
+    height: $size14px;
+    border-radius: $size9px;
+    padding: $size3px $size5px;
+    margin-left: $size5px;
+    margin-top: $size205px;
+
+    .colorCircles {
+      margin: 0px;
+      padding: 0px;
+      height: $size14px;
+      width: $size23px;
+      display: flex;
+      flex-direction: row;
+
+      .colorCircle {
+        border: $size2px solid $color-white;
+        border-radius: 100%;
+        height: $size10px;
+        width: $size10px;
+        z-index: 6;
+      }
+
+      .colorCircleSecond {
+        margin-left: -$size7px;
+        z-index: 1;
+      }
+    }
+
+    h6 {
+      font-size: 500;
+      margin: 0px;
+      padding: 0px;
+      user-select: none;
+      font-size: $size11-5px;
+      line-height: $size14px;
+    }
+  }
+
+  .goodsImg {
+    background-color: $color-grey;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% auto;
+    width: 100%;
+    height: $size230px;
+    border-radius: $size15px;
+  }
+
+  .body {
+    .slideIndicator {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: $size12px;
+
+      .indicator {
+        height: $size4px;
+        width: $size22px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        svg {
+          width: $size4px;
+          height: $size4px;
+        }
+      }
+    }
+    .goodsInfo {
+      width: 100%;
+      min-height: $size89px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .goodsInfoTop {
+        h3:nth-child(1) {
+          font-weight: 600;
+        }
+
+        h3:nth-child(2) {
+          font-weight: 400;
+          display: -webkit-box; /* Используем flexbox для ограничения строк */
+          -webkit-box-orient: vertical; /* Устанавливаем ориентацию на вертикальную */
+          overflow: hidden; /* Скрываем переполнение */
+          line-clamp: 2; /* Ограничиваем до 2 строк */
+          line-height: 1.2; /* Устанавливаем высоту строки */
+          max-height: 2.4em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .orderCard {
+    width: $flexsize176px;
+    height: $flexsize333px;
+
+    .favorited {
+      width: $flexsize20px;
+      height: $flexsize20px;
+      margin-top: $flexsize5px;
+      margin-left: $flexsize151px;
+    }
+    .favoritedPositive {
+      img {
+        width: $flexsize20px;
+        height: $flexsize20px;
+      }
+    }
+    .favoritedNegative {
+      img {
+        width: $flexsize16px;
+        height: $flexsize16px;
+      }
+    }
+
+    .colors {
+      width: $flexsize35px;
+      height: $flexsize14px;
+      border-radius: $flexsize9px;
+      padding: $flexsize3px $flexsize5px;
+      margin-left: $flexsize5px;
+      margin-top: $flexsize205px;
+
+      .colorCircles {
+        height: $flexsize14px;
+        width: $flexsize23px;
+
+        .colorCircle {
+          border: $flexsize2px solid $color-white;
+          height: $flexsize10px;
+          width: $flexsize10px;
+        }
+
+        .colorCircleSecond {
+          margin-left: -$flexsize7px;
+        }
+      }
+
+      h6 {
+        font-size: $flexsize11-5px;
+        line-height: $flexsize14px;
+      }
+    }
+
+    .goodsImg {
+      height: $flexsize230px;
+      border-radius: $flexsize15px;
+    }
+
+    .body {
+      .slideIndicator {
+        height: $flexsize12px;
+
+        .indicator {
+          height: $flexsize4px;
+          width: $flexsize22px;
+
+          svg {
+            width: $flexsize4px;
+            height: $flexsize4px;
+          }
+        }
+      }
+
+      .goodsInfo {
+        min-height: $flexsize89px;
+      }
+    }
+  }
+}

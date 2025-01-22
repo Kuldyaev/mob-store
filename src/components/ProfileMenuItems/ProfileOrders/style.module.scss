@@ -1,0 +1,48 @@
+@use "./../../../scss/colors.scss" as *;
+@use "./../../../scss/variabels.scss" as *;
+
+.profileOrders {
+  display: flex;
+  flex-direction: row;
+  width: min(480px, 100vw);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: $size55px;
+
+  .header {
+    width: 92%;
+    padding: 0px 4%;
+    height: $size43px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .searchBarPlace {
+    margin-left: $size15px;
+  }
+  .body {
+    margin-top: $size10px;
+    width: 92%;
+    padding: 0px 4%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $size6px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profileOrders {
+    padding-bottom: $flexsize55px;
+    .header {
+      height: $flexsize43px;
+    }
+    .searchBarPlace {
+      margin-left: $flexsize15px;
+    }
+    .body {
+      margin-top: $flexsize10px;
+      gap: $flexsize6px;
+    }
+  }
+}

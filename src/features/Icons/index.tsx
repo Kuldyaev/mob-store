@@ -18,11 +18,14 @@ import inviteFrendIconSVG from "./inviteFrendIconSVG.svg";
 import promoCodesIconSVG from "./promoCodesIconSVG.svg";
 import telegramIconSVG from "./telegramIconSVG.svg";
 import documentIconSVG from "./documentIconSVG.svg";
+import favotiteIcon from "./favotiteIcon.svg";
+import menuOutlinedIcon from "./menuOutlinedIcon.svg";
 import TrashCanIcon from "./TrashCanIcon";
 import FavoriteIcon from "./FavoriteIcon";
 import ClockIcon from "./ClockIcon";
 import BackIcon from "./BackIcon";
 import ContextMenuIcon from "./ContextMenuIcon";
+import SlideIndicatorIcon from "./SlideIndicatorIcon";
 
 export {
   SearchIcon,
@@ -50,4 +53,7 @@ export {
   ClockIcon,
   BackIcon,
   ContextMenuIcon,
+  favotiteIcon,
+  menuOutlinedIcon,
+  SlideIndicatorIcon,
 };

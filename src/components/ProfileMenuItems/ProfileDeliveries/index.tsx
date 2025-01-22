@@ -8,6 +8,30 @@ interface ProfileDeliveriesProps {
   onClickBack?: () => void;
 }
 
+const data = [
+  {
+    id: 0,
+    title: "Собираем и готовим к отправке",
+    details: "Будет в пункте выдачи 28 декабря",
+    img: "nike",
+    brand: "Nike",
+    description: "Кроссовки The Powerpuff Girls x Nike SBDunk Low «Buttercup»",
+    size: "Размер 43 EU",
+
+    price: "24 690₽",
+  },
+  {
+    id: 1,
+    title: "Уже у вас",
+    details: "Доставлено 12 октября",
+    img: "vans",
+    brand: "Vans",
+    description: "Кроссовки Peaches x Vans Knu Skool «Black Pink»",
+    size: "Размер 38 EU",
+    price: "15 390₽",
+  },
+];
+
 const ProfileDeliveries: FC<ProfileDeliveriesProps> = ({
   title,
   onClickBack,
@@ -19,27 +43,10 @@ const ProfileDeliveries: FC<ProfileDeliveriesProps> = ({
         <Paragraph9>{title}</Paragraph9>
         <div>{}</div>
       </div>
-
       <div className={s.body}>
-        <DeliveryCard
-          title="Собираем и готовим к отправке"
-          details="Будет в пункте выдачи 28 декабря"
-          img="nike"
-          brand="Nike"
-          description="Кроссовки The Powerpuff Girls x Nike SB
-Dunk Low «Buttercup»"
-          size="Размер 43 EU"
-          price="24 690₽"
-        />
-        <DeliveryCard
-          title="Уже у вас"
-          details="Доставлено 12 октября"
-          img="vans"
-          brand="Vans"
-          description="Кроссовки Peaches x Vans Knu Skool «Black Pink»"
-          size="Размер 38 EU"
-          price="15 390₽"
-        />
+        {data.map((item) => (
+          <DeliveryCard key={item.id} item={item} />
+        ))}
       </div>
     </div>
   );
