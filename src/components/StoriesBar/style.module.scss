@@ -12,7 +12,7 @@
 
   .storiesLine {
     min-height: $size86px;
-    width: $size410px;
+    min-width: $size499px;
     padding-left: $size15px;
     display: flex;
     flex-direction: row;
@@ -85,7 +85,7 @@
 
     .storiesLine {
       min-height: $flexsize86px;
-      width: $flexsize410px;
+      min-width: $flexsize499px;
       padding-left: $flexsize15px;
       gap: $flexsize15px;
 

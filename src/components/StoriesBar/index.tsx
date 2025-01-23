@@ -3,28 +3,33 @@ import s from "./style.module.scss";
 const data = [
   {
     id: 0,
-    title: "Календарь",
+    title: "О нас",
     img: "story1.png",
   },
   {
     id: 1,
-    title: "Акции",
+    title: "Доставка",
     img: "story2.png",
   },
   {
     id: 2,
-    title: "Мастхэв",
+    title: "В тренде",
     img: "story3.png",
   },
   {
     id: 3,
-    title: "М-25%",
+    title: "Релизы",
     img: "story4.png",
   },
   {
     id: 4,
-    title: "Красота",
+    title: "Образы",
     img: "story1.png",
+  },
+  {
+    id: 5,
+    title: "Подборки",
+    img: "story3.png",
   },
 ];
 
