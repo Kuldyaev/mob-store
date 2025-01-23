@@ -1,74 +1,52 @@
 import s from "./style.module.scss";
 
+const data = [
+  {
+    id: 0,
+    title: "Календарь",
+    img: "story1.png",
+  },
+  {
+    id: 1,
+    title: "Акции",
+    img: "story2.png",
+  },
+  {
+    id: 2,
+    title: "Мастхэв",
+    img: "story3.png",
+  },
+  {
+    id: 3,
+    title: "М-25%",
+    img: "story4.png",
+  },
+  {
+    id: 4,
+    title: "Красота",
+    img: "story1.png",
+  },
+];
+
 const StoriesBar = () => {
   return (
     <div className={s.stories}>
       <div className={s.storiesLine}>
-        <div className={s.storiesLineItem}>
-          <div className={s.storiesImgPlace}>
-            <div className={s.whiteCircle}>
-              <div
-                className={s.imgCircle}
-                style={{
-                  backgroundImage: "url('images/" + "story1" + ".png')",
-                }}
-              ></div>
+        {data.map((item) => (
+          <div className={s.storiesLineItem} key={item.id}>
+            <div className={s.storiesImgPlace}>
+              <div className={s.whiteCircle}>
+                <div
+                  className={s.imgCircle}
+                  style={{
+                    backgroundImage: "url('images/" + item.img + "')",
+                  }}
+                ></div>
+              </div>
             </div>
+            <h6>{item.title}</h6>
           </div>
-          <h6>Календарь</h6>
-        </div>
-        <div className={s.storiesLineItem}>
-          <div className={s.storiesImgPlace}>
-            <div className={s.whiteCircle}>
-              <div
-                className={s.imgCircle}
-                style={{
-                  backgroundImage: "url('images/" + "story2" + ".png')",
-                }}
-              ></div>
-            </div>
-          </div>
-          <h6>Акции</h6>
-        </div>
-        <div className={s.storiesLineItem}>
-          <div className={s.storiesImgPlace}>
-            <div className={s.whiteCircle}>
-              <div
-                className={s.imgCircle}
-                style={{
-                  backgroundImage: "url('images/" + "story3" + ".png')",
-                }}
-              ></div>
-            </div>
-          </div>
-          <h6>Мастхэв</h6>
-        </div>
-        <div className={s.storiesLineItem}>
-          <div className={s.storiesImgPlace}>
-            <div className={s.whiteCircle}>
-              <div
-                className={s.imgCircle}
-                style={{
-                  backgroundImage: "url('images/" + "story4" + ".png')",
-                }}
-              ></div>
-            </div>
-          </div>
-          <h6>-25%</h6>
-        </div>
-        <div className={s.storiesLineItem}>
-          <div className={s.storiesImgPlace}>
-            <div className={s.whiteCircle}>
-              <div
-                className={s.imgCircle}
-                style={{
-                  backgroundImage: "url('images/" + "story1" + ".png')",
-                }}
-              ></div>
-            </div>
-          </div>
-          <h6>Красота</h6>
-        </div>
+        ))}
       </div>
       <div className={s.storiesBottom}></div>
     </div>
