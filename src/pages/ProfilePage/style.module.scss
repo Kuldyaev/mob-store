@@ -1,6 +1,26 @@
 @use "./../../scss/colors.scss" as *;
 @use "./../../scss/variabels.scss" as *;
 
+.headerFixed {
+  background-color: $color-white;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  width: 100%;
+  height: min($size36px, $flexsize36px);
+
+  .infoBlock {
+    transition: opacity 0.5s linear;
+  }
+  .opacity1 {
+    opacity: 1;
+  }
+
+  .opacity0 {
+    opacity: 0;
+  }
+}
+
 .profileDesk {
   background-color: $color-grey;
   padding: 0px;
@@ -38,14 +58,14 @@
 
   h1 {
     margin-bottom: $size15px;
-    margin-top: $size38px;
+    margin-top: $size10px;
   }
 
   .profileDeskTop {
     background-color: $color-white;
     width: $size360px;
-    height: $size218px;
-    padding: $size15px;
+    height: $size208px;
+    padding: 0 $size15px $size15px $size15px;
     border-radius: 0px 0px $size25px $size25px;
     margin-bottom: $size8px;
     top: 0;
@@ -213,13 +233,13 @@
 
     h1 {
       margin-bottom: $flexsize15px;
-      margin-top: $flexsize38px;
+      margin-top: $flexsize10px;
     }
 
     .profileDeskTop {
-      height: $flexsize218px;
+      height: $flexsize208px;
       width: $flexsize360px;
-      padding: $flexsize15px;
+      padding: 0px $flexsize15px $flexsize15px $flexsize15px;
       border-radius: 0px 0px $flexsize25px $flexsize25px;
       margin-bottom: $flexsize8px;
 

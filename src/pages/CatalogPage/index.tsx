@@ -1,5 +1,7 @@
+import { useState, useEffect, useRef } from "react";
 import SearchBar from "@/components/SearchBar";
-import { Paragraph1 } from "@/components/uikit";
+import { Paragraph9, Paragraph1 } from "@/components/uikit";
+import cn from "classnames";
 import s from "./style.module.scss";
 
 const catalog = [
@@ -87,25 +89,64 @@ const catalog = [
 ];
 
 const CatalogPage = () => {
+  const elRef = useRef<HTMLDivElement | null>(null);
+  const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
+
+  const handleScroll = () => {
+    if (elRef.current) {
+      const rect = elRef.current.getBoundingClientRect();
+
+      if (isShowedFixHeader) {
+        setIsShowedFixHeader(
+          Math.round((+rect.top * 17.727) / +rect.width) < 1
+        );
+      } else {
+        setIsShowedFixHeader(
+          Math.round((+rect.top * 17.727) / +rect.width) < 1
+        );
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className={s.catalogDesk}>
-      <Paragraph1>Каталог</Paragraph1>
-      <SearchBar />
-      <div className={s.cardDesk}>
-        {catalog.map((item) => (
-          <div className={s.card} key={item.id}>
-            <h3 className={s.cardTitle}>{item.title}</h3>
-            <div
-              className={s.cardImgPlace}
-              style={{
-                backgroundImage: "url('images/" + item.image + ".png')",
-              }}
-            ></div>
-          </div>
-        ))}
+    <>
+      <div className={cn(s.headerFixed, "flex-row-center-center")}>
+        <div
+          className={cn(
+            s.infoBlock,
+            "flex-column-center-center",
+            isShowedFixHeader ? s.opacity1 : s.opacity0
+          )}
+        >
+          <Paragraph9>Каталог</Paragraph9>
+        </div>
       </div>
-      <div className={s.cardDeskBottom}></div>
-    </div>
+      <div className={s.catalogDesk} ref={elRef}>
+        <Paragraph1>Каталог</Paragraph1>
+        <SearchBar />
+        <div className={s.cardDesk}>
+          {catalog.map((item) => (
+            <div className={s.card} key={item.id}>
+              <h3 className={s.cardTitle}>{item.title}</h3>
+              <div
+                className={s.cardImgPlace}
+                style={{
+                  backgroundImage: "url('images/" + item.image + ".png')",
+                }}
+              ></div>
+            </div>
+          ))}
+        </div>
+        <div className={s.cardDeskBottom}></div>
+      </div>
+    </>
   );
 };
 
