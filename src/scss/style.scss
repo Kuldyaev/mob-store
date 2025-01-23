@@ -66,6 +66,34 @@ button {
   color: $color-black;
 }
 
+.flex-row-between-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-row-end-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.flex-row-start-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flex-column-start-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

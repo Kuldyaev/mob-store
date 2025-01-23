@@ -11,7 +11,7 @@ import {
   CheckBox,
 } from "../../components/uikit";
 
-import { DeleteBtn, FavoriteBtn } from "../../components/uikit";
+import { DeleteBtn, FavoriteBtn } from "@/components/uikit";
 
 interface CartItemProps {
   item: {
