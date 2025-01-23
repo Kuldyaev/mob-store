@@ -3,18 +3,20 @@
 
 .stories {
   width: 480px;
-  margin-top: $size21px;
+  margin-top: $size15px;
+  margin-bottom: $size15px;
   margin-left: -$size15px;
+  height: $size86px;
   overflow: hidden;
   overflow-x: auto;
 
   .storiesLine {
-    min-height: $size89px;
+    min-height: $size86px;
     width: $size410px;
     padding-left: $size15px;
     display: flex;
     flex-direction: row;
-    gap: $size16px;
+    gap: $size15px;
 
     .storiesLineItem {
       width: $size67px;
@@ -66,11 +68,6 @@
       }
     }
   }
-
-  .storiesBottom {
-    width: 100%;
-    min-height: $size20px;
-  }
 }
 
 .stories::-webkit-scrollbar {
@@ -80,14 +77,17 @@
 @media screen and (max-width: 480px) {
   .stories {
     width: 100vw;
+    margin-top: $flexsize15px;
+    margin-bottom: $flexsize15px;
     margin-left: -$flexsize15px;
-    margin-top: $flexsize21px;
+
+    height: $flexsize86px;
 
     .storiesLine {
-      min-height: $flexsize89px;
+      min-height: $flexsize86px;
       width: $flexsize410px;
       padding-left: $flexsize15px;
-      gap: $flexsize16px;
+      gap: $flexsize15px;
 
       .storiesLineItem {
         width: $flexsize67px;
@@ -114,10 +114,6 @@
           line-height: $flexsize14-5px;
         }
       }
-    }
-
-    .storiesBottom {
-      min-height: $flexsize20px;
     }
   }
 }

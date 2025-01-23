@@ -48,7 +48,6 @@ const StoriesBar = () => {
           </div>
         ))}
       </div>
-      <div className={s.storiesBottom}></div>
     </div>
   );
 };
