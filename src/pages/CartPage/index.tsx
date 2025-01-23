@@ -1,8 +1,21 @@
+import { useState } from "react";
 import CartItem from "@/components/CarItem";
-import { Paragraph1 } from "@/components/uikit";
+import {
+  Paragraph1,
+  Paragraph4,
+  Paragraph5_g,
+  Paragraph7,
+  CheckBox,
+  DeleteBtn,
+} from "@/components/uikit";
+
+import { ArrowToRight } from "@/features/Icons";
+import cn from "classnames";
 import s from "./style.module.scss";
 
 const CartPage = () => {
+  const [isSelectedAll, setIsSelectedAll] = useState<boolean>(false);
+
   const goods = [
     {
       id: 1,
@@ -51,7 +64,42 @@ const CartPage = () => {
   ];
   return (
     <div className={s.cartDesk}>
-      <Paragraph1>Корзина</Paragraph1>
+      <div className={s.header}>
+        <Paragraph1>Корзина</Paragraph1>
+        <div className={s.details}>
+          <Paragraph5_g>5 товаров</Paragraph5_g>
+          <Paragraph5_g>2 недоступно</Paragraph5_g>
+        </div>
+      </div>
+      <div className={cn(s.freeDeliveryBlock, "flex-column-start-start")}>
+        <div className={cn(s.freeDeliveryInfo, "flex-row-between-center")}>
+          <div className={cn(s.title, "flex-column-start-start")}>
+            <Paragraph4>Доставка курьером </Paragraph4>
+            <Paragraph5_g>Бесплатно</Paragraph5_g>
+          </div>
+          <ArrowToRight />
+        </div>
+        <div className={s.indicator}>{}</div>
+        <div
+          className={cn(s.freeDeliveryConditions, "flex-row-between-center")}
+        >
+          <Paragraph7>12 000₽</Paragraph7>
+          <Paragraph7>22 000₽</Paragraph7>
+        </div>
+      </div>
+      <div className={cn(s.groupActionsBlock, "flex-row-between-center")}>
+        <div className={cn(s.deleteSelected, "flex-row-start-center")}>
+          <DeleteBtn />
+          <Paragraph5_g>Удалить выбранные</Paragraph5_g>
+        </div>
+        <div className={cn(s.chooseAll, "flex-row-end-center")}>
+          <Paragraph5_g>Выбрать все</Paragraph5_g>
+          <CheckBox
+            checked={isSelectedAll}
+            changeValue={() => setIsSelectedAll(!isSelectedAll)}
+          />
+        </div>
+      </div>
       <div>
         {goods.map((item) => (
           <CartItem item={item} key={item.id} />
