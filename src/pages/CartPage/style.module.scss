@@ -27,9 +27,8 @@
   }
 }
 .cartDesk {
-  padding: 0 $size15px;
-  background-color: $color-white;
   min-height: 90dvh;
+  padding-bottom: $size65px;
 
   .opacity1 {
     opacity: 1;
@@ -39,135 +38,165 @@
     opacity: 0;
   }
 
-  .header {
-    margin-top: $size10px;
-    margin-bottom: $size12px;
-    display: flex;
-    align-items: flex-end;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: $size10px;
-    transition: opacity 0.5s linear;
+  .cartDeskTop {
+    padding: 0 $size15px;
+    padding-top: $size10px;
+    margin-bottom: $size8px;
+    background-color: $color-white;
+    border-radius: 0px 0px $size25px $size25px;
 
-    .details {
+    .header {
+      background-color: $color-white;
+      margin-bottom: $size12px;
       display: flex;
       align-items: flex-end;
       flex-direction: row;
       justify-content: flex-start;
-      gap: $size11px;
+      gap: $size10px;
+      transition: opacity 0.5s linear;
 
-      h2:nth-child(2) {
-        color: $color-orange;
+      .details {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: $size11px;
+
+        h2:nth-child(2) {
+          color: $color-orange;
+        }
       }
     }
-  }
 
-  .freeDeliveryBlock {
-    background-color: $color-grey;
-    padding: $size10px;
-    width: $size340px;
-    height: $size74px;
-    border-radius: $size14px;
-
-    .freeDeliveryInfo {
+    .freeDeliveryBlock {
+      background-color: $color-grey;
+      padding: $size10px;
       width: $size340px;
-      height: $size37px;
-      margin-bottom: $size12px;
+      height: $size74px;
+      border-radius: $size14px;
 
-      .title {
-        gap: min($size4px, $flexsize4px);
-        h2:first-child {
+      .freeDeliveryInfo {
+        width: $size340px;
+        height: $size37px;
+        margin-bottom: $size12px;
+
+        .title {
+          gap: min($size4px, $flexsize4px);
+          h2:first-child {
+            font-weight: 500;
+          }
+          h2:nth-child(2) {
+            font-weight: 400;
+          }
+        }
+      }
+
+      .indicator {
+        width: $size334px;
+        height: 0px;
+        border: 3px solid $color-blue;
+        border-radius: min($size3px, $flexsize3px);
+      }
+
+      .freeDeliveryConditions {
+        width: $size340px;
+        margin-top: $size4px;
+        h3 {
+          color: $color-blue;
           font-weight: 500;
         }
-        h2:nth-child(2) {
-          font-weight: 400;
-        }
       }
     }
 
-    .indicator {
-      width: $size334px;
-      height: 0px;
-      border: 3px solid $color-blue;
-      border-radius: min($size3px, $flexsize3px);
-    }
+    .groupActionsBlock {
+      width: 100%;
+      height: min($size46px, $flexsize46px);
 
-    .freeDeliveryConditions {
-      width: $size340px;
-      margin-top: $size4px;
-      h3 {
-        color: $color-blue;
-        font-weight: 500;
+      .deleteSelected {
+        gap: min($size5px, $flexsize5px);
+
+        button {
+          width: min($size16px, $flexsize16px);
+          height: min($size16px, $flexsize16px);
+
+          svg {
+            width: min($size16px, $flexsize16px);
+            height: min($size16px, $flexsize16px);
+          }
+        }
+
+        h2 {
+          font-weight: 500;
+        }
+      }
+      .chooseAll {
+        gap: min($size6px, $flexsize6px);
+        h2 {
+          font-weight: 500;
+        }
       }
     }
   }
 
-  .groupActionsBlock {
-    width: 100%;
-    height: min($size46px, $flexsize46px);
+  .cartDeskBody {
+    padding: 0 $size15px;
+    margin-bottom: $size8px;
+    background-color: $color-white;
+    border-radius: $size25px;
 
-    .deleteSelected {
-      gap: min($size5px, $flexsize5px);
-
-      button {
-        width: min($size16px, $flexsize16px);
-        height: min($size16px, $flexsize16px);
-
-        svg {
-          width: min($size16px, $flexsize16px);
-          height: min($size16px, $flexsize16px);
-        }
-      }
-
-      h2 {
-        font-weight: 500;
-      }
-    }
-    .chooseAll {
-      gap: min($size6px, $flexsize6px);
-      h2 {
-        font-weight: 500;
-      }
+    div:first-child {
+      border-top: none;
     }
   }
 }
 
 @media screen and (max-width: 480px) {
   .cartDesk {
-    padding: $flexsize15px;
+    padding-bottom: $flexsize65px;
+    .cartDeskTop {
+      padding: 0 $flexsize15px;
+      padding-top: $flexsize10px;
+      margin-bottom: $flexsize8px;
+      border-radius: 0px 0px $flexsize25px $flexsize25px;
 
-    .header {
-      margin-top: $flexsize10px;
-      margin-bottom: $flexsize12px;
-      gap: $flexsize10px;
+      .header {
+        margin-top: $flexsize10px;
+        margin-bottom: $flexsize12px;
+        gap: $flexsize10px;
 
-      .details {
-        gap: $flexsize11px;
+        .details {
+          gap: $flexsize11px;
+        }
+      }
+
+      .freeDeliveryBlock {
+        padding: $flexsize10px;
+        width: $flexsize340px;
+        height: $flexsize74px;
+        border-radius: $flexsize14px;
+
+        .freeDeliveryInfo {
+          width: $flexsize340px;
+          height: $flexsize37px;
+          margin-bottom: $flexsize12px;
+        }
+
+        .indicator {
+          width: $flexsize334px;
+          border: $flexsize3px solid $color-blue;
+          border-radius: $flexsize3px;
+        }
+
+        .freeDeliveryConditions {
+          width: $flexsize340px;
+          margin-top: $flexsize4px;
+        }
       }
     }
-
-    .freeDeliveryBlock {
-      padding: $flexsize10px;
-      width: $flexsize340px;
-      height: $flexsize74px;
-      border-radius: $flexsize14px;
-
-      .freeDeliveryInfo {
-        width: $flexsize340px;
-        height: $flexsize37px;
-        margin-bottom: $flexsize12px;
-      }
-
-      .indicator {
-        width: $flexsize334px;
-        border: $flexsize3px solid $color-blue;
-        border-radius: $flexsize3px;
-      }
-
-      .freeDeliveryConditions {
-        width: $flexsize340px;
-        margin-top: $flexsize4px;
-      }
+    .cartDeskBody {
+      padding: 0 $flexsize15px;
+      margin-bottom: $flexsize8px;
+      border-radius: $flexsize25px;
     }
   }
 }
