@@ -8,7 +8,7 @@
 .bottomMenu {
   width: min(406.15px, 84.615vw);
   height: $size36px;
-  padding: $size11px $size30px;
+  padding: $size10px $size30px;
   position: fixed;
   z-index: 10;
   display: flex;
@@ -17,6 +17,7 @@
   align-items: center;
   background-color: $color-white;
   bottom: 0px;
+  border-top: 0.25px solid $color-dark-grey;
   // margin-top: calc(100dvh - $size58px);
 
   .bottomMenuBtn {
@@ -86,7 +87,7 @@
   .bottomMenu {
     height: $flexsize36px;
     margin-top: calc(100dvh - $flexsize58px);
-    padding: $flexsize11px $flexsize30px;
+    padding: $flexsize10px $flexsize30px;
 
     .bottomMenuBtn {
       width: $flexsize50px;
