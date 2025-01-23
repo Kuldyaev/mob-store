@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import CartItem from "@/components/CarItem";
+import CartResults from "@/components/CartResults";
 import {
   Paragraph1,
   Paragraph4,
@@ -88,6 +89,12 @@ const CartPage = () => {
       price: "24 690",
     },
   ];
+
+  const cartResults = {
+    quontityTotal: 5,
+    sumTotal: 78290,
+    sumDiscount: 1200,
+  };
   return (
     <>
       <div className={cn(s.headerFixed, "flex-row-center-center")}>
@@ -106,51 +113,60 @@ const CartPage = () => {
         </div>
       </div>
       <div className={s.cartDesk} ref={elRef}>
-        <div
-          className={cn(s.header, isShowedFixHeader ? s.opacity0 : s.opacity1)}
-        >
-          <Paragraph1>Корзина</Paragraph1>
-          <div className={s.details}>
-            <Paragraph5_g>5 товаров</Paragraph5_g>
-            <Paragraph5_g>2 недоступно</Paragraph5_g>
-          </div>
-        </div>
-        <div className={cn(s.freeDeliveryBlock, "flex-column-start-start")}>
-          <div className={cn(s.freeDeliveryInfo, "flex-row-between-center")}>
-            <div className={cn(s.title, "flex-column-start-start")}>
-              <Paragraph4>Доставка курьером </Paragraph4>
-              <Paragraph5_g>Бесплатно</Paragraph5_g>
-            </div>
-            <ArrowToRight />
-          </div>
-          <div className={s.indicator}>{}</div>
+        <div className={s.cartDeskTop}>
           <div
-            className={cn(s.freeDeliveryConditions, "flex-row-between-center")}
+            className={cn(
+              s.header,
+              isShowedFixHeader ? s.opacity0 : s.opacity1
+            )}
           >
-            <Paragraph7>12 000₽</Paragraph7>
-            <Paragraph7>22 000₽</Paragraph7>
+            <Paragraph1>Корзина</Paragraph1>
+            <div className={s.details}>
+              <Paragraph5_g>5 товаров</Paragraph5_g>
+              <Paragraph5_g>2 недоступно</Paragraph5_g>
+            </div>
+          </div>
+          <div className={cn(s.freeDeliveryBlock, "flex-column-start-start")}>
+            <div className={cn(s.freeDeliveryInfo, "flex-row-between-center")}>
+              <div className={cn(s.title, "flex-column-start-start")}>
+                <Paragraph4>Доставка курьером </Paragraph4>
+                <Paragraph5_g>Бесплатно</Paragraph5_g>
+              </div>
+              <ArrowToRight />
+            </div>
+            <div className={s.indicator}>{}</div>
+            <div
+              className={cn(
+                s.freeDeliveryConditions,
+                "flex-row-between-center"
+              )}
+            >
+              <Paragraph7>12 000₽</Paragraph7>
+              <Paragraph7>22 000₽</Paragraph7>
+            </div>
+          </div>
+          <div className={cn(s.groupActionsBlock, "flex-row-between-center")}>
+            <div className={cn(s.deleteSelected, "flex-row-start-center")}>
+              <DeleteBtn />
+              <Paragraph5_g>Удалить выбранные</Paragraph5_g>
+            </div>
+            <div className={cn(s.chooseAll, "flex-row-end-center")}>
+              <Paragraph5_g>Выбрать все</Paragraph5_g>
+              <CheckBox
+                checked={isSelectedAll}
+                changeValue={() => {
+                  setIsSelectedAll(!isSelectedAll);
+                }}
+              />
+            </div>
           </div>
         </div>
-        <div className={cn(s.groupActionsBlock, "flex-row-between-center")}>
-          <div className={cn(s.deleteSelected, "flex-row-start-center")}>
-            <DeleteBtn />
-            <Paragraph5_g>Удалить выбранные</Paragraph5_g>
-          </div>
-          <div className={cn(s.chooseAll, "flex-row-end-center")}>
-            <Paragraph5_g>Выбрать все</Paragraph5_g>
-            <CheckBox
-              checked={isSelectedAll}
-              changeValue={() => {
-                setIsSelectedAll(!isSelectedAll);
-              }}
-            />
-          </div>
-        </div>
-        <div>
+        <div className={s.cartDeskBody}>
           {goods.map((item) => (
             <CartItem item={item} key={item.id} />
           ))}
         </div>
+        <CartResults data={cartResults} />
       </div>
     </>
   );

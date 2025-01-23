@@ -1,0 +1,121 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.results {
+  background-color: $color-white;
+  min-height: $size140px;
+  width: $size360px;
+  border-radius: $size25px $size25px 0 0;
+  padding: $size20px $size15px;
+
+  .title {
+    margin-bottom: $size15px;
+    h3 {
+      font-size: $size20px;
+      line-height: $size16px;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: $size11-5px;
+      line-height: $size16px;
+      font-weight: 400;
+    }
+  }
+
+  .totalSum {
+    margin-bottom: $size8px;
+
+    h2:first-child {
+      font-size: $size12-5px;
+      line-height: $size16px;
+      font-weight: 400;
+    }
+
+    h2:nth-child(2) {
+      font-size: $size12-5px;
+      line-height: $size16px;
+      font-weight: 600;
+    }
+  }
+  .discount {
+    margin-bottom: $size15px;
+    h2:first-child {
+      font-size: $size12-5px;
+      line-height: $size16px;
+      font-weight: 400;
+    }
+    h2:nth-child(2) {
+      font-size: $size12-5px;
+      line-height: $size16px;
+      font-weight: 600;
+      color: $color-blue;
+    }
+  }
+
+  button {
+    height: $size44px;
+    width: $size360px;
+    border-radius: $size14px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $size15-5px;
+    line-height: $size18px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .results {
+    min-height: $flexsize140px;
+    width: $flexsize360px;
+    border-radius: $flexsize25px $flexsize25px 0 0;
+    padding: $flexsize20px $flexsize15px;
+
+    .title {
+      margin-bottom: $flexsize15px;
+      h3 {
+        font-size: $flexsize20px;
+        line-height: $flexsize16px;
+      }
+      h2 {
+        font-size: $flexsize11-5px;
+        line-height: $flexsize16px;
+      }
+    }
+
+    .totalSum {
+      margin-bottom: $flexsize8px;
+      h2:first-child {
+        font-size: $flexsize12-5px;
+        line-height: $flexsize16px;
+      }
+
+      h2:nth-child(2) {
+        font-size: $flexsize12-5px;
+        line-height: $flexsize16px;
+      }
+    }
+
+    .discount {
+      margin-bottom: $flexsize15px;
+      h2:first-child {
+        font-size: $flexsize12-5px;
+        line-height: $flexsize16px;
+      }
+      h2:nth-child(2) {
+        font-size: $flexsize12-5px;
+        line-height: $flexsize16px;
+      }
+    }
+
+    button {
+      height: $flexsize44px;
+      width: $flexsize360px;
+      border-radius: $flexsize14px;
+      font-size: $flexsize15-5px;
+      line-height: $flexsize18px;
+    }
+  }
+}
