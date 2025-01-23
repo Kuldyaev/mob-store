@@ -38,7 +38,7 @@
 
   h1 {
     margin-bottom: $size15px;
-    margin-top: $size15px;
+    margin-top: $size38px;
   }
 
   .profileDeskTop {
@@ -47,8 +47,7 @@
     height: $size218px;
     padding: $size15px;
     border-radius: 0px 0px $size25px $size25px;
-    position: fixed;
-    margin-bottom: 10px;
+    margin-bottom: $size8px;
     top: 0;
     z-index: 2;
 
@@ -105,17 +104,16 @@
     }
   }
   .profileDeskMenu {
-    position: absolute;
     z-index: 1;
     background-color: $color-white;
     display: flex;
     flex-direction: column;
 
     min-height: $size550px;
-    margin-top: $size265px;
     width: $size360px;
     padding: $size15px;
     border-radius: $size25px $size25px 0px 0px;
+    padding-bottom: $size59px;
 
     .profileDeskMenuItem {
       display: flex;
@@ -215,7 +213,7 @@
 
     h1 {
       margin-bottom: $flexsize15px;
-      margin-top: $flexsize15px;
+      margin-top: $flexsize38px;
     }
 
     .profileDeskTop {
@@ -223,6 +221,7 @@
       width: $flexsize360px;
       padding: $flexsize15px;
       border-radius: 0px 0px $flexsize25px $flexsize25px;
+      margin-bottom: $flexsize8px;
 
       h3 {
         margin-top: $flexsize20px;
@@ -261,10 +260,10 @@
 
     .profileDeskMenu {
       min-height: $flexsize550px;
-      margin-top: $flexsize265px;
       width: $flexsize360px;
       padding: $flexsize15px;
       border-radius: $flexsize25px $flexsize25px 0px 0px;
+      padding-bottom: $flexsize59px;
 
       .profileDeskMenuItem {
         height: $flexsize55px;

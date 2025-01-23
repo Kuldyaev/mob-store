@@ -17,7 +17,7 @@
     gap: $size16px;
 
     .storiesLineItem {
-      width: $size69px;
+      width: $size67px;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -25,28 +25,34 @@
       align-items: center;
 
       .storiesImgPlace {
-        width: $size69px;
-        height: $size69px;
+        width: $size67px;
+        height: $size67px;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 100%;
+
+        background-image: linear-gradient(
+          165.07deg,
+          #7ac4ec 9.42%,
+          #2e87ec 91.26%
+        );
 
         .whiteCircle {
           display: flex;
           justify-content: center;
           align-items: center;
           background-color: $color-white;
-          width: $size65px;
-          height: $size65px;
+          width: $size62px;
+          height: $size62px;
           border-radius: 100%;
 
           .imgCircle {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: $size59px;
-            height: $size59px;
+            width: $size57px;
+            height: $size57px;
             border-radius: 100%;
             background-size: contain;
           }
@@ -60,62 +66,6 @@
         font-size: $size12px;
         line-height: $size14-5px;
         color: $color-black;
-      }
-    }
-
-    .storiesLineItem:nth-child(1) {
-      .storiesImgPlace {
-        background-image: linear-gradient(
-            390deg,
-            transparent 50%,
-            $color-black 50%
-          ),
-          linear-gradient(70deg, $color-black 50%, transparent 50%);
-      }
-    }
-
-    .storiesLineItem:nth-child(2) {
-      .storiesImgPlace {
-        background-image: linear-gradient(
-            200deg,
-            transparent 50%,
-            $color-blue 50%
-          ),
-          linear-gradient(240deg, $color-blue 50%, transparent 50%);
-      }
-      h6 {
-        color: $color-blue;
-      }
-    }
-
-    .storiesLineItem:nth-child(3) {
-      .storiesImgPlace {
-        background-image: linear-gradient(
-            200deg,
-            transparent 50%,
-            $color-black 50%
-          ),
-          linear-gradient(240deg, $color-black 50%, transparent 50%);
-      }
-    }
-    .storiesLineItem:nth-child(4) {
-      .storiesImgPlace {
-        background-image: linear-gradient(
-            320deg,
-            transparent 50%,
-            $color-black 50%
-          ),
-          linear-gradient(280deg, $color-black 50%, transparent 50%);
-      }
-    }
-    .storiesLineItem:nth-child(5) {
-      .storiesImgPlace {
-        background-image: linear-gradient(
-            180deg,
-            transparent 50%,
-            $color-black 50%
-          ),
-          linear-gradient(135deg, $color-black 50%, transparent 50%);
       }
     }
   }
@@ -143,19 +93,19 @@
       gap: $flexsize16px;
 
       .storiesLineItem {
-        width: $flexsize69px;
+        width: $flexsize67px;
 
         .storiesImgPlace {
-          width: $flexsize69px;
-          height: $flexsize69px;
+          width: $flexsize67px;
+          height: $flexsize67px;
 
           .whiteCircle {
-            width: $flexsize65px;
-            height: $flexsize65px;
+            width: $flexsize62px;
+            height: $flexsize62px;
 
             .imgCircle {
-              width: $flexsize59px;
-              height: $flexsize59px;
+              width: $flexsize57px;
+              height: $flexsize57px;
             }
           }
         }
