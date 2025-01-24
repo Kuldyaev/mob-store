@@ -26,9 +26,29 @@
     font-size: $size20px;
     width: $size28px;
     height: $size28px;
+    padding: 0px;
   }
+
+  button:first-child {
+    svg {
+      width: $size12px;
+      height: $size12px;
+    }
+  }
+  button:last-child {
+    svg {
+      width: $size12px;
+      height: $size12px;
+    }
+  }
+
   .dis {
     color: $color-grey-text;
+    svg {
+      path {
+        fill: $color-grey-text;
+      }
+    }
   }
 }
 
@@ -44,6 +64,19 @@
       font-size: $flexsize20px;
       width: $flexsize28px;
       height: $flexsize28px;
+    }
+
+    button:first-child {
+      svg {
+        width: $flexsize12px;
+        height: $flexsize12px;
+      }
+    }
+    button:last-child {
+      svg {
+        width: $flexsize12px;
+        height: $flexsize12px;
+      }
     }
   }
 }

@@ -1,14 +1,10 @@
-import { useNavigate } from "react-router-dom";
-// import cn from "classnames";
 import s from "./style.module.scss";
 
-const ProfileTopAva = () => {
-  const navigate = useNavigate();
+interface ProfileTopAvaProps {
+  onClick: () => void;
+}
 
-  const settingsLink = () => {
-    navigate("/examples");
-  };
-
+const ProfileTopAva = ({ onClick }: ProfileTopAvaProps) => {
   return (
     <div className={s.profileTopAva}>
       <div
@@ -19,7 +15,7 @@ const ProfileTopAva = () => {
       ></div>
       <div className={s.profileTextBlock}>
         <h5>Шарапов Александр</h5>
-        <button onClick={settingsLink}>
+        <button onClick={onClick}>
           <h6>Настройки &rsaquo;</h6>
         </button>
       </div>
