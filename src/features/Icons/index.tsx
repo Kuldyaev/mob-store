@@ -26,6 +26,7 @@ import ClockIcon from "./ClockIcon";
 import BackIcon from "./BackIcon";
 import ContextMenuIcon from "./ContextMenuIcon";
 import SlideIndicatorIcon from "./SlideIndicatorIcon";
+import WarningInfoIcon from "./WarningInfoIcon";
 
 export {
   SearchIcon,
@@ -56,4 +57,5 @@ export {
   favotiteIcon,
   menuOutlinedIcon,
   SlideIndicatorIcon,
+  WarningInfoIcon,
 };
