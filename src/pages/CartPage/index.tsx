@@ -54,17 +54,21 @@ const CartPage = () => {
       delivery: "5-10",
       color: "Зеленый",
       price: "24 690",
+      available: true,
+      warning: "Осталось 3 шт по текущей цене",
     },
     {
       id: 2,
-      brand: "Nike",
+      brand: "Vans",
       type: "shoes",
-      img: "nike",
-      desc: "Кроссовки The Powerpuff Girls x Nike SB Dunk Low «Buttercup»",
-      size: "43 EU",
+      img: "vans",
+      desc: "Peaches x Vans Knu Skool «Black Pink»",
+      size: "38 EU",
       delivery: "5-10",
       color: "Красный",
-      price: "24 690",
+      price: "15 390",
+      available: true,
+      warning: null,
     },
     {
       id: 3,
@@ -76,17 +80,21 @@ const CartPage = () => {
       delivery: "5-10",
       color: "Синий",
       price: "24 690",
+      available: false,
+      warning: null,
     },
     {
       id: 4,
-      brand: "Reebok",
+      brand: "New Balance",
       type: "shoes",
-      img: "nike",
-      desc: "Кроссовки The Powerpuff Girls x Nike SB Dunk Low «Buttercup»",
-      size: "43 EU",
+      img: "newbalance",
+      desc: "New Balance 2002R «White Beige»",
+      size: "39 EU",
       delivery: "5-10",
       color: "Синий",
-      price: "24 690",
+      price: "9 990",
+      available: true,
+      warning: null,
     },
   ];
 
@@ -162,9 +170,28 @@ const CartPage = () => {
           </div>
         </div>
         <div className={s.cartDeskBody}>
-          {goods.map((item) => (
-            <CartItem item={item} key={item.id} />
-          ))}
+          {goods
+            .filter((item) => item.available)
+            .map((item) => (
+              <CartItem item={item} key={item.id} />
+            ))}
+
+          <div
+            className={s.unavalableBlock}
+            style={{
+              display:
+                goods.find((item) => !item.available) !== undefined
+                  ? "flex"
+                  : "none",
+            }}
+          >
+            <div className={s.unavalableTitle}>Недоступные товары</div>
+            {goods
+              .filter((item) => !item.available)
+              .map((item) => (
+                <CartItem item={item} key={item.id} />
+              ))}
+          </div>
         </div>
         <CartResults data={cartResults} />
       </div>

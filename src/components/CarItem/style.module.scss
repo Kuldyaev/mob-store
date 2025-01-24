@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: $color-white;
   min-height: $size140px;
   width: $size360px;
@@ -19,10 +19,10 @@
     .itemImg {
       margin-top: $size15px;
       width: $size104px;
-      height: $size104px;
+      height: $size130px;
       min-height: $size104px;
       background-color: $color-grey;
-      border-radius: $size10px;
+      border-radius: $size14px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -30,15 +30,21 @@
       background-position: center;
       background-size: 80% auto;
     }
+
+    .smallImg {
+      height: $size104px;
+    }
   }
 }
 
 .textInfo {
   .itemHeader {
     padding-top: $size15px;
+    padding-bottom: $size8px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    gap: $size15px;
 
     .desc {
       width: $size204px;
@@ -46,7 +52,24 @@
       flex-direction: column;
 
       h1 {
-        margin-bottom: 0px;
+        margin-bottom: $size2px;
+      }
+
+      .notavailable {
+        color: $color-orange;
+        font-weight: 400;
+        font-size: $size11-5px;
+        line-height: $size16px;
+        user-select: none;
+      }
+
+      .warn {
+        gap: $size2px;
+
+        svg {
+          height: $size11px;
+          width: $size11px;
+        }
       }
     }
   }
@@ -58,6 +81,19 @@
       display: flex;
       flex-direction: row;
       gap: $size6px;
+
+      h2:nth-child(2) {
+        span {
+          color: $color-grey-text;
+        }
+      }
+
+      svg {
+        rotate: 90deg;
+        height: $size8px;
+        width: $size4px;
+        margin-top: $size4px;
+      }
     }
 
     .price {
@@ -76,6 +112,15 @@
       display: flex;
       flex-direction: row;
       gap: $size25px;
+    }
+    .sameBtn {
+      border: none;
+      background-color: $color-grey;
+      width: $size80px;
+      height: $size28px;
+      border-radius: $size8px;
+      font-weight: 500;
+      font-size: $size12-5px;
     }
   }
 }
@@ -97,23 +142,51 @@
         margin-top: $flexsize15px;
         width: $flexsize104px;
         min-height: $flexsize104px;
+        height: $flexsize130px;
+        border-radius: $flexsize14px;
+      }
+      .smallImg {
         height: $flexsize104px;
-        border-radius: $flexsize10px;
       }
     }
 
     .textInfo {
       .itemHeader {
         padding-top: $flexsize15px;
+        padding-bottom: $flexsize8px;
+        gap: $flexsize15px;
 
         .desc {
           width: $flexsize204px;
+
+          h1 {
+            margin-bottom: $flexsize2px;
+          }
+
+          .notavailable {
+            font-size: $flexsize11-5px;
+            line-height: $flexsize16px;
+          }
+
+          .warn {
+            gap: $flexsize2px;
+            svg {
+              width: $flexsize11px;
+              height: $flexsize11px;
+            }
+          }
         }
       }
 
       .itemBody {
         .bodySettings {
           gap: $flexsize6px;
+
+          svg {
+            height: $flexsize8px;
+            width: $flexsize4px;
+            margin-top: $flexsize5px;
+          }
         }
 
         .price {
@@ -127,6 +200,13 @@
 
         .itemFooterBtnsBlock {
           gap: $flexsize25px;
+        }
+
+        .sameBtn {
+          width: $flexsize80px;
+          height: $flexsize28px;
+          border-radius: $flexsize8px;
+          font-size: $flexsize12-5px;
         }
       }
     }
