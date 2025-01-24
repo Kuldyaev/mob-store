@@ -1,7 +1,7 @@
 import { useState, lazy, Suspense, useEffect, useRef } from "react";
 import ProfileTopAva from "@/components/ProfileTopAva";
 import { Paragraph1, Paragraph9 } from "@/components/uikit";
-
+import Loader from "@/components/Loader";
 import {
   ArrowToRight,
   starIconSVG,
@@ -30,6 +30,37 @@ const ProfileOrders = lazy(
   () => import("@/components/ProfileMenuItems/ProfileOrders")
 );
 
+const ProfileSettings = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileSettings")
+);
+
+const ProfilePromo = lazy(
+  () => import("@/components/ProfileMenuItems/ProfilePromo")
+);
+
+const ProfileAbout = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileAbout")
+);
+
+const ProfileContacts = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileContacts")
+);
+
+const ProfileAddress = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileAddress")
+);
+
+const ProfileDiscount = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileDiscount")
+);
+
+const ProfileRefferal = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileRefferal")
+);
+
+const ProfileFaq = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileFaq")
+);
 const menu = [
   {
     id: 0,
@@ -64,7 +95,7 @@ const menu = [
     title: "Мои адреса",
     info: "Доставим в любой город России",
     icon: deliveryIconSVG,
-    name: "adress",
+    name: "address",
   },
   {
     id: 5,
@@ -99,7 +130,7 @@ const menu = [
     title: "О сервисе",
     info: "Публичная оферта и политика конфиденциальности",
     icon: documentIconSVG,
-    name: "about3423",
+    name: "about",
   },
 ];
 
@@ -146,22 +177,24 @@ const ProfilePage = () => {
 
   return (
     <>
-      <div className={cn(s.headerFixed, "flex-row-center-center")}>
-        <div
-          className={cn(
-            s.infoBlock,
-            "flex-column-center-center",
-            isShowedFixHeader ? s.opacity1 : s.opacity0
-          )}
-        >
-          <Paragraph9>Профиль</Paragraph9>
+      {activeMenuScreen === "main" && (
+        <div className={cn(s.headerFixed, "flex-row-center-center")}>
+          <div
+            className={cn(
+              s.infoBlock,
+              "flex-column-center-center",
+              isShowedFixHeader ? s.opacity1 : s.opacity0
+            )}
+          >
+            <Paragraph9>Профиль</Paragraph9>
+          </div>
         </div>
-      </div>
+      )}
       <div className={s.profileDesk} ref={elRef}>
         <div className={s.mainDesk}>
           <div className={s.profileDeskTop}>
             <Paragraph1>Профиль</Paragraph1>
-            <ProfileTopAva />
+            <ProfileTopAva onClick={() => setActiveMenuScreen("settings")} />
             <div className={s.profileTopLine}>
               <div
                 className={s.profileTopLineItem}
@@ -218,7 +251,7 @@ const ProfilePage = () => {
           )}
         >
           {activeMenuScreen === "brands" && (
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader />}>
               <ProfileBrands
                 title="Подписки на бренды"
                 onClickBack={hideMenuItem}
@@ -226,23 +259,64 @@ const ProfilePage = () => {
             </Suspense>
           )}
           {activeMenuScreen === "shopping" && (
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader />}>
               <ProfileOrders title="Покупки" onClickBack={hideMenuItem} />
             </Suspense>
           )}
           {activeMenuScreen === "deliveries" && (
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader />}>
               <ProfileDeliveries title="Доставки" onClickBack={hideMenuItem} />
             </Suspense>
           )}
-          {activeMenuScreen === "promo" && <div>Промокоды</div>}
-          {activeMenuScreen === "about" && <div>О сервисе</div>}
-          {activeMenuScreen === "adress" && <div>Мои адреса</div>}
-          {activeMenuScreen === "discount" && <div>Скидки месяца</div>}
-          {activeMenuScreen === "refferal" && <div>Пригласите друга</div>}
-          {activeMenuScreen === "faq" && <div>Отзывы и вопросы</div>}
-          {activeMenuScreen === "contacts" && <div>Связаться с нами</div>}
-          {activeMenuScreen === "settings" && <div>Настройки</div>}
+          {activeMenuScreen === "promo" && (
+            <Suspense fallback={<Loader />}>
+              <ProfilePromo title="Промокоды" onClickBack={hideMenuItem} />
+            </Suspense>
+          )}
+          {activeMenuScreen === "about" && (
+            <Suspense fallback={<Loader />}>
+              <ProfileAbout title="О сервисе" onClickBack={hideMenuItem} />
+            </Suspense>
+          )}
+          {activeMenuScreen === "address" && (
+            <Suspense fallback={<Loader />}>
+              <ProfileAddress title="Мои адреса" onClickBack={hideMenuItem} />
+            </Suspense>
+          )}
+          {activeMenuScreen === "discount" && (
+            <Suspense fallback={<Loader />}>
+              <ProfileDiscount
+                title="Ваши скидки в декабре"
+                onClickBack={hideMenuItem}
+              />
+            </Suspense>
+          )}
+          {activeMenuScreen === "refferal" && (
+            <Suspense fallback={<Loader />}>
+              <ProfileRefferal
+                title="Скидки для вас и ваших друзей"
+                onClickBack={hideMenuItem}
+              />
+            </Suspense>
+          )}
+          {activeMenuScreen === "faq" && (
+            <Suspense fallback={<Loader />}>
+              <ProfileFaq title="Отзывы и вопросы" onClickBack={hideMenuItem} />
+            </Suspense>
+          )}
+          {activeMenuScreen === "contacts" && (
+            <Suspense fallback={<Loader />}>
+              <ProfileContacts
+                title="Связаться с нами"
+                onClickBack={hideMenuItem}
+              />
+            </Suspense>
+          )}
+          {activeMenuScreen === "settings" && (
+            <Suspense fallback={<Loader />}>
+              <ProfileSettings title="Настройки" onClickBack={hideMenuItem} />
+            </Suspense>
+          )}
         </div>
       </div>
     </>

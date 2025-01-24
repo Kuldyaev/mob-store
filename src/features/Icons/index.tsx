@@ -27,6 +27,8 @@ import BackIcon from "./BackIcon";
 import ContextMenuIcon from "./ContextMenuIcon";
 import SlideIndicatorIcon from "./SlideIndicatorIcon";
 import WarningInfoIcon from "./WarningInfoIcon";
+import PlusIcon from "./PlusIcon";
+import MinusIcon from "./MinusIcon";
 
 export {
   SearchIcon,
@@ -58,4 +60,6 @@ export {
   menuOutlinedIcon,
   SlideIndicatorIcon,
   WarningInfoIcon,
+  PlusIcon,
+  MinusIcon,
 };
