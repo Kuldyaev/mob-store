@@ -147,6 +147,29 @@
     div:first-child {
       border-top: none;
     }
+
+    .unavalableBlock {
+      display: flex;
+      flex-direction: column;
+      .unavalableTitle {
+        background-color: $color-grey;
+        color: $color-dark-grey;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: $size6px;
+        font-size: $size12-5px;
+        line-height: $size15px;
+        width: $size360px;
+        height: $size23px;
+        padding-left: $size8px;
+      }
+
+      div:nth-child(2) {
+        border-top: none;
+      }
+    }
   }
 }
 
@@ -197,6 +220,17 @@
       padding: 0 $flexsize15px;
       margin-bottom: $flexsize8px;
       border-radius: $flexsize25px;
+
+      .unavalableBlock {
+        .unavalableTitle {
+          border-radius: $flexsize6px;
+          font-size: $flexsize12-5px;
+          line-height: $flexsize15px;
+          width: $flexsize360px;
+          height: $flexsize23px;
+          padding-left: $flexsize8px;
+        }
+      }
     }
   }
 }
