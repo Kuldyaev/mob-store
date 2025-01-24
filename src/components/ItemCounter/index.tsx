@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { MinusIcon, PlusIcon } from "@/features/Icons";
 import s from "./style.module.scss";
 
 interface ItemCounterProps {
@@ -23,10 +24,12 @@ export const ItemCounter: FC<ItemCounterProps> = ({
         onClick={() => changeQuantity(quantity - 1)}
         disabled={quantity <= 1}
       >
-        -
+        <MinusIcon />
       </button>
       {quantity}
-      <button onClick={() => changeQuantity(quantity + 1)}>+</button>
+      <button onClick={() => changeQuantity(quantity + 1)}>
+        <PlusIcon />
+      </button>
     </div>
   );
 };
