@@ -61,6 +61,15 @@ const ProfileRefferal = lazy(
 const ProfileFaq = lazy(
   () => import("@/components/ProfileMenuItems/ProfileFaq")
 );
+
+const ProfileFavorites = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileFavorites")
+);
+
+const ProfileViewed = lazy(
+  () => import("@/components/ProfileMenuItems/ProfileViewed")
+);
+
 const menu = [
   {
     id: 0,
@@ -177,19 +186,101 @@ const ProfilePage = () => {
 
   return (
     <>
-      {activeMenuScreen === "main" && (
-        <div className={cn(s.headerFixed, "flex-row-center-center")}>
-          <div
-            className={cn(
-              s.infoBlock,
-              "flex-column-center-center",
-              isShowedFixHeader ? s.opacity1 : s.opacity0
-            )}
-          >
-            <Paragraph9>Профиль</Paragraph9>
-          </div>
+      <div
+        className={cn(
+          s.secondDesk,
+          activeMenuScreen === "main" ? s.hidden : s.showed
+        )}
+      >
+        {activeMenuScreen === "brands" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileBrands
+              title="Подписки на бренды"
+              onClickBack={hideMenuItem}
+            />
+          </Suspense>
+        )}
+        {activeMenuScreen === "shopping" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileOrders title="Покупки" onClickBack={hideMenuItem} />
+          </Suspense>
+        )}
+        {activeMenuScreen === "deliveries" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileDeliveries title="Доставки" onClickBack={hideMenuItem} />
+          </Suspense>
+        )}
+        {activeMenuScreen === "promo" && (
+          <Suspense fallback={<Loader />}>
+            <ProfilePromo title="Промокоды" onClickBack={hideMenuItem} />
+          </Suspense>
+        )}
+        {activeMenuScreen === "about" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileAbout title="О сервисе" onClickBack={hideMenuItem} />
+          </Suspense>
+        )}
+        {activeMenuScreen === "address" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileAddress title="Мои адреса" onClickBack={hideMenuItem} />
+          </Suspense>
+        )}
+        {activeMenuScreen === "discount" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileDiscount
+              title="Ваши скидки в декабре"
+              onClickBack={hideMenuItem}
+            />
+          </Suspense>
+        )}
+        {activeMenuScreen === "refferal" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileRefferal
+              title="Скидки для вас и ваших друзей"
+              onClickBack={hideMenuItem}
+            />
+          </Suspense>
+        )}
+        {activeMenuScreen === "faq" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileFaq title="Отзывы и вопросы" onClickBack={hideMenuItem} />
+          </Suspense>
+        )}
+        {activeMenuScreen === "contacts" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileContacts
+              title="Связаться с нами"
+              onClickBack={hideMenuItem}
+            />
+          </Suspense>
+        )}
+        {activeMenuScreen === "settings" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileSettings title="Настройки" onClickBack={hideMenuItem} />
+          </Suspense>
+        )}
+        {activeMenuScreen === "favorites" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileFavorites title="Избранное" onClickBack={hideMenuItem} />
+          </Suspense>
+        )}
+        {activeMenuScreen === "viewed" && (
+          <Suspense fallback={<Loader />}>
+            <ProfileViewed title="Просмотренное" onClickBack={hideMenuItem} />
+          </Suspense>
+        )}
+      </div>
+      <div className={cn(s.headerFixed, "flex-row-center-center")}>
+        <div
+          className={cn(
+            s.infoBlock,
+            "flex-column-center-center",
+            isShowedFixHeader ? s.opacity1 : s.opacity0
+          )}
+        >
+          <Paragraph9>Профиль</Paragraph9>
         </div>
-      )}
+      </div>
       <div className={s.profileDesk} ref={elRef}>
         <div className={s.mainDesk}>
           <div className={s.profileDeskTop}>
@@ -201,6 +292,7 @@ const ProfilePage = () => {
                 style={{
                   backgroundImage: "url('images/liked.png')",
                 }}
+                onClick={() => setActiveMenuScreen("favorites")}
               >
                 <div className={s.profileItemTitlePlace}>
                   <h5>Избранное</h5>
@@ -212,6 +304,7 @@ const ProfilePage = () => {
                 style={{
                   backgroundImage: "url('images/viewed.png')",
                 }}
+                onClick={() => setActiveMenuScreen("viewed")}
               >
                 <div className={s.profileItemTitlePlace}>
                   <h5>Просмотренное</h5>
@@ -243,80 +336,6 @@ const ProfilePage = () => {
               </div>
             ))}
           </div>
-        </div>
-        <div
-          className={cn(
-            s.secondDesk,
-            activeMenuScreen === "main" ? s.hidden : s.showed
-          )}
-        >
-          {activeMenuScreen === "brands" && (
-            <Suspense fallback={<Loader />}>
-              <ProfileBrands
-                title="Подписки на бренды"
-                onClickBack={hideMenuItem}
-              />
-            </Suspense>
-          )}
-          {activeMenuScreen === "shopping" && (
-            <Suspense fallback={<Loader />}>
-              <ProfileOrders title="Покупки" onClickBack={hideMenuItem} />
-            </Suspense>
-          )}
-          {activeMenuScreen === "deliveries" && (
-            <Suspense fallback={<Loader />}>
-              <ProfileDeliveries title="Доставки" onClickBack={hideMenuItem} />
-            </Suspense>
-          )}
-          {activeMenuScreen === "promo" && (
-            <Suspense fallback={<Loader />}>
-              <ProfilePromo title="Промокоды" onClickBack={hideMenuItem} />
-            </Suspense>
-          )}
-          {activeMenuScreen === "about" && (
-            <Suspense fallback={<Loader />}>
-              <ProfileAbout title="О сервисе" onClickBack={hideMenuItem} />
-            </Suspense>
-          )}
-          {activeMenuScreen === "address" && (
-            <Suspense fallback={<Loader />}>
-              <ProfileAddress title="Мои адреса" onClickBack={hideMenuItem} />
-            </Suspense>
-          )}
-          {activeMenuScreen === "discount" && (
-            <Suspense fallback={<Loader />}>
-              <ProfileDiscount
-                title="Ваши скидки в декабре"
-                onClickBack={hideMenuItem}
-              />
-            </Suspense>
-          )}
-          {activeMenuScreen === "refferal" && (
-            <Suspense fallback={<Loader />}>
-              <ProfileRefferal
-                title="Скидки для вас и ваших друзей"
-                onClickBack={hideMenuItem}
-              />
-            </Suspense>
-          )}
-          {activeMenuScreen === "faq" && (
-            <Suspense fallback={<Loader />}>
-              <ProfileFaq title="Отзывы и вопросы" onClickBack={hideMenuItem} />
-            </Suspense>
-          )}
-          {activeMenuScreen === "contacts" && (
-            <Suspense fallback={<Loader />}>
-              <ProfileContacts
-                title="Связаться с нами"
-                onClickBack={hideMenuItem}
-              />
-            </Suspense>
-          )}
-          {activeMenuScreen === "settings" && (
-            <Suspense fallback={<Loader />}>
-              <ProfileSettings title="Настройки" onClickBack={hideMenuItem} />
-            </Suspense>
-          )}
         </div>
       </div>
     </>
