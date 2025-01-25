@@ -6,6 +6,7 @@
   flex-direction: column;
   width: min(480px, 100vw);
   overflow: hidden;
+  margin-top: -$size20px;
 }
 
 .back::-webkit-scrollbar {
@@ -112,6 +113,10 @@
 }
 
 @media screen and (max-width: 479px) {
+  .back {
+    margin-top: -$flexsize20px;
+  }
+
   .topImgBlock {
     width: 100vw;
     height: 120.51vw;
