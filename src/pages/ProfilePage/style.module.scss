@@ -21,6 +21,26 @@
   }
 }
 
+.secondDesk {
+  width: min(480px, 100vw);
+  height: 100%;
+  min-height: 100vh;
+  position: absolute;
+  overflow-y: auto;
+  z-index: 10;
+  transition: margin-left 0.1s;
+  overflow-x: hidden;
+  background-color: $color-white;
+}
+
+.showed {
+  margin-left: 0vw;
+}
+
+.hidden {
+  margin-left: -103vw;
+}
+
 .profileDesk {
   background-color: $color-grey;
   padding: 0px;
@@ -34,26 +54,6 @@
     flex-direction: column;
     z-index: 2;
     position: absolute;
-  }
-
-  .secondDesk {
-    width: min(480px, 100vw);
-    height: 100%;
-    min-height: 100vh;
-    position: absolute;
-    overflow-y: auto;
-    z-index: 6;
-    transition: margin-left 0.1s;
-    overflow-x: hidden;
-    background-color: $color-white;
-  }
-
-  .showed {
-    margin-left: 0vw;
-  }
-
-  .hidden {
-    margin-left: -103vw;
   }
 
   h1 {
@@ -84,7 +84,7 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      gap: $size15px;
+      gap: $size8px;
 
       .profileTopLineItem {
         background-color: $color-grey;
@@ -130,10 +130,9 @@
     flex-direction: column;
 
     min-height: $size550px;
-    width: $size360px;
-    padding: $size15px;
+    width: $size375px;
+    padding: $size15px 0 $size59px $size15px;
     border-radius: $size25px $size25px 0px 0px;
-    padding-bottom: $size59px;
 
     .profileDeskMenuItem {
       display: flex;
@@ -249,7 +248,7 @@
       }
 
       .profileTopLine {
-        gap: $flexsize15px;
+        gap: $flexsize8px;
 
         .profileTopLineItem {
           height: $flexsize90px;
@@ -280,10 +279,9 @@
 
     .profileDeskMenu {
       min-height: $flexsize550px;
-      width: $flexsize360px;
-      padding: $flexsize15px;
+      width: $flexsize375px;
+      padding: $flexsize15px 0 $flexsize59px $flexsize15px;
       border-radius: $flexsize25px $flexsize25px 0px 0px;
-      padding-bottom: $flexsize59px;
 
       .profileDeskMenuItem {
         height: $flexsize55px;

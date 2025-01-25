@@ -4,7 +4,7 @@
 .stories {
   width: 480px;
   margin-top: $size15px;
-  margin-bottom: $size15px;
+  margin-bottom: $size40px;
   margin-left: -$size15px;
   height: $size86px;
   overflow: hidden;
@@ -78,7 +78,7 @@
   .stories {
     width: 100vw;
     margin-top: $flexsize15px;
-    margin-bottom: $flexsize15px;
+    margin-bottom: $flexsize40px;
     margin-left: -$flexsize15px;
 
     height: $flexsize86px;
