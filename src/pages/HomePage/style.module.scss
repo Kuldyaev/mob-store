@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   background-color: $color-white;
-  opacity: 0.5;
+  opacity: 0;
 }
 
 .headerFixed {
@@ -35,7 +35,7 @@
   flex-direction: column;
   width: min(480px, 100vw);
   overflow: hidden;
-  margin-top: -444px;
+  margin-top: -480px;
 }
 
 .back::-webkit-scrollbar {
