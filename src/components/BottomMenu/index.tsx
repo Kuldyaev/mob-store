@@ -22,6 +22,11 @@ const BottomMenu = () => {
     } else {
       setIsActiveRoute("/" + paths[1]);
     }
+    if (paths[1] === "" || paths[1] === "/") {
+      document.getElementById("root")?.parentElement?.classList.add("dark");
+    } else {
+      document.getElementById("root")?.parentElement?.classList.remove("dark");
+    }
   }, [location]);
 
   const homeLink = () => {

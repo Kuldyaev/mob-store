@@ -33,8 +33,7 @@
     width: $size22px;
     height: $size22px;
     border-radius: $size6px;
-    background-color: $color-white;
-    border: 1px solid $color-dark-grey;
+    background-color: $color-grey;
 
     svg {
       display: none;
@@ -44,9 +43,9 @@
   }
 }
 
-.checkboxcontainer:hover input ~ .checkmark {
-  background-color: #fdfdfd;
-}
+// .checkboxcontainer:hover input ~ .checkmark {
+//   background-color: #fdfdfd;
+// }
 
 .checkboxcontainer input:checked ~ .checkmark {
   background-color: $color-blue;

@@ -1,11 +1,60 @@
 @use "./../../scss/colors.scss" as *;
 @use "./../../scss/variabels.scss" as *;
 
+.shade {
+  width: 100%;
+  height: min(578.45px, 120.51vw);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: $color-white;
+  opacity: 0;
+}
+
+.headerFixed {
+  background-color: $color-white;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  width: 100%;
+  height: min($size73px, $flexsize73px);
+  transition: opacity 0.5s linear;
+
+  .infoBlock {
+    position: absolute;
+    width: $size104px;
+    height: $size24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    left: min($size15px, $flexsize15px);
+    top: min($size49px, $flexsize49px);
+  }
+
+  .infoBlock.infoBlockSmall {
+    // left: min($size163px, $flexsize163px);
+    // top: min($size8px, $flexsize8px);
+    // scale: 0.666;
+    font-weight: 600;
+  }
+}
+
+.opacity1 {
+  opacity: 1;
+}
+
+.opacity0 {
+  opacity: 0;
+}
+
 .back {
   display: flex;
   flex-direction: column;
   width: min(480px, 100vw);
   overflow: hidden;
+  margin-top: max(-1 * $size73px, -1 * $flexsize73px);
 }
 
 .back::-webkit-scrollbar {

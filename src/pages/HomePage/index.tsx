@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import PopularCategoties from "@/components/PopularCategoties";
 import StoriesBar from "@/components/StoriesBar";
 import SearchBar from "@/components/SearchBar";
@@ -6,11 +6,15 @@ import SportsParts from "@/components/SportsParts";
 import SalomonUltra from "@/components/SalomonUltra";
 import ForEach from "@/components/ForEach";
 import MustHave from "@/components/MustHave";
-import { Paragraph6 } from "@/components/uikit";
+import { Paragraph6, Paragraph1 } from "@/components/uikit";
+import cn from "classnames";
 import s from "./style.module.scss";
 
 const HomePage = () => {
   const elRef = useRef<HTMLDivElement | null>(null);
+  const shadow = useRef<HTMLDivElement | null>(null);
+  const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
+  const [isFixHeaderSmall, setIsFixHeaderSmall] = useState<boolean>(false);
 
   const handleScroll = () => {
     if (elRef.current) {
@@ -24,6 +28,33 @@ const HomePage = () => {
           (+rect.width * 0.964)
         ).toFixed(2);
       }
+
+      if (isShowedFixHeader) {
+        setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
+      } else {
+        setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
+      }
+
+      if (shadow.current) {
+        if (Number((+rect.top / (+rect.width * 0.964)).toFixed(2)) < 0) {
+          shadow.current.style.opacity = "1";
+        } else {
+          shadow.current.style.opacity = (
+            1 -
+            +rect.top / (+rect.width * 0.964)
+          ).toFixed(2);
+        }
+      }
+
+      +rect.top + 0.08 * +rect.width < 0
+        ? setIsFixHeaderSmall(true)
+        : setIsFixHeaderSmall(false);
+
+      +rect.top + 0.08 * +rect.width < 0
+        ? setIsFixHeaderSmall(true)
+        : setIsFixHeaderSmall(false);
+
+      console.log(+rect.top + 0.1 * +rect.width);
     }
   };
 
@@ -34,56 +65,82 @@ const HomePage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    isShowedFixHeader
+      ? document.getElementById("root")?.parentElement?.classList.remove("dark")
+      : document.getElementById("root")?.parentElement?.classList.add("dark");
+  }, [isShowedFixHeader]);
+
   return (
-    <div className={s.back}>
-      <div className={s.topImgBlock}>
-        <div className={s.topImg}></div>
-      </div>
-      <div className={s.desk}>
-        <div className={s.topImgTextBlock} ref={elRef}>
-          <h4>Moncler x Adidas Originals</h4>
-          <h5>
-            коллекция созданна в рамках кампании The Art of Explorers и
-            посвящена исследованию мира
-          </h5>
-        </div>
-        <div className={s.homedesk}>
-          <SearchBar />
-          <StoriesBar />
-          <div className={s.blockTitle}>
-            <Paragraph6>Популярные категории</Paragraph6>
-          </div>
-          <PopularCategoties />
-          <div className={s.blockTitle}>
-            <Paragraph6>Salomon X Ultra 4</Paragraph6>
-            <div className={s.toAllBtn}>Все &gt;</div>
-          </div>
-          <SalomonUltra />
-          <div className={s.blockTitle}>
-            <Paragraph6>Виды спорта</Paragraph6>
-          </div>
-          <SportsParts />
-          <div className={s.blockTitle}>
-            <Paragraph6>Salomon X Ultra 4</Paragraph6>
-            <div className={s.toAllBtn}>Все &gt;</div>
-          </div>
-          <SalomonUltra />
-          <div className={s.blockTitle}>
-            <Paragraph6>Для каждого</Paragraph6>
-          </div>
-          <ForEach />
-          <div className={s.blockTitle}>
-            <Paragraph6>Salomon X Ultra 4</Paragraph6>
-            <div className={s.toAllBtn}>Все &gt;</div>
-          </div>
-          <SalomonUltra />
-          <div className={s.blockTitle}>
-            <Paragraph6>Мастхэв для дома</Paragraph6>
-          </div>
-          <MustHave />
+    <>
+      <div
+        className={cn(
+          s.headerFixed,
+          isShowedFixHeader ? s.opacity1 : s.opacity0
+        )}
+      >
+        <div
+          className={cn(
+            s.infoBlock,
+            "animHeader",
+            "flex-column-center-center",
+            isFixHeaderSmall ? "inCenter" : null
+          )}
+        >
+          <Paragraph1>Главная</Paragraph1>
         </div>
       </div>
-    </div>
+      <div className={s.shade} ref={shadow}></div>
+      <div className={s.back}>
+        <div className={s.topImgBlock}>
+          <div className={s.topImg}></div>
+        </div>
+        <div className={s.desk}>
+          <div className={s.topImgTextBlock} ref={elRef}>
+            <h4>Moncler x Adidas Originals</h4>
+            <h5>
+              коллекция созданна в рамках кампании The Art of Explorers и
+              посвящена исследованию мира
+            </h5>
+          </div>
+          <div className={s.homedesk}>
+            <SearchBar />
+            <StoriesBar />
+            <div className={s.blockTitle}>
+              <Paragraph6>Популярные категории</Paragraph6>
+            </div>
+            <PopularCategoties />
+            <div className={s.blockTitle}>
+              <Paragraph6>Salomon X Ultra 4</Paragraph6>
+              <div className={s.toAllBtn}>Все &gt;</div>
+            </div>
+            <SalomonUltra />
+            <div className={s.blockTitle}>
+              <Paragraph6>Виды спорта</Paragraph6>
+            </div>
+            <SportsParts />
+            <div className={s.blockTitle}>
+              <Paragraph6>Salomon X Ultra 4</Paragraph6>
+              <div className={s.toAllBtn}>Все &gt;</div>
+            </div>
+            <SalomonUltra />
+            <div className={s.blockTitle}>
+              <Paragraph6>Для каждого</Paragraph6>
+            </div>
+            <ForEach />
+            <div className={s.blockTitle}>
+              <Paragraph6>Salomon X Ultra 4</Paragraph6>
+              <div className={s.toAllBtn}>Все &gt;</div>
+            </div>
+            <SalomonUltra />
+            <div className={s.blockTitle}>
+              <Paragraph6>Мастхэв для дома</Paragraph6>
+            </div>
+            <MustHave />
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

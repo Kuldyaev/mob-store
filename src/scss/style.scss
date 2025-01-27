@@ -1,4 +1,5 @@
 @use "./colors.scss" as *;
+@use "./variabels.scss" as *;
 
 :root {
   font-family: "Inter", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -6,7 +7,7 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: $color-black;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,6 +24,17 @@
 
 html::-webkit-scrollbar {
   display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $color-white;
+    color: $color-black;
+  }
+  .dark {
+    background-color: #012463;
+    color: $color-black;
+  }
 }
 
 a {
@@ -107,10 +119,24 @@ button {
   justify-content: center;
 }
 
+.animHeader {
+  color: black;
+  transform: translate(0px, 0px) scale(1);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+.animHeader.inCenter {
+  transform: translate($size140px, -1 * $size42px) scale(0.666);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #f5f5f5;
+    color: $color-black;
+    background-color: $color-white;
   }
 
   button {
