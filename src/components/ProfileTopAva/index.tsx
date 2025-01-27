@@ -1,3 +1,5 @@
+import { ArrowToRight } from "@/features/Icons";
+
 import s from "./style.module.scss";
 
 interface ProfileTopAvaProps {
@@ -15,8 +17,9 @@ const ProfileTopAva = ({ onClick }: ProfileTopAvaProps) => {
       ></div>
       <div className={s.profileTextBlock}>
         <h5>Шарапов Александр</h5>
-        <button onClick={onClick}>
-          <h6>Настройки &rsaquo;</h6>
+        <button onClick={onClick} className="flex-row-center-center">
+          <h6>Настройки</h6>
+          <ArrowToRight />
         </button>
       </div>
     </div>

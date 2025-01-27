@@ -14,7 +14,7 @@ import {
   promoCodesIconSVG,
   telegramIconSVG,
   documentIconSVG,
-} from "../../features/Icons";
+} from "@/features/Icons";
 import cn from "classnames";
 import s from "./style.module.scss";
 
@@ -284,7 +284,14 @@ const ProfilePage = () => {
       <div className={s.profileDesk} ref={elRef}>
         <div className={s.mainDesk}>
           <div className={s.profileDeskTop}>
-            <Paragraph1>Профиль</Paragraph1>
+            <div
+              className={cn(
+                s.smallTitle,
+                isShowedFixHeader ? s.opacity0 : s.opacity1
+              )}
+            >
+              <Paragraph1>Профиль</Paragraph1>
+            </div>
             <ProfileTopAva onClick={() => setActiveMenuScreen("settings")} />
             <div className={s.profileTopLine}>
               <div

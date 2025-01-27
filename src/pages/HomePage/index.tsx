@@ -6,7 +6,7 @@ import SportsParts from "@/components/SportsParts";
 import SalomonUltra from "@/components/SalomonUltra";
 import ForEach from "@/components/ForEach";
 import MustHave from "@/components/MustHave";
-import { Paragraph6, Paragraph9 } from "@/components/uikit";
+import { Paragraph6, Paragraph1 } from "@/components/uikit";
 import cn from "classnames";
 import s from "./style.module.scss";
 
@@ -14,6 +14,7 @@ const HomePage = () => {
   const elRef = useRef<HTMLDivElement | null>(null);
   const shadow = useRef<HTMLDivElement | null>(null);
   const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
+  const [isFixHeaderSmall, setIsFixHeaderSmall] = useState<boolean>(false);
 
   const handleScroll = () => {
     if (elRef.current) {
@@ -29,13 +30,9 @@ const HomePage = () => {
       }
 
       if (isShowedFixHeader) {
-        setIsShowedFixHeader(
-          Math.round((+rect.top * 17.727) / +rect.width) < 1
-        );
+        setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
       } else {
-        setIsShowedFixHeader(
-          Math.round((+rect.top * 17.727) / +rect.width) < 1
-        );
+        setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
       }
 
       if (shadow.current) {
@@ -48,6 +45,16 @@ const HomePage = () => {
           ).toFixed(2);
         }
       }
+
+      +rect.top + 0.08 * +rect.width < 0
+        ? setIsFixHeaderSmall(true)
+        : setIsFixHeaderSmall(false);
+
+      +rect.top + 0.08 * +rect.width < 0
+        ? setIsFixHeaderSmall(true)
+        : setIsFixHeaderSmall(false);
+
+      console.log(+rect.top + 0.1 * +rect.width);
     }
   };
 
@@ -58,17 +65,29 @@ const HomePage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    isShowedFixHeader
+      ? document.getElementById("root")?.parentElement?.classList.remove("dark")
+      : document.getElementById("root")?.parentElement?.classList.add("dark");
+  }, [isShowedFixHeader]);
+
   return (
     <>
       <div
         className={cn(
           s.headerFixed,
-          "flex-row-center-center",
           isShowedFixHeader ? s.opacity1 : s.opacity0
         )}
       >
-        <div className={cn(s.infoBlock, "flex-column-center-center")}>
-          <Paragraph9>Главная</Paragraph9>
+        <div
+          className={cn(
+            s.infoBlock,
+            "animHeader",
+            "flex-column-center-center",
+            isFixHeaderSmall ? "inCenter" : null
+          )}
+        >
+          <Paragraph1>Главная</Paragraph1>
         </div>
       </div>
       <div className={s.shade} ref={shadow}></div>
