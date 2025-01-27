@@ -1,4 +1,5 @@
 @use "./colors.scss" as *;
+@use "./variabels.scss" as *;
 
 :root {
   font-family: "Inter", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -116,6 +117,20 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.animHeader {
+  color: black;
+  transform: translate(0px, 0px) scale(1);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+.animHeader.inCenter {
+  transform: translate($size140px, -1 * $size42px) scale(0.666);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: linear;
 }
 
 @media (prefers-color-scheme: light) {

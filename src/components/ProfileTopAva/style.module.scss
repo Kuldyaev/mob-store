@@ -39,6 +39,7 @@
     }
 
     button {
+      gap: $size4px;
       border: none;
       background-color: $color-white;
       padding-left: 0px;
@@ -47,6 +48,10 @@
         line-height: $size15px;
         color: $color-dark-grey;
         font-weight: 400;
+      }
+      svg {
+        width: $size6px;
+        height: $size10px;
       }
     }
   }
@@ -72,9 +77,14 @@
         line-height: $flexsize17-5px;
       }
       button {
+        gap: $flexsize4px;
         h6 {
           font-size: $flexsize12-5px;
           line-height: $flexsize15px;
+        }
+        svg {
+          width: $flexsize6px;
+          height: $flexsize10px;
         }
       }
     }
