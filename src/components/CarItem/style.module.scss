@@ -61,6 +61,7 @@
         font-size: $size11-5px;
         line-height: $size16px;
         user-select: none;
+        letter-spacing: calc(-2 * min(0.19px, 0.039vw));
       }
 
       .warn {
@@ -98,6 +99,9 @@
 
     .price {
       margin-top: $size10px;
+      h2 {
+        letter-spacing: calc(-3 * min(0.178px, 0.037vw));
+      }
     }
   }
 

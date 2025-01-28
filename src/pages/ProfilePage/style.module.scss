@@ -111,24 +111,8 @@
           width: calc(100% - $size10px);
           height: $size35px;
 
-          h5,
-          h6 {
-            margin: 0;
-            padding: 0;
-          }
-
-          h5 {
-            font-size: $size14-5px;
-            line-height: $size17-5px;
-            color: $color-black;
-            font-weight: 500;
-          }
-
-          h6 {
-            font-size: $size12-5px;
-            line-height: $size15px;
-            color: $color-dark-grey;
-            font-weight: 400;
+          h2 {
+            letter-spacing: calc(-1 * min(0.15px, 0.032vw));
           }
         }
       }
@@ -210,6 +194,7 @@
             font-weight: 400;
             font-size: $size11-5px;
             line-height: $size14px;
+            letter-spacing: calc(-1 * min(0.19px, 0.039vw));
           }
         }
       }
@@ -273,16 +258,6 @@
             padding: $flexsize10px 0 0 $flexsize10px;
             width: calc(100% - $flexsize10px);
             height: $flexsize35px;
-
-            h5 {
-              font-size: $flexsize14-5px;
-              line-height: $flexsize17-5px;
-            }
-
-            h6 {
-              font-size: $flexsize12-5px;
-              line-height: $flexsize15px;
-            }
           }
         }
       }

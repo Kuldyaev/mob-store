@@ -1,3 +1,4 @@
+import { Paragraph10 } from "@/components/uikit";
 import cn from "classnames";
 import s from "./style.module.scss";
 
@@ -7,11 +8,11 @@ const SportsParts = () => {
       <div className={s.popcatLine}>
         <div className={s.popcatLineItem}>
           <div className={cn(s.popcatLineItemImg, s.image1)}></div>
-          <h5>Футбол</h5>
+          <Paragraph10>Футбол</Paragraph10>
         </div>
         <div className={s.popcatLineItem}>
           <div className={cn(s.popcatLineItemImg, s.image2)}></div>
-          <h5>Баскетбол</h5>
+          <Paragraph10>Баскетбол</Paragraph10>
         </div>
       </div>
     </div>

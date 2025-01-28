@@ -1,6 +1,11 @@
 import { useState, lazy, Suspense, useEffect, useRef } from "react";
 import ProfileTopAva from "@/components/ProfileTopAva";
-import { Paragraph1, Paragraph9 } from "@/components/uikit";
+import {
+  Paragraph1,
+  Paragraph5_g,
+  Paragraph9,
+  Paragraph12,
+} from "@/components/uikit";
 import Loader from "@/components/Loader";
 import {
   ArrowToRight,
@@ -302,8 +307,8 @@ const ProfilePage = () => {
                 onClick={() => setActiveMenuScreen("favorites")}
               >
                 <div className={s.profileItemTitlePlace}>
-                  <h5>Избранное</h5>
-                  <h6>12 товаров</h6>
+                  <Paragraph12>Избранное</Paragraph12>
+                  <Paragraph5_g>12 товаров</Paragraph5_g>
                 </div>
               </div>
               <div
@@ -314,8 +319,8 @@ const ProfilePage = () => {
                 onClick={() => setActiveMenuScreen("viewed")}
               >
                 <div className={s.profileItemTitlePlace}>
-                  <h5>Просмотренное</h5>
-                  <h6>35 товаров</h6>
+                  <Paragraph12>Просмотренное</Paragraph12>
+                  <Paragraph5_g>35 товаров</Paragraph5_g>
                 </div>
               </div>
             </div>

@@ -62,9 +62,12 @@
         margin: 0px;
         padding: 0px;
         font-weight: 500;
-        font-size: $size12px;
-        line-height: $size14-5px;
+        // font-size: $size12px;
+        font-size: $size11-5px;
+        // line-height: $size14-5px;
+        line-height: $size14px;
         color: $color-black;
+        letter-spacing: calc(-1 * min(0.14px, 0.029vw));
       }
     }
   }
@@ -110,8 +113,11 @@
         }
 
         h6 {
-          font-size: $flexsize12px;
-          line-height: $flexsize14-5px;
+          // font-size: $flexsize12px;
+          // line-height: $flexsize14-5px;
+
+          font-size: $flexsize11-5px;
+          line-height: $flexsize14px;
         }
       }
     }

@@ -122,11 +122,13 @@
       font-size: $size24px;
       line-height: $size29px;
       margin-bottom: $size5px;
+      letter-spacing: calc(-1 * min(0.22px, 0.046vw));
     }
     h5 {
       font-weight: 400;
       font-size: $size14-5px;
       line-height: $size17-5px;
+      letter-spacing: calc(-1 * min(0.28px, 0.059vw));
     }
   }
 

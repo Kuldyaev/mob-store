@@ -20,11 +20,15 @@ const CartResults: FC<CartResultsProps> = ({ data }) => {
       </div>
       <div className={cn(s.totalSum, "flex-row-between-center")}>
         <Paragraph5_g>{data.quontityTotal} товаров</Paragraph5_g>
-        <Paragraph5_b>{data.sumTotal}₽</Paragraph5_b>
+        <Paragraph5_b>
+          {Intl.NumberFormat("ru-RU").format(data.sumTotal)}₽
+        </Paragraph5_b>
       </div>
       <div className={cn(s.discount, "flex-row-between-center")}>
         <Paragraph5_g>Скидка</Paragraph5_g>
-        <Paragraph5_b>- {data.sumDiscount}₽</Paragraph5_b>
+        <Paragraph5_b>
+          - {Intl.NumberFormat("ru-RU").format(data.sumDiscount)}₽
+        </Paragraph5_b>
       </div>
 
       <Button label="Оформить заказ" />
