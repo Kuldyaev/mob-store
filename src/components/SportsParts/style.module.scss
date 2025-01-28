@@ -21,6 +21,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      gap: $size8px;
 
       .popcatLineItemImg {
         width: $size285px;
@@ -37,15 +38,6 @@
       }
       .image2 {
         background-image: url("/images/basketball.png");
-      }
-      h5 {
-        user-select: none;
-        padding: 0;
-        margin: 0;
-        font-weight: 600;
-        font-size: $size14px;
-        line-height: $size16px;
-        margin-top: $size8px;
       }
     }
   }
@@ -69,17 +61,12 @@
 
       .popcatLineItem {
         width: $flexsize285px;
+        gap: $flexsize8px;
 
         .popcatLineItemImg {
           width: $flexsize285px;
           height: $flexsize200px;
           border-radius: $flexsize10px;
-        }
-
-        h5 {
-          font-size: $flexsize14px;
-          line-height: $flexsize16px;
-          margin-top: $flexsize8px;
         }
       }
     }

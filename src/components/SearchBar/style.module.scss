@@ -24,7 +24,9 @@
     justify-content: flex-start;
     align-items: center;
     font-size: $size14-5px;
+    line-height: $size17-5px;
     font-weight: 400;
+    letter-spacing: calc(-1 * min(0.18px, 0.037vw));
   }
 }
 
@@ -52,6 +54,7 @@
       justify-content: flex-start;
       align-items: center;
       font-size: $flexsize14-5px;
+      line-height: $flexsize17-5px;
     }
   }
 }

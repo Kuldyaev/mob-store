@@ -10,7 +10,10 @@
 .paragraf6,
 .paragraf7,
 .paragraf8,
-.paragraf9 {
+.paragraf9,
+.paragraf10,
+.paragraf11,
+.paragraf12 {
   margin: 0px;
   padding: 0px;
   user-select: none;
@@ -26,32 +29,37 @@
   font-weight: 600;
   font-size: $size12-5px;
   line-height: $size16px;
+  letter-spacing: calc(-2 * min(0.15px, 0.032vw));
 }
 
 .paragraf3 {
   font-weight: 400;
   font-size: $size12-5px;
   line-height: $size15px;
+  letter-spacing: calc(-3 * min(0.15px, 0.032vw));
 }
 
 .paragraf4 {
   font-weight: 600;
   font-size: $size14-5px;
   line-height: $size17-5px;
+  letter-spacing: calc(-4 * min(0.178px, 0.037vw));
 }
 
 .paragraf5_b {
   font-weight: 400;
   font-size: $size12-5px;
-  line-height: $size16px;
+  line-height: $size15px;
   color: $color-black;
+  letter-spacing: calc(-2 * min(0.15px, 0.032vw));
 }
 
 .paragraf5_g {
   font-weight: 400;
   font-size: $size12-5px;
-  line-height: $size16px;
+  line-height: $size15px;
   color: $color-grey-text;
+  letter-spacing: calc(-2 * min(0.15px, 0.032vw));
 }
 
 .paragraf6 {
@@ -59,6 +67,7 @@
   font-size: $size19px;
   line-height: $size23px;
   color: $color-black;
+  letter-spacing: calc(-1 * min(0.23px, 0.048vw));
 }
 
 .paragraf7 {
@@ -66,13 +75,14 @@
   font-size: $size12px;
   line-height: $size14-5px;
   color: $color-black;
+  letter-spacing: calc(-3 * min(0.148px, 0.03vw));
 }
 
 .paragraf8 {
   font-weight: 400;
   font-size: $size12px;
   line-height: $size14-5px;
-  letter-spacing: -4%;
+  letter-spacing: calc(-4 * min(0.148px, 0.03vw));
   color: $color-black;
 }
 
@@ -80,8 +90,30 @@
   font-weight: 600;
   font-size: $size15-5px;
   line-height: $size16px;
-  letter-spacing: -4%;
+  letter-spacing: calc(-4 * min(0.19px, 0.039vw));
   color: $color-black;
+}
+
+.paragraf10 {
+  font-weight: 600;
+  font-size: $size14px;
+  line-height: $size17px;
+  letter-spacing: calc(-1 * min(0.17px, 0.036vw));
+}
+
+.paragraf11 {
+  font-weight: 400;
+  font-size: $size10px;
+  line-height: $size12px;
+  color: $color-grey-text;
+  letter-spacing: calc(-4 * min(0.123px, 0.025vw));
+}
+
+.paragraf12 {
+  font-weight: 500;
+  font-size: $size14-5px;
+  line-height: $size17-5px;
+  letter-spacing: calc(-1 * min(0.178px, 0.037vw));
 }
 
 @media screen and (max-width: 480px) {
@@ -129,5 +161,20 @@
   .paragraf9 {
     font-size: $flexsize15-5px;
     line-height: $flexsize16px;
+  }
+
+  .paragraf10 {
+    font-size: $flexsize14px;
+    line-height: $flexsize17px;
+  }
+
+  .paragraf11 {
+    font-size: $flexsize10px;
+    line-height: $flexsize12px;
+  }
+
+  .paragraf12 {
+    font-size: $flexsize14-5px;
+    line-height: $flexsize17-5px;
   }
 }

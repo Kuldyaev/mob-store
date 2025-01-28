@@ -86,10 +86,8 @@
       width: calc(100% - $flexsize20px);
       height: $flexsize32px;
       color: $color-black;
-      font-size: $flexsize14-5px;
-      line-height: $flexsize16px;
+      overflow: visible;
       padding: $flexsize10px $flexsize10px 0 $flexsize10px;
-      user-select: none;
     }
 
     .cardImgPlace {

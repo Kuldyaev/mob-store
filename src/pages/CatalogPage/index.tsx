@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import SearchBar from "@/components/SearchBar";
-import { Paragraph9, Paragraph1 } from "@/components/uikit";
+import { Paragraph9, Paragraph1, Paragraph12 } from "@/components/uikit";
 import cn from "classnames";
 import s from "./style.module.scss";
 
@@ -134,7 +134,9 @@ const CatalogPage = () => {
         <div className={s.cardDesk}>
           {catalog.map((item) => (
             <div className={s.card} key={item.id}>
-              <h3 className={s.cardTitle}>{item.title}</h3>
+              <div className={s.cardTitle}>
+                <Paragraph12> {item.title}</Paragraph12>
+              </div>
               <div
                 className={s.cardImgPlace}
                 style={{

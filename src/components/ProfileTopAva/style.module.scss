@@ -36,6 +36,7 @@
       font-weight: 500;
       font-size: $size14-5px;
       line-height: $size17-5px;
+      letter-spacing: calc(-2 * min(0.178px, 0.037vw));
     }
 
     button {
@@ -48,6 +49,7 @@
         line-height: $size15px;
         color: $color-dark-grey;
         font-weight: 400;
+        letter-spacing: calc(-1 * min(0.148px, 0.03vw));
       }
       svg {
         width: $size6px;
