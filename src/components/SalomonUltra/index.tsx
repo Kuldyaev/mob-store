@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { Paragraph4, Paragraph7, Paragraph8 } from "../../components/uikit";
+import {
+  Paragraph4,
+  Paragraph7,
+  Paragraph8,
+  Paragraph11,
+} from "../../components/uikit";
 import { ClockIcon } from "./../../features/Icons";
 import { FavoriteBtn } from "../../components/uikit";
 import cn from "classnames";
@@ -46,7 +51,7 @@ const SalomonUltra = () => {
           </Paragraph8>
           <div className={s.infoline}>
             <ClockIcon />
-            <p className={s.infolineText}>Доставка 5-10 дней</p>
+            <Paragraph11>Доставка 5-10 дней</Paragraph11>
           </div>
           <Paragraph4>
             16 090 <span>₽</span>
@@ -88,7 +93,7 @@ const SalomonUltra = () => {
           </Paragraph8>
           <div className={s.infoline}>
             <ClockIcon />
-            <p className={s.infolineText}>Доставка 5-10 дней</p>
+            <Paragraph11>Доставка 5-10 дней</Paragraph11>
           </div>
           <Paragraph4>
             16 090 <span>₽</span>
@@ -130,7 +135,7 @@ const SalomonUltra = () => {
           </Paragraph8>
           <div className={s.infoline}>
             <ClockIcon />
-            <p className={s.infolineText}>Доставка 5-10 дней</p>
+            <Paragraph11>Доставка 5-10 дней</Paragraph11>
           </div>
           <Paragraph4>
             16 090 <span>₽</span>
@@ -172,7 +177,7 @@ const SalomonUltra = () => {
           </Paragraph8>
           <div className={s.infoline}>
             <ClockIcon />
-            <p className={s.infolineText}>Доставка 5-10 дней</p>
+            <Paragraph11>Доставка 5-10 дней</Paragraph11>
           </div>
           <Paragraph4>
             16 090 <span>₽</span>

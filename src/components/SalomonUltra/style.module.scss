@@ -108,15 +108,6 @@
           width: $size12px;
           height: $size12px;
         }
-
-        .infolineText {
-          padding: 0px;
-          margin: 0px;
-          font-size: $size10px;
-          line-height: $size12px;
-          font-weight: 400;
-          color: $color-grey-text;
-        }
       }
     }
   }
@@ -197,11 +188,6 @@
           svg {
             width: $flexsize12px;
             height: $flexsize12px;
-          }
-
-          .infolineText {
-            font-size: $flexsize10px;
-            line-height: $flexsize12px;
           }
         }
       }

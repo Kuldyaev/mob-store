@@ -14,11 +14,13 @@
       font-size: $size20px;
       line-height: $size16px;
       font-weight: 700;
+      letter-spacing: calc(-1 * min(0.24px, 0.051vw));
     }
     h2 {
       font-size: $size11-5px;
       line-height: $size16px;
       font-weight: 400;
+      letter-spacing: calc(-2 * min(0.19px, 0.039vw));
     }
   }
 
@@ -27,28 +29,30 @@
 
     h2:first-child {
       font-size: $size12-5px;
-      line-height: $size16px;
       font-weight: 400;
+      letter-spacing: calc(-3 * min(0.15px, 0.032vw));
     }
 
     h2:nth-child(2) {
       font-size: $size12-5px;
       line-height: $size16px;
       font-weight: 600;
+      letter-spacing: calc(-3 * min(0.15px, 0.032vw));
     }
   }
   .discount {
     margin-bottom: $size15px;
     h2:first-child {
       font-size: $size12-5px;
-      line-height: $size16px;
       font-weight: 400;
+      letter-spacing: calc(-3 * min(0.15px, 0.032vw));
     }
     h2:nth-child(2) {
       font-size: $size12-5px;
       line-height: $size16px;
       font-weight: 600;
       color: $color-blue;
+      letter-spacing: calc(-3 * min(0.15px, 0.032vw));
     }
   }
 
@@ -62,6 +66,7 @@
     align-items: center;
     font-size: $size15-5px;
     line-height: $size18px;
+    letter-spacing: calc(-1.5 * min(0.19px, 0.039vw));
     font-weight: 600;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
@@ -90,7 +95,6 @@
       margin-bottom: $flexsize8px;
       h2:first-child {
         font-size: $flexsize12-5px;
-        line-height: $flexsize16px;
       }
 
       h2:nth-child(2) {
@@ -103,7 +107,6 @@
       margin-bottom: $flexsize15px;
       h2:first-child {
         font-size: $flexsize12-5px;
-        line-height: $flexsize16px;
       }
       h2:nth-child(2) {
         font-size: $flexsize12-5px;

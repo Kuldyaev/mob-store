@@ -85,6 +85,7 @@
           gap: min($size4px, $flexsize4px);
           h2:first-child {
             font-weight: 500;
+            letter-spacing: calc(-3 * min(0.178px, 0.037vw));
           }
           h2:nth-child(2) {
             font-weight: 400;
@@ -105,6 +106,9 @@
         h3 {
           color: $color-blue;
           font-weight: 500;
+          font-size: $size11-5px;
+          line-height: $size14px;
+          letter-spacing: calc(-2 * min(0.14px, 0.029vw));
         }
       }
     }
@@ -214,6 +218,10 @@
         .freeDeliveryConditions {
           width: $flexsize340px;
           margin-top: $flexsize4px;
+          h3 {
+            font-size: $flexsize11-5px;
+            line-height: $flexsize14px;
+          }
         }
       }
     }

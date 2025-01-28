@@ -38,7 +38,8 @@
       color: $color-dark-grey;
       font-weight: 500;
       font-size: $size9px;
-      letter-spacing: 0.18px;
+      line-height: $size11px;
+      letter-spacing: min(0.22px, 0.046vw);
     }
   }
 
@@ -93,6 +94,7 @@
       width: $flexsize50px;
       h5 {
         font-size: $flexsize9px;
+        line-height: $flexsize11px;
       }
     }
     .bottomMenuBtn:nth-child(1) {

@@ -7,6 +7,9 @@ import { Paragraph6 } from "./Text/Paragraph6";
 import { Paragraph7 } from "./Text/Paragraph7";
 import { Paragraph8 } from "./Text/Paragraph8";
 import { Paragraph9 } from "./Text/Paragraph9";
+import { Paragraph10 } from "./Text/Patagraph10";
+import { Paragraph11 } from "./Text/Paragraph11";
+import { Paragraph12 } from "./Text/Paragraph12";
 import { CheckBox } from "./Checkbox";
 import { DeleteBtn } from "./Buttons/DeleteBtn";
 import { FavoriteBtn } from "./Buttons/FavoriteBtn";
@@ -26,6 +29,9 @@ export {
   Paragraph7,
   Paragraph8,
   Paragraph9,
+  Paragraph10,
+  Paragraph11,
+  Paragraph12,
   Button,
   CheckBox,
   DeleteBtn,
