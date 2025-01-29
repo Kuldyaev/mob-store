@@ -24,33 +24,14 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-
-    h5,
-    h6 {
-      margin: 0;
-      padding: 0;
-    }
-
-    h5 {
-      color: $color-black;
-      font-weight: 500;
-      font-size: $size14-5px;
-      line-height: $size17-5px;
-      letter-spacing: calc(-2 * min(0.178px, 0.037vw));
-    }
+    gap: $size3px;
 
     button {
       gap: $size4px;
       border: none;
       background-color: $color-white;
       padding-left: 0px;
-      h6 {
-        font-size: $size12-5px;
-        line-height: $size15px;
-        color: $color-dark-grey;
-        font-weight: 400;
-        letter-spacing: calc(-1 * min(0.148px, 0.03vw));
-      }
+
       svg {
         width: $size6px;
         height: $size10px;
@@ -73,17 +54,10 @@
     }
     .profileTextBlock {
       height: $flexsize40px;
+      gap: $flexsize3px;
 
-      h5 {
-        font-size: $flexsize14-5px;
-        line-height: $flexsize17-5px;
-      }
       button {
         gap: $flexsize4px;
-        h6 {
-          font-size: $flexsize12-5px;
-          line-height: $flexsize15px;
-        }
         svg {
           width: $flexsize6px;
           height: $flexsize10px;

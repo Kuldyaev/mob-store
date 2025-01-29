@@ -133,6 +133,58 @@ button {
   transition-timing-function: linear;
 }
 
+.fw900 {
+  font-weight: 900;
+}
+.fw800 {
+  font-weight: 800;
+}
+.fw700 {
+  font-weight: 700;
+}
+.fw600 {
+  font-weight: 600;
+}
+.fw500 {
+  font-weight: 500;
+}
+.fw400 {
+  font-weight: 400;
+}
+.fw300 {
+  font-weight: 300;
+}
+.fw200 {
+  font-weight: 200;
+}
+.fw100 {
+  font-weight: 100;
+}
+
+.super-black {
+  color: $color-super-black;
+}
+.black {
+  color: $color-black;
+}
+.white {
+  color: $color-white;
+}
+.orange {
+  color: $color-orange;
+}
+.grey {
+  color: $color-grey-text;
+}
+.grey-second {
+  color: $color-dark-grey;
+}
+.red {
+  color: $color-red;
+}
+.blue {
+  color: $color-blue;
+
 .homeTopHeaderFixed {
   height: min($size73px, $flexsize73px);
   transition: height 2s linear;
@@ -140,6 +192,7 @@ button {
 
 .smaller {
   height: 43px;
+
 }
 
 @media (prefers-color-scheme: light) {

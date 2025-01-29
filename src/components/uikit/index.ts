@@ -18,6 +18,14 @@ import { BackBtn } from "./Buttons/BackBtn";
 import { ContextMenuBtn } from "./Buttons/ContextMenuBtn";
 import { Button } from "./Buttons/Button";
 
+import { Typograph_24 } from "./Text/Typograph_24";
+import { Typograph_20 } from "./Text/Typograph_20";
+import { Typograph_19 } from "./Text/Typograph_19";
+import { Typograph_15_5 } from "./Text/Typograph_15_5";
+import { Typograph_14_5 } from "./Text/Typograph_14_5";
+import { Typograph_12_5 } from "./Text/Typograph_12_5";
+import { Typograph_11_5 } from "./Text/Typograph_11_5";
+
 export {
   Paragraph1,
   Paragraph2,
@@ -39,4 +47,11 @@ export {
   SearchBtn,
   BackBtn,
   ContextMenuBtn,
+  Typograph_24,
+  Typograph_20,
+  Typograph_19,
+  Typograph_15_5,
+  Typograph_14_5,
+  Typograph_12_5,
+  Typograph_11_5,
 };
