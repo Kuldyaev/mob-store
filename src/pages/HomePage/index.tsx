@@ -6,7 +6,7 @@ import SportsParts from "@/components/SportsParts";
 import SalomonUltra from "@/components/SalomonUltra";
 import ForEach from "@/components/ForEach";
 import MustHave from "@/components/MustHave";
-import { Paragraph6, Paragraph1 } from "@/components/uikit";
+import { Typograph_24, Typograph_19 } from "@/components/uikit";
 import cn from "classnames";
 import s from "./style.module.scss";
 
@@ -87,7 +87,7 @@ const HomePage = () => {
             isFixHeaderSmall ? "inCenter" : null
           )}
         >
-          <Paragraph1>Главная</Paragraph1>
+          <Typograph_24>Главная</Typograph_24>
         </div>
       </div>
       <div className={s.shade} ref={shadow}></div>
@@ -107,34 +107,34 @@ const HomePage = () => {
             <SearchBar />
             <StoriesBar />
             <div className={s.blockTitle}>
-              <Paragraph6>Популярные категории</Paragraph6>
+              <Typograph_19>Популярные категории</Typograph_19>
             </div>
             <PopularCategoties />
             <div className={s.blockTitle}>
-              <Paragraph6>Salomon X Ultra 4</Paragraph6>
+              <Typograph_19>Salomon X Ultra 4</Typograph_19>
               <div className={s.toAllBtn}>Все &gt;</div>
             </div>
             <SalomonUltra />
             <div className={s.blockTitle}>
-              <Paragraph6>Виды спорта</Paragraph6>
+              <Typograph_19>Виды спорта</Typograph_19>
             </div>
             <SportsParts />
             <div className={s.blockTitle}>
-              <Paragraph6>Salomon X Ultra 4</Paragraph6>
+              <Typograph_19>Salomon X Ultra 4</Typograph_19>
               <div className={s.toAllBtn}>Все &gt;</div>
             </div>
             <SalomonUltra />
             <div className={s.blockTitle}>
-              <Paragraph6>Для каждого</Paragraph6>
+              <Typograph_19>Для каждого</Typograph_19>
             </div>
             <ForEach />
             <div className={s.blockTitle}>
-              <Paragraph6>Salomon X Ultra 4</Paragraph6>
+              <Typograph_19>Salomon X Ultra 4</Typograph_19>
               <div className={s.toAllBtn}>Все &gt;</div>
             </div>
             <SalomonUltra />
             <div className={s.blockTitle}>
-              <Paragraph6>Мастхэв для дома</Paragraph6>
+              <Typograph_19>Мастхэв для дома</Typograph_19>
             </div>
             <MustHave />
           </div>

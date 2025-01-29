@@ -1,5 +1,5 @@
 import { ArrowToRight } from "@/features/Icons";
-
+import { Typograph_14_5, Typograph_12_5 } from "@/components/uikit";
 import s from "./style.module.scss";
 
 interface ProfileTopAvaProps {
@@ -16,9 +16,13 @@ const ProfileTopAva = ({ onClick }: ProfileTopAvaProps) => {
         }}
       ></div>
       <div className={s.profileTextBlock}>
-        <h5>Шарапов Александр</h5>
+        <Typograph_14_5 fw="fw500" spacing={-2}>
+          Шарапов Александр
+        </Typograph_14_5>
         <button onClick={onClick} className="flex-row-center-center">
-          <h6>Настройки</h6>
+          <Typograph_12_5 fw="fw400" color="grey">
+            Настройки
+          </Typograph_12_5>
           <ArrowToRight />
         </button>
       </div>

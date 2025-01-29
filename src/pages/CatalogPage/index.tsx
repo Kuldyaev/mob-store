@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import SearchBar from "@/components/SearchBar";
-import { Paragraph9, Paragraph1, Paragraph12 } from "@/components/uikit";
+import {
+  Typograph_24,
+  Typograph_15_5,
+  Typograph_14_5,
+} from "@/components/uikit";
 import cn from "classnames";
 import s from "./style.module.scss";
 
@@ -125,17 +129,17 @@ const CatalogPage = () => {
             isShowedFixHeader ? s.opacity1 : s.opacity0
           )}
         >
-          <Paragraph9>Каталог</Paragraph9>
+          <Typograph_15_5>Каталог</Typograph_15_5>
         </div>
       </div>
       <div className={s.catalogDesk} ref={elRef}>
-        <Paragraph1>Каталог</Paragraph1>
+        <Typograph_24>Каталог</Typograph_24>
         <SearchBar />
         <div className={s.cardDesk}>
           {catalog.map((item) => (
             <div className={s.card} key={item.id}>
               <div className={s.cardTitle}>
-                <Paragraph12> {item.title}</Paragraph12>
+                <Typograph_14_5> {item.title}</Typograph_14_5>
               </div>
               <div
                 className={s.cardImgPlace}

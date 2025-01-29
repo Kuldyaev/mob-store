@@ -1,10 +1,11 @@
 import { useState, lazy, Suspense, useEffect, useRef } from "react";
 import ProfileTopAva from "@/components/ProfileTopAva";
 import {
-  Paragraph1,
-  Paragraph5_g,
-  Paragraph9,
-  Paragraph12,
+  Typograph_24,
+  Typograph_15_5,
+  Typograph_14_5,
+  Typograph_12_5,
+  Typograph_11_5,
 } from "@/components/uikit";
 import Loader from "@/components/Loader";
 import {
@@ -283,7 +284,7 @@ const ProfilePage = () => {
             isShowedFixHeader ? s.opacity1 : s.opacity0
           )}
         >
-          <Paragraph9>Профиль</Paragraph9>
+          <Typograph_15_5>Профиль</Typograph_15_5>
         </div>
       </div>
       <div className={s.profileDesk} ref={elRef}>
@@ -295,7 +296,7 @@ const ProfilePage = () => {
                 isShowedFixHeader ? s.opacity0 : s.opacity1
               )}
             >
-              <Paragraph1>Профиль</Paragraph1>
+              <Typograph_24>Профиль</Typograph_24>
             </div>
             <ProfileTopAva onClick={() => setActiveMenuScreen("settings")} />
             <div className={s.profileTopLine}>
@@ -307,8 +308,8 @@ const ProfilePage = () => {
                 onClick={() => setActiveMenuScreen("favorites")}
               >
                 <div className={s.profileItemTitlePlace}>
-                  <Paragraph12>Избранное</Paragraph12>
-                  <Paragraph5_g>12 товаров</Paragraph5_g>
+                  <Typograph_14_5>Избранное</Typograph_14_5>
+                  <Typograph_12_5 color="grey">12 товаров</Typograph_12_5>
                 </div>
               </div>
               <div
@@ -319,8 +320,8 @@ const ProfilePage = () => {
                 onClick={() => setActiveMenuScreen("viewed")}
               >
                 <div className={s.profileItemTitlePlace}>
-                  <Paragraph12>Просмотренное</Paragraph12>
-                  <Paragraph5_g>35 товаров</Paragraph5_g>
+                  <Typograph_14_5>Просмотренное</Typograph_14_5>
+                  <Typograph_12_5 color="grey">35 товаров</Typograph_12_5>
                 </div>
               </div>
             </div>
@@ -338,8 +339,10 @@ const ProfilePage = () => {
                 </div>
                 <div className={s.profileDeskMenuInfo}>
                   <div className={s.profileDeskMenuText}>
-                    <h4>{item.title}</h4>
-                    <h5>{item.info}</h5>
+                    <Typograph_14_5 fw="fw400" spacing={null}>
+                      {item.title}
+                    </Typograph_14_5>
+                    <Typograph_11_5 color="grey">{item.info}</Typograph_11_5>
                   </div>
                   <button onClick={() => showMenuItem(item.name)}>
                     <ArrowToRight />

@@ -19,6 +19,53 @@
   user-select: none;
 }
 
+.typograph_24,
+.typograph_20,
+.typograph_19,
+.typograph_15_5,
+.typograph_14_5,
+.typograph_12_5,
+.typograph_11_5 {
+  margin: 0px;
+  padding: 0px;
+  user-select: none;
+  line-height: normal;
+}
+
+.typograph_24 {
+  font-size: $size24px;
+}
+
+.typograph_20 {
+  font-size: $size20px;
+  line-height: $size20px;
+}
+
+.typograph_19 {
+  font-size: $size19px;
+  line-height: $size19px;
+}
+
+.typograph_15_5 {
+  font-size: $size15-5px;
+  line-height: $size15-5px;
+}
+
+.typograph_14_5 {
+  font-size: $size14-5px;
+  line-height: $size14-5px;
+}
+
+.typograph_12_5 {
+  font-size: $size12-5px;
+  line-height: $size12-5px;
+}
+
+.typograph_11_5 {
+  font-size: $size11-5px;
+  line-height: $size11-5px;
+}
+
 .paragraf1 {
   font-weight: 700;
   font-size: $size24px;
@@ -117,6 +164,40 @@
 }
 
 @media screen and (max-width: 480px) {
+  .typograph_24 {
+    font-size: $flexsize24px;
+  }
+
+  .typograph_20 {
+    font-size: $flexsize20px;
+    line-height: $flexsize20px;
+  }
+
+  .typograph_19 {
+    font-size: $flexsize19px;
+    line-height: $flexsize19px;
+  }
+
+  .typograph_15_5 {
+    font-size: $flexsize15-5px;
+    line-height: $flexsize15-5px;
+  }
+
+  .typograph_14_5 {
+    font-size: $flexsize14-5px;
+    line-height: $flexsize14-5px;
+  }
+
+  .typograph_12_5 {
+    font-size: $flexsize12-5px;
+    line-height: $flexsize12-5px;
+  }
+
+  .typograph_11_5 {
+    font-size: $flexsize11-5px;
+    line-height: $flexsize11-5px;
+  }
+
   .paragraf1 {
     font-size: $flexsize24px;
     line-height: $flexsize24px;
