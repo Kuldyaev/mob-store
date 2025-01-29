@@ -1,30 +1,12 @@
 @use "./../../scss/colors.scss" as *;
 @use "./../../scss/variabels.scss" as *;
-.headerFixed {
+.headerFixedSub {
   background-color: $color-white;
   position: sticky;
   top: 0;
   z-index: 6;
   width: 100%;
   height: min($size36px, $flexsize36px);
-
-  .infoBlock {
-    transition: opacity 0.5s linear;
-  }
-  .opacity1 {
-    opacity: 1;
-  }
-
-  .opacity0 {
-    opacity: 0;
-  }
-
-  .details {
-    gap: min($size11px, $flexsize11px);
-    h2:nth-child(2) {
-      color: $color-orange;
-    }
-  }
 }
 .cartDesk {
   min-height: 90dvh;
@@ -62,6 +44,7 @@
         flex-direction: row;
         justify-content: flex-start;
         gap: $size11px;
+        margin-bottom: $size4px;
 
         h2:nth-child(2) {
           color: $color-orange;
@@ -185,6 +168,7 @@
 
         .details {
           gap: $flexsize11px;
+          margin-bottom: $flexsize4px;
         }
       }
 

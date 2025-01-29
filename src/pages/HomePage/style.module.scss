@@ -66,7 +66,7 @@
   flex-direction: column;
   width: min(480px, 100vw);
   overflow: hidden;
-  margin-top: max(-1 * $size73px, -1 * $flexsize73px);
+  // margin-top: max(-1 * $size73px, -1 * $flexsize73px);
 }
 
 .back::-webkit-scrollbar {
@@ -143,6 +143,16 @@
     border-radius: $size25px $size25px 0px 0px;
     padding-top: $size15px;
     padding-left: $size15px;
+    .smallTitle {
+      transition: opacity 0.1s linear;
+      margin-bottom: $size15px;
+    }
+    .opacity1 {
+      opacity: 1;
+    }
+    .opacity0 {
+      opacity: 0;
+    }
 
     .titlePlace {
       color: $color-black;
@@ -224,6 +234,10 @@
       border-radius: $flexsize25px $flexsize25px 0px 0px;
       padding-top: $flexsize15px;
       padding-left: $flexsize15px;
+
+      .smallTitle {
+        margin-bottom: $flexsize15px;
+      }
 
       .blockTitle {
         margin-bottom: $flexsize12px;

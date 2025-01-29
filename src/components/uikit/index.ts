@@ -1,4 +1,3 @@
-import { Paragraph1 } from "./Text/Paragraph1";
 import { Paragraph2 } from "./Text/Paragraph2";
 import { Paragraph3 } from "./Text/Paragraph3";
 import { Paragraph4 } from "./Text/Paragraph4";
@@ -25,9 +24,9 @@ import { Typograph_15_5 } from "./Text/Typograph_15_5";
 import { Typograph_14_5 } from "./Text/Typograph_14_5";
 import { Typograph_12_5 } from "./Text/Typograph_12_5";
 import { Typograph_11_5 } from "./Text/Typograph_11_5";
+import { Typograph_9 } from "./Text/Typograph_9";
 
 export {
-  Paragraph1,
   Paragraph2,
   Paragraph3,
   Paragraph4,
@@ -54,4 +53,5 @@ export {
   Typograph_14_5,
   Typograph_12_5,
   Typograph_11_5,
+  Typograph_9,
 };

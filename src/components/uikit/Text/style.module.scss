@@ -25,7 +25,8 @@
 .typograph_15_5,
 .typograph_14_5,
 .typograph_12_5,
-.typograph_11_5 {
+.typograph_11_5,
+.typograph_9 {
   margin: 0px;
   padding: 0px;
   user-select: none;
@@ -64,6 +65,11 @@
 .typograph_11_5 {
   font-size: $size11-5px;
   line-height: $size11-5px;
+}
+
+.typograph_9 {
+  font-size: $size9px;
+  line-height: $size9px;
 }
 
 .paragraf1 {
@@ -196,6 +202,11 @@
   .typograph_11_5 {
     font-size: $flexsize11-5px;
     line-height: $flexsize11-5px;
+  }
+
+  .typograph_9 {
+    font-size: $flexsize9px;
+    line-height: $flexsize9px;
   }
 
   .paragraf1 {

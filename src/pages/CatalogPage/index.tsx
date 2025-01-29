@@ -1,10 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import { dispatch, useSelector } from "@/store";
+import { setHeaderFixedShowed } from "@/store/slices/status";
 import SearchBar from "@/components/SearchBar";
-import {
-  Typograph_24,
-  Typograph_15_5,
-  Typograph_14_5,
-} from "@/components/uikit";
+import { Typograph_24, Typograph_14_5 } from "@/components/uikit";
 import cn from "classnames";
 import s from "./style.module.scss";
 
@@ -94,25 +92,18 @@ const catalog = [
 
 const CatalogPage = () => {
   const elRef = useRef<HTMLDivElement | null>(null);
-  const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
-
+  const isShowed = useSelector((state) => state.status.headerFixed.isShowed);
   const handleScroll = () => {
     if (elRef.current) {
       const rect = elRef.current.getBoundingClientRect();
-
-      if (isShowedFixHeader) {
-        setIsShowedFixHeader(
-          Math.round((+rect.top * 17.727) / +rect.width) < 1
-        );
-      } else {
-        setIsShowedFixHeader(
-          Math.round((+rect.top * 17.727) / +rect.width) < 1
-        );
-      }
+      dispatch(
+        setHeaderFixedShowed(Math.round((+rect.top * 17.727) / +rect.width) < 1)
+      );
     }
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -121,19 +112,11 @@ const CatalogPage = () => {
 
   return (
     <>
-      <div className={cn(s.headerFixed, "flex-row-center-center")}>
-        <div
-          className={cn(
-            s.infoBlock,
-            "flex-column-center-center",
-            isShowedFixHeader ? s.opacity1 : s.opacity0
-          )}
-        >
-          <Typograph_15_5>Каталог</Typograph_15_5>
-        </div>
-      </div>
+      <div className={cn(s.headerFixedSub, "flex-row-center-center")}></div>
       <div className={s.catalogDesk} ref={elRef}>
-        <Typograph_24>Каталог</Typograph_24>
+        <div className={cn(s.smallTitle, isShowed ? s.opacity0 : s.opacity1)}>
+          <Typograph_24>Каталог</Typograph_24>
+        </div>
         <SearchBar />
         <div className={s.cardDesk}>
           {catalog.map((item) => (
