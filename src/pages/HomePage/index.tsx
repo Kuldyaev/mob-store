@@ -15,10 +15,21 @@ const HomePage = () => {
   const shadow = useRef<HTMLDivElement | null>(null);
   const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
   const [isFixHeaderSmall, setIsFixHeaderSmall] = useState<boolean>(false);
+  const [topFixHeaderText, setTopFixHeaderText] = useState<number | string>(0);
+  const [leftFixHeaderText, setLeftFixHeaderText] = useState<number | string>(
+    0
+  );
+  const [fontFixHeaderText, setFontFixHeaderText] = useState<number | string>(
+    24
+  );
+  const [heightFixHeaderText, setHeightFixHeaderText] = useState<
+    number | string
+  >(73);
 
   const handleScroll = () => {
     if (elRef.current) {
       const rect = elRef.current.getBoundingClientRect();
+      const currYpos = Math.round((+rect.top * 390) / +rect.width);
 
       if (Number((+rect.top / (+rect.width * 0.964)).toFixed(2)) < 0) {
         elRef.current.style.opacity = "0";
@@ -27,12 +38,6 @@ const HomePage = () => {
           +rect.top /
           (+rect.width * 0.964)
         ).toFixed(2);
-      }
-
-      if (isShowedFixHeader) {
-        setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
-      } else {
-        setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
       }
 
       if (shadow.current) {
@@ -46,22 +51,65 @@ const HomePage = () => {
         }
       }
 
-      +rect.top + 0.08 * +rect.width < 0
-        ? setIsFixHeaderSmall(true)
-        : setIsFixHeaderSmall(false);
+      if (currYpos < -45) {
+        // console.log("const: " + +rect.width);
+        console.log("Y: " + +currYpos);
+        console.log("height: " + ((118 + +currYpos) * +rect.width) / 360);
 
-      +rect.top + 0.08 * +rect.width < 0
-        ? setIsFixHeaderSmall(true)
-        : setIsFixHeaderSmall(false);
+        setIsShowedFixHeader(false);
+        // if (49 + 45 + +currYpos > 4) {
+        //   setTopFixHeaderText(
+        //     ((49 + 45 + +currYpos * 0.95) * +rect.width) / 360
+        //   );
+        //   setLeftFixHeaderText(
+        //     (((-135 - +currYpos * 3.2) * +rect.width) / 360).toFixed(2)
+        //   );
+        //   // setIsFixHeaderSmall(false);
+        // } else {
+        //   // setIsFixHeaderSmall(true);
+        // }
 
-      console.log(+rect.top + 0.1 * +rect.width);
+        if (currYpos < -75) {
+          if (
+            +heightFixHeaderText !== Math.min((43 * +rect.width) / 360, 52.92)
+          )
+            setHeightFixHeaderText(Math.min((43 * +rect.width) / 360, 52.92));
+
+          if (+fontFixHeaderText !== Math.min((16 * +rect.width) / 360, 19.69))
+            setFontFixHeaderText(Math.min((16 * +rect.width) / 360, 19.69));
+        } else {
+          setHeightFixHeaderText(((118 + +currYpos) * +rect.width) / 360);
+          setFontFixHeaderText(
+            Math.min(((16 - +currYpos / 10) * +rect.width) / 360, 19.69)
+          );
+        }
+      } else {
+        setIsShowedFixHeader(true);
+        // setTopFixHeaderText((49 * +rect.width) / 360);
+        if (+heightFixHeaderText !== Math.min((73 * +rect.width) / 360, 89.85))
+          setHeightFixHeaderText(Math.min((73 * +rect.width) / 360, 89.85));
+
+        if (+fontFixHeaderText !== Math.min((24 * +rect.width) / 360, 29.54))
+          setFontFixHeaderText(Math.min((24 * +rect.width) / 360, 29.54));
+      }
+
+      // console.log(currYpos);
     }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    setTopFixHeaderText(Math.min((49 * window.outerWidth) / 390, 60.31));
+    setLeftFixHeaderText(Math.min(((15 * window.outerWidth) / 390, 18.46)));
+    setFontFixHeaderText(Math.min((24 * window.outerWidth) / 390, 29.54));
+    setHeightFixHeaderText(Math.min((73 * window.outerWidth) / 390, 89.85));
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      setTopFixHeaderText(Math.min((49 * window.outerWidth) / 390, 60.31));
+      setLeftFixHeaderText(Math.min(((15 * window.outerWidth) / 390, 18.46)));
+      setFontFixHeaderText(Math.min((24 * window.outerWidth) / 390, 29.54));
+      setHeightFixHeaderText(Math.min((73 * window.outerWidth) / 390, 89.85));
     };
   }, []);
 
@@ -76,8 +124,10 @@ const HomePage = () => {
       <div
         className={cn(
           s.headerFixed,
-          isShowedFixHeader ? s.opacity1 : s.opacity0
+          !isShowedFixHeader ? s.opacity1 : s.opacity0,
+          "homeTopHeaderFixed"
         )}
+        style={{ height: heightFixHeaderText + "px" }}
       >
         <div
           className={cn(
@@ -86,9 +136,20 @@ const HomePage = () => {
             "flex-column-center-center",
             isFixHeaderSmall ? "inCenter" : null
           )}
+          style={{
+            color: !isShowedFixHeader ? "black" : "white",
+            top: topFixHeaderText + "px",
+            left: leftFixHeaderText + "px",
+          }}
         >
+
           <Typograph_24>Главная</Typograph_24>
+
         </div>
+
+        {/* <div className={cn(s.smallTitle, "flex-row-center-center")}>
+          <h3 style={{ opacity: isFixHeaderSmall ? 1 : 0 }}>Главная</h3>
+        </div> */}
       </div>
       <div className={s.shade} ref={shadow}></div>
       <div className={s.back}>
@@ -104,6 +165,14 @@ const HomePage = () => {
             </h5>
           </div>
           <div className={s.homedesk}>
+            <div
+              className={cn(
+                s.titlePlace,
+                isShowedFixHeader ? null : s.blackText
+              )}
+            >
+              <Paragraph1>Главная</Paragraph1>
+            </div>
             <SearchBar />
             <StoriesBar />
             <div className={s.blockTitle}>
