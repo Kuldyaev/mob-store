@@ -5,7 +5,7 @@ import { StatusState } from "@/shared/types/store/status";
 const initialState: StatusState = {
   activeRoute: "/",
   headerFixed: {
-    isShowed: true,
+    isShowed: false,
   },
 };
 
