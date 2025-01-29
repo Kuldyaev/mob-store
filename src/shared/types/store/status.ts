@@ -1,3 +1,8 @@
 export interface StatusState {
-  isAuthorized: boolean;
+  headerFixed: HeaderFixedType;
+  activeRoute: string;
+}
+
+export interface HeaderFixedType {
+  isShowed: boolean;
 }

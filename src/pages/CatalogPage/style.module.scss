@@ -1,32 +1,28 @@
 @use "./../../scss/colors.scss" as *;
 @use "./../../scss/variabels.scss" as *;
 
-.headerFixed {
+.headerFixedSub {
   background-color: $color-white;
   position: sticky;
   top: 0;
   z-index: 6;
   width: 100%;
   height: min($size36px, $flexsize36px);
-
-  .infoBlock {
-    transition: opacity 0.5s linear;
-  }
-  .opacity1 {
-    opacity: 1;
-  }
-
-  .opacity0 {
-    opacity: 0;
-  }
 }
 
 .catalogDesk {
   padding: $size10px $size15px $size15px $size15px $size15px;
   background-color: $color-white;
 
-  h1 {
+  .smallTitle {
     margin-bottom: $size15px;
+    transition: opacity 0.1s linear;
+  }
+  .opacity1 {
+    opacity: 1;
+  }
+  .opacity0 {
+    opacity: 0;
   }
 }
 
@@ -97,7 +93,7 @@
 
   .catalogDesk {
     padding: $flexsize10px $flexsize15px $flexsize15px $flexsize15px;
-    h1 {
+    .smallTitle {
       margin-bottom: $flexsize15px;
     }
   }

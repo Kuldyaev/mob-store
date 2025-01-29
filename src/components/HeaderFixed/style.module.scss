@@ -6,19 +6,28 @@
 }
 
 .headerFixed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: min(480px, 100vw);
-  height: $size36px;
-  position: fixed;
-  z-index: 12;
-
   background-color: $color-white;
-}
+  position: fixed;
+  top: 0;
+  z-index: 12;
+  width: min(480px, 100vw);
+  height: min($size36px, $flexsize36px);
 
-@media screen and (max-width: 480px) {
-  .headerFixed {
-    height: $flexsize36px;
+  .infoBlock {
+    transition: opacity 0.5s linear;
+
+    .details {
+      gap: min($size11px, $flexsize11px);
+      h2:nth-child(2) {
+        color: $color-orange;
+      }
+    }
+  }
+  .opacity1 {
+    opacity: 1;
+  }
+
+  .opacity0 {
+    opacity: 0;
   }
 }

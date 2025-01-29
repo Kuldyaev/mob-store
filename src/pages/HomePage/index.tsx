@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { dispatch, useSelector } from "@/store";
+import { setHeaderFixedShowed } from "@/store/slices/status";
 import PopularCategoties from "@/components/PopularCategoties";
 import StoriesBar from "@/components/StoriesBar";
 import SearchBar from "@/components/SearchBar";
@@ -13,12 +15,18 @@ import s from "./style.module.scss";
 const HomePage = () => {
   const elRef = useRef<HTMLDivElement | null>(null);
   const shadow = useRef<HTMLDivElement | null>(null);
-  const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
-  const [isFixHeaderSmall, setIsFixHeaderSmall] = useState<boolean>(false);
+  const isShowed = useSelector((state) => state.status.headerFixed.isShowed);
+
+  // const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
+  // const [isFixHeaderSmall, setIsFixHeaderSmall] = useState<boolean>(false);
 
   const handleScroll = () => {
     if (elRef.current) {
       const rect = elRef.current.getBoundingClientRect();
+
+      dispatch(
+        setHeaderFixedShowed(Math.round((+rect.top * 100) / +rect.width) < -15)
+      );
 
       if (Number((+rect.top / (+rect.width * 0.964)).toFixed(2)) < 0) {
         elRef.current.style.opacity = "0";
@@ -29,11 +37,11 @@ const HomePage = () => {
         ).toFixed(2);
       }
 
-      if (isShowedFixHeader) {
-        setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
-      } else {
-        setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
-      }
+      // if (isShowedFixHeader) {
+      //   setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
+      // } else {
+      //   setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
+      // }
 
       if (shadow.current) {
         if (Number((+rect.top / (+rect.width * 0.964)).toFixed(2)) < 0) {
@@ -46,19 +54,18 @@ const HomePage = () => {
         }
       }
 
-      +rect.top + 0.08 * +rect.width < 0
-        ? setIsFixHeaderSmall(true)
-        : setIsFixHeaderSmall(false);
+      // +rect.top + 0.08 * +rect.width < 0
+      //   ? setIsFixHeaderSmall(true)
+      //   : setIsFixHeaderSmall(false);
 
-      +rect.top + 0.08 * +rect.width < 0
-        ? setIsFixHeaderSmall(true)
-        : setIsFixHeaderSmall(false);
-
-      // console.log(+rect.top + 0.1 * +rect.width);
+      // +rect.top + 0.08 * +rect.width < 0
+      //   ? setIsFixHeaderSmall(true)
+      //   : setIsFixHeaderSmall(false);
     }
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -66,30 +73,13 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    isShowedFixHeader
+    isShowed
       ? document.getElementById("root")?.parentElement?.classList.remove("dark")
       : document.getElementById("root")?.parentElement?.classList.add("dark");
-  }, [isShowedFixHeader]);
+  }, [isShowed]);
 
   return (
     <>
-      <div
-        className={cn(
-          s.headerFixed,
-          isShowedFixHeader ? s.opacity1 : s.opacity0
-        )}
-      >
-        <div
-          className={cn(
-            s.infoBlock,
-            "animHeader",
-            "flex-column-center-center",
-            isFixHeaderSmall ? "inCenter" : null
-          )}
-        >
-          <Typograph_24>Главная</Typograph_24>
-        </div>
-      </div>
       <div className={s.shade} ref={shadow}></div>
       <div className={s.back}>
         <div className={s.topImgBlock}>
@@ -104,6 +94,11 @@ const HomePage = () => {
             </h5>
           </div>
           <div className={s.homedesk}>
+            <div
+              className={cn(s.smallTitle, isShowed ? s.opacity0 : s.opacity1)}
+            >
+              <Typograph_24>Главная</Typograph_24>
+            </div>
             <SearchBar />
             <StoriesBar />
             <div className={s.blockTitle}>
