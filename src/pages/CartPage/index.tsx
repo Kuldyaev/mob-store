@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react";
+import { dispatch, useSelector } from "@/store";
+import { setHeaderFixedShowed } from "@/store/slices/status";
 import CartItem from "@/components/CarItem";
 import CartResults from "@/components/CartResults";
 import {
   CheckBox,
   DeleteBtn,
   Typograph_24,
-  Typograph_15_5,
   Typograph_14_5,
   Typograph_12_5,
   Typograph_11_5,
@@ -17,26 +18,21 @@ import s from "./style.module.scss";
 
 const CartPage = () => {
   const elRef = useRef<HTMLDivElement | null>(null);
+  const isShowed = useSelector((state) => state.status.headerFixed.isShowed);
   const [isSelectedAll, setIsSelectedAll] = useState<boolean>(false);
-  const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
 
   const handleScroll = () => {
     if (elRef.current) {
       const rect = elRef.current.getBoundingClientRect();
 
-      if (isShowedFixHeader) {
-        setIsShowedFixHeader(
-          Math.round((+rect.top * 17.727) / +rect.width) < 1
-        );
-      } else {
-        setIsShowedFixHeader(
-          Math.round((+rect.top * 17.727) / +rect.width) < 1
-        );
-      }
+      dispatch(
+        setHeaderFixedShowed(Math.round((+rect.top * 17.727) / +rect.width) < 1)
+      );
     }
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -105,33 +101,10 @@ const CartPage = () => {
   };
   return (
     <>
-      <div className={cn(s.headerFixed, "flex-row-center-center")}>
-        <div
-          className={cn(
-            s.infoBlock,
-            "flex-column-center-center",
-            isShowedFixHeader ? s.opacity1 : s.opacity0
-          )}
-        >
-          <Typograph_15_5>Корзина</Typograph_15_5>
-          <div className={cn(s.details, "flex-row-center-center")}>
-            <Typograph_12_5 color="grey-second" spacing={-2} fw="fw400">
-              5 товаров
-            </Typograph_12_5>
-            <Typograph_12_5 color="orange" spacing={-2} fw="fw400">
-              2 недоступно
-            </Typograph_12_5>
-          </div>
-        </div>
-      </div>
+      <div className={cn(s.headerFixedSub, "flex-row-center-center")}></div>
       <div className={s.cartDesk} ref={elRef}>
         <div className={s.cartDeskTop}>
-          <div
-            className={cn(
-              s.header,
-              isShowedFixHeader ? s.opacity0 : s.opacity1
-            )}
-          >
+          <div className={cn(s.header, isShowed ? s.opacity0 : s.opacity1)}>
             <Typograph_24>Корзина</Typograph_24>
             <div className={s.details}>
               <Typograph_12_5 color="grey-second" spacing={-2} fw="fw400">

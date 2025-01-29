@@ -1,88 +1,66 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "@/store";
 import {
   ProfileIcon,
   CatalogIcon,
   MainPageIcon,
   CartIcon,
-} from "../../features/Icons";
+} from "@/features/Icons";
+import { Typograph_9 } from "@/components/uikit";
 import cn from "classnames";
 import s from "./style.module.scss";
 
 const BottomMenu = () => {
+  const activeRoute = useSelector((state) => state.status.activeRoute);
   const navigate = useNavigate();
-  const location = useLocation();
-  const [isActiveRoute, setIsActiveRoute] = useState<string>("/");
-
-  useEffect(() => {
-    const paths = location.pathname.split("/");
-    if (paths[1] === "") {
-      setIsActiveRoute("/");
-    } else {
-      setIsActiveRoute("/" + paths[1]);
-    }
-    if (paths[1] === "" || paths[1] === "/") {
-      document.getElementById("root")?.parentElement?.classList.add("dark");
-    } else {
-      document.getElementById("root")?.parentElement?.classList.remove("dark");
-    }
-  }, [location]);
-
-  const homeLink = () => {
-    navigate("/");
-  };
-
-  const catalogLink = () => {
-    navigate("/catalog");
-  };
-
-  const cartLink = () => {
-    navigate("/cart");
-  };
-
-  const profileLink = () => {
-    navigate("/profile");
-  };
 
   return (
     <div className={s.bottomMenu}>
       <button
-        className={cn(s.bottomMenuBtn, isActiveRoute === "/" && s.activeBtn)}
-        onClick={homeLink}
+        className={cn(s.bottomMenuBtn, activeRoute === "/" && s.activeBtn)}
+        onClick={() => navigate("/")}
       >
         <MainPageIcon />
-        <h5>Главная</h5>
+        <Typograph_9 color={activeRoute === "/" ? "blue" : "grey-second"}>
+          Главная
+        </Typograph_9>
       </button>
       <button
         className={cn(
           s.bottomMenuBtn,
-          isActiveRoute === "/catalog" && s.activeBtn
+          activeRoute === "/catalog" && s.activeBtn
         )}
-        onClick={catalogLink}
+        onClick={() => navigate("/catalog")}
       >
         <CatalogIcon />
-        <h5>Каталог</h5>
+        <Typograph_9
+          color={activeRoute === "/catalog" ? "blue" : "grey-second"}
+        >
+          Каталог
+        </Typograph_9>
       </button>
       <button
-        className={cn(
-          s.bottomMenuBtn,
-          isActiveRoute === "/cart" && s.activeBtn
-        )}
-        onClick={cartLink}
+        className={cn(s.bottomMenuBtn, activeRoute === "/cart" && s.activeBtn)}
+        onClick={() => navigate("/cart")}
       >
         <CartIcon />
-        <h5>Корзина</h5>
+        <Typograph_9 color={activeRoute === "/cart" ? "blue" : "grey-second"}>
+          Корзина
+        </Typograph_9>
       </button>
       <button
         className={cn(
           s.bottomMenuBtn,
-          isActiveRoute === "/profile" && s.activeBtn
+          activeRoute === "/profile" && s.activeBtn
         )}
-        onClick={profileLink}
+        onClick={() => navigate("/profile")}
       >
         <ProfileIcon />
-        <h5>Профиль</h5>
+        <Typograph_9
+          color={activeRoute === "/profile" ? "blue" : "grey-second"}
+        >
+          Профиль
+        </Typograph_9>
       </button>
     </div>
   );

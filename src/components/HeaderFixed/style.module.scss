@@ -1,0 +1,33 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.headerFixed::-webkit-scrollbar {
+  display: none;
+}
+
+.headerFixed {
+  background-color: $color-white;
+  position: fixed;
+  top: 0;
+  z-index: 12;
+  width: min(480px, 100vw);
+  height: min($size36px, $flexsize36px);
+
+  .infoBlock {
+    transition: opacity 0.5s linear;
+
+    .details {
+      gap: min($size11px, $flexsize11px);
+      h2:nth-child(2) {
+        color: $color-orange;
+      }
+    }
+  }
+  .opacity1 {
+    opacity: 1;
+  }
+
+  .opacity0 {
+    opacity: 0;
+  }
+}

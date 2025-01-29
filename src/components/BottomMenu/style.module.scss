@@ -18,7 +18,7 @@
   background-color: $color-white;
   bottom: 0px;
   border-top: 0.25px solid $color-dark-grey;
-  // margin-top: calc(100dvh - $size58px);
+  margin-top: calc(100dvh - $size58px);
 
   .bottomMenuBtn {
     padding: 0px;
@@ -30,17 +30,6 @@
     justify-content: space-between;
     align-items: center;
     background-color: $color-white;
-
-    h5 {
-      margin: 0;
-      padding: 0;
-      user-select: none;
-      color: $color-dark-grey;
-      font-weight: 500;
-      font-size: $size9px;
-      line-height: $size11px;
-      letter-spacing: min(0.22px, 0.046vw);
-    }
   }
 
   .activeBtn {
@@ -48,10 +37,6 @@
       path {
         fill: $color-blue;
       }
-    }
-
-    h5 {
-      color: $color-blue;
     }
   }
 
@@ -92,10 +77,6 @@
 
     .bottomMenuBtn {
       width: $flexsize50px;
-      h5 {
-        font-size: $flexsize9px;
-        line-height: $flexsize11px;
-      }
     }
     .bottomMenuBtn:nth-child(1) {
       svg {

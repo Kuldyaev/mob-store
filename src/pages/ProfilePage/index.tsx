@@ -1,8 +1,9 @@
 import { useState, lazy, Suspense, useEffect, useRef } from "react";
+import { dispatch, useSelector } from "@/store";
+import { setHeaderFixedShowed } from "@/store/slices/status";
 import ProfileTopAva from "@/components/ProfileTopAva";
 import {
   Typograph_24,
-  Typograph_15_5,
   Typograph_14_5,
   Typograph_12_5,
   Typograph_11_5,
@@ -152,25 +153,20 @@ const menu = [
 const ProfilePage = () => {
   const [activeMenuScreen, setActiveMenuScreen] = useState<string>("main");
   const elRef = useRef<HTMLDivElement | null>(null);
-  const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
+  const isShowed = useSelector((state) => state.status.headerFixed.isShowed);
 
   const handleScroll = () => {
     if (elRef.current) {
       const rect = elRef.current.getBoundingClientRect();
 
-      if (isShowedFixHeader) {
-        setIsShowedFixHeader(
-          Math.round((+rect.top * 17.727) / +rect.width) < 1
-        );
-      } else {
-        setIsShowedFixHeader(
-          Math.round((+rect.top * 17.727) / +rect.width) < 1
-        );
-      }
+      dispatch(
+        setHeaderFixedShowed(Math.round((+rect.top * 17.727) / +rect.width) < 1)
+      );
     }
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -276,25 +272,12 @@ const ProfilePage = () => {
           </Suspense>
         )}
       </div>
-      <div className={cn(s.headerFixed, "flex-row-center-center")}>
-        <div
-          className={cn(
-            s.infoBlock,
-            "flex-column-center-center",
-            isShowedFixHeader ? s.opacity1 : s.opacity0
-          )}
-        >
-          <Typograph_15_5>Профиль</Typograph_15_5>
-        </div>
-      </div>
+      <div className={cn(s.headerFixedSub, "flex-row-center-center")}></div>
       <div className={s.profileDesk} ref={elRef}>
         <div className={s.mainDesk}>
           <div className={s.profileDeskTop}>
             <div
-              className={cn(
-                s.smallTitle,
-                isShowedFixHeader ? s.opacity0 : s.opacity1
-              )}
+              className={cn(s.smallTitle, isShowed ? s.opacity0 : s.opacity1)}
             >
               <Typograph_24>Профиль</Typograph_24>
             </div>

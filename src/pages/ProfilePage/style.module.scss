@@ -1,24 +1,13 @@
 @use "./../../scss/colors.scss" as *;
 @use "./../../scss/variabels.scss" as *;
 
-.headerFixed {
+.headerFixedSub {
   background-color: $color-white;
   position: sticky;
   top: 0;
   z-index: 6;
   width: 100%;
   height: min($size36px, $flexsize36px);
-
-  .infoBlock {
-    transition: opacity 0.5s linear;
-  }
-
-  .opacity1 {
-    opacity: 1;
-  }
-  .opacity0 {
-    opacity: 0;
-  }
 }
 
 .secondDesk {
@@ -73,6 +62,7 @@
     z-index: 2;
 
     .smallTitle {
+      opacity: 0;
       transition: opacity 0.1s linear;
     }
     .opacity1 {
