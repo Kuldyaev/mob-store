@@ -82,14 +82,6 @@
       opacity: 0;
     }
 
-    h3 {
-      margin: 0;
-      padding: 0;
-      font-weight: 700;
-      margin-top: $size20px;
-      font-size: $size24px;
-    }
-
     .profileTopLine {
       display: flex;
       flex-direction: row;
@@ -111,8 +103,8 @@
           width: calc(100% - $size10px);
           height: $size35px;
 
-          h2 {
-            letter-spacing: calc(-1 * min(0.15px, 0.032vw));
+          h3:first-child {
+            margin-bottom: $size3px;
           }
         }
       }
@@ -172,30 +164,9 @@
           width: $size290px;
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
           justify-content: center;
-          h4,
-          h5 {
-            width: $size290px;
-            margin: 0;
-            border: none;
-            padding: 0;
-            user-select: none;
-          }
-
-          h4 {
-            color: $color-super-black;
-            font-weight: 400;
-            font-size: $size14-5px;
-            line-height: $size17-5px;
-          }
-          h5 {
-            color: $color-dark-grey;
-            font-weight: 400;
-            font-size: $size11-5px;
-            line-height: $size14px;
-            letter-spacing: calc(-1 * min(0.19px, 0.039vw));
-          }
+          gap: $size3px;
         }
       }
 
@@ -226,22 +197,12 @@
     padding: 0px;
     width: 100vw;
 
-    h1 {
-      margin-bottom: $flexsize15px;
-      margin-top: $flexsize10px;
-    }
-
     .profileDeskTop {
       height: $flexsize208px;
       width: $flexsize360px;
       padding: 0px $flexsize15px $flexsize15px $flexsize15px;
       border-radius: 0px 0px $flexsize25px $flexsize25px;
       margin-bottom: $flexsize8px;
-
-      h3 {
-        margin-top: $flexsize20px;
-        font-size: $flexsize24px;
-      }
 
       .profileTopLine {
         gap: $flexsize8px;
@@ -258,6 +219,10 @@
             padding: $flexsize10px 0 0 $flexsize10px;
             width: calc(100% - $flexsize10px);
             height: $flexsize35px;
+
+            h3:first-child {
+              margin-bottom: $flexsize3px;
+            }
           }
         }
       }
@@ -291,20 +256,7 @@
           .profileDeskMenuText {
             max-width: $flexsize290px;
             width: $flexsize290px;
-
-            h4,
-            h5 {
-              width: $flexsize290px;
-            }
-
-            h4 {
-              font-size: $flexsize14-5px;
-              line-height: $flexsize17-5px;
-            }
-            h5 {
-              font-size: $flexsize11-5px;
-              line-height: $flexsize14px;
-            }
+            gap: $flexsize3px;
           }
         }
 

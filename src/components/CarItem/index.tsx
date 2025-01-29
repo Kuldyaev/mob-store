@@ -3,11 +3,8 @@ import { useState } from "react";
 import { ItemCounter } from "../ItemCounter";
 import { WarningInfoIcon, ArrowToRight } from "@/features/Icons";
 import {
-  Paragraph2,
-  Paragraph3,
-  Paragraph4,
-  Paragraph5_b,
-  Paragraph5_g,
+  Typograph_14_5,
+  Typograph_12_5,
   CheckBox,
   DeleteBtn,
   FavoriteBtn,
@@ -48,8 +45,12 @@ const CartItem: FC<CartItemProps> = ({ item }) => {
       <div className={s.textInfo}>
         <div className={s.itemHeader}>
           <div className={s.desc}>
-            <Paragraph2>{item.brand}</Paragraph2>
-            <Paragraph3>{item.desc}</Paragraph3>
+            <Typograph_12_5 fw="fw600" spacing={-2}>
+              {item.brand}
+            </Typograph_12_5>
+            <Typograph_12_5 fw="fw400" spacing={-3}>
+              {item.desc}{" "}
+            </Typograph_12_5>
             {!item.available && (
               <div className={s.notavailable}>
                 Разобрали, но есть другие размеры
@@ -71,18 +72,20 @@ const CartItem: FC<CartItemProps> = ({ item }) => {
           </div> */}
           {item.available && (
             <div className={s.bodySettings}>
-              <Paragraph5_g>Размер:</Paragraph5_g>
-              <Paragraph5_b>
+              <Typograph_12_5 fw="fw400" spacing={-2} color="grey-second">
+                Размер:
+              </Typograph_12_5>
+              <Typograph_12_5 fw="fw400" spacing={-2}>
                 {item.size} <span>|</span> {item.delivery} дней
-              </Paragraph5_b>
+              </Typograph_12_5>
               <ArrowToRight />
             </div>
           )}
           {item.available && (
             <div className={s.price}>
-              <Paragraph4>
+              <Typograph_14_5 fw="fw600" spacing={-3}>
                 {item.price} <span>₽</span>
-              </Paragraph4>
+              </Typograph_14_5>
             </div>
           )}
         </div>

@@ -10,50 +10,13 @@
 
   .title {
     margin-bottom: $size15px;
-    h3 {
-      font-size: $size20px;
-      line-height: $size16px;
-      font-weight: 700;
-      letter-spacing: calc(-1 * min(0.24px, 0.051vw));
-    }
-    h2 {
-      font-size: $size11-5px;
-      line-height: $size16px;
-      font-weight: 400;
-      letter-spacing: calc(-2 * min(0.19px, 0.039vw));
-    }
   }
 
   .totalSum {
     margin-bottom: $size8px;
-
-    h2:first-child {
-      font-size: $size12-5px;
-      font-weight: 400;
-      letter-spacing: calc(-3 * min(0.15px, 0.032vw));
-    }
-
-    h2:nth-child(2) {
-      font-size: $size12-5px;
-      line-height: $size16px;
-      font-weight: 600;
-      letter-spacing: calc(-3 * min(0.15px, 0.032vw));
-    }
   }
   .discount {
     margin-bottom: $size15px;
-    h2:first-child {
-      font-size: $size12-5px;
-      font-weight: 400;
-      letter-spacing: calc(-3 * min(0.15px, 0.032vw));
-    }
-    h2:nth-child(2) {
-      font-size: $size12-5px;
-      line-height: $size16px;
-      font-weight: 600;
-      color: $color-blue;
-      letter-spacing: calc(-3 * min(0.15px, 0.032vw));
-    }
   }
 
   button {
@@ -81,37 +44,14 @@
 
     .title {
       margin-bottom: $flexsize15px;
-      h3 {
-        font-size: $flexsize20px;
-        line-height: $flexsize16px;
-      }
-      h2 {
-        font-size: $flexsize11-5px;
-        line-height: $flexsize16px;
-      }
     }
 
     .totalSum {
       margin-bottom: $flexsize8px;
-      h2:first-child {
-        font-size: $flexsize12-5px;
-      }
-
-      h2:nth-child(2) {
-        font-size: $flexsize12-5px;
-        line-height: $flexsize16px;
-      }
     }
 
     .discount {
       margin-bottom: $flexsize15px;
-      h2:first-child {
-        font-size: $flexsize12-5px;
-      }
-      h2:nth-child(2) {
-        font-size: $flexsize12-5px;
-        line-height: $flexsize16px;
-      }
     }
 
     button {

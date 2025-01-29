@@ -2,13 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import CartItem from "@/components/CarItem";
 import CartResults from "@/components/CartResults";
 import {
-  Paragraph1,
-  Paragraph4,
-  Paragraph5_g,
-  Paragraph7,
-  Paragraph9,
   CheckBox,
   DeleteBtn,
+  Typograph_24,
+  Typograph_15_5,
+  Typograph_14_5,
+  Typograph_12_5,
+  Typograph_11_5,
 } from "@/components/uikit";
 
 import { ArrowToRight } from "@/features/Icons";
@@ -113,10 +113,14 @@ const CartPage = () => {
             isShowedFixHeader ? s.opacity1 : s.opacity0
           )}
         >
-          <Paragraph9>Корзина</Paragraph9>
+          <Typograph_15_5>Корзина</Typograph_15_5>
           <div className={cn(s.details, "flex-row-center-center")}>
-            <Paragraph5_g>5 товаров</Paragraph5_g>
-            <Paragraph5_g>2 недоступно</Paragraph5_g>
+            <Typograph_12_5 color="grey-second" spacing={-2} fw="fw400">
+              5 товаров
+            </Typograph_12_5>
+            <Typograph_12_5 color="orange" spacing={-2} fw="fw400">
+              2 недоступно
+            </Typograph_12_5>
           </div>
         </div>
       </div>
@@ -128,17 +132,23 @@ const CartPage = () => {
               isShowedFixHeader ? s.opacity0 : s.opacity1
             )}
           >
-            <Paragraph1>Корзина</Paragraph1>
+            <Typograph_24>Корзина</Typograph_24>
             <div className={s.details}>
-              <Paragraph5_g>5 товаров</Paragraph5_g>
-              <Paragraph5_g>2 недоступно</Paragraph5_g>
+              <Typograph_12_5 color="grey-second" spacing={-2} fw="fw400">
+                5 товаров
+              </Typograph_12_5>
+              <Typograph_12_5 color="orange" spacing={-2} fw="fw400">
+                2 недоступно
+              </Typograph_12_5>
             </div>
           </div>
           <div className={cn(s.freeDeliveryBlock, "flex-column-start-start")}>
             <div className={cn(s.freeDeliveryInfo, "flex-row-between-center")}>
               <div className={cn(s.title, "flex-column-start-start")}>
-                <Paragraph4>Доставка курьером </Paragraph4>
-                <Paragraph5_g>Бесплатно</Paragraph5_g>
+                <Typograph_14_5 spacing={-3}>Доставка курьером </Typograph_14_5>
+                <Typograph_12_5 spacing={-2} color="grey-second" fw="fw400">
+                  Бесплатно
+                </Typograph_12_5>
               </div>
               <ArrowToRight />
             </div>
@@ -149,17 +159,25 @@ const CartPage = () => {
                 "flex-row-between-center"
               )}
             >
-              <Paragraph7>12 000₽</Paragraph7>
-              <Paragraph7>22 000₽</Paragraph7>
+              <Typograph_11_5 color="blue" spacing={-2} fw="fw500">
+                12 000₽
+              </Typograph_11_5>
+              <Typograph_11_5 color="blue" spacing={-2} fw="fw500">
+                22 000₽
+              </Typograph_11_5>
             </div>
           </div>
           <div className={cn(s.groupActionsBlock, "flex-row-between-center")}>
             <div className={cn(s.deleteSelected, "flex-row-start-center")}>
               <DeleteBtn />
-              <Paragraph5_g>Удалить выбранные</Paragraph5_g>
+              <Typograph_12_5 spacing={-2} color="grey-second" fw="fw500">
+                Удалить выбранные
+              </Typograph_12_5>
             </div>
             <div className={cn(s.chooseAll, "flex-row-end-center")}>
-              <Paragraph5_g>Выбрать все</Paragraph5_g>
+              <Typograph_12_5 spacing={-2} color="grey-second" fw="fw500">
+                Выбрать все
+              </Typograph_12_5>
               <CheckBox
                 checked={isSelectedAll}
                 changeValue={() => {
@@ -185,7 +203,11 @@ const CartPage = () => {
                   : "none",
             }}
           >
-            <div className={s.unavalableTitle}>Недоступные товары</div>
+            <div className={s.unavalableTitle}>
+              <Typograph_12_5 spacing={-3} color="grey-second" fw="fw600">
+                Недоступные товары
+              </Typograph_12_5>
+            </div>
             {goods
               .filter((item) => !item.available)
               .map((item) => (
