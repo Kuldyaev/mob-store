@@ -54,7 +54,7 @@ const HomePage = () => {
         ? setIsFixHeaderSmall(true)
         : setIsFixHeaderSmall(false);
 
-      console.log(+rect.top + 0.1 * +rect.width);
+      // console.log(+rect.top + 0.1 * +rect.width);
     }
   };
 

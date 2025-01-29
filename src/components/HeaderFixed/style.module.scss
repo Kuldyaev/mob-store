@@ -1,0 +1,24 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.headerFixed::-webkit-scrollbar {
+  display: none;
+}
+
+.headerFixed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min(480px, 100vw);
+  height: $size36px;
+  position: fixed;
+  z-index: 12;
+
+  background-color: $color-white;
+}
+
+@media screen and (max-width: 480px) {
+  .headerFixed {
+    height: $flexsize36px;
+  }
+}
