@@ -15,14 +15,17 @@ import s from "./style.module.scss";
 const HomePage = () => {
   const elRef = useRef<HTMLDivElement | null>(null);
   const shadow = useRef<HTMLDivElement | null>(null);
+
   const isShowed = useSelector((state) => state.status.headerFixed.isShowed);
 
   // const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
   // const [isFixHeaderSmall, setIsFixHeaderSmall] = useState<boolean>(false);
 
+
   const handleScroll = () => {
     if (elRef.current) {
       const rect = elRef.current.getBoundingClientRect();
+      const currYpos = Math.round((+rect.top * 390) / +rect.width);
 
       dispatch(
         setHeaderFixedShowed(Math.round((+rect.top * 100) / +rect.width) < -15)
@@ -37,12 +40,6 @@ const HomePage = () => {
         ).toFixed(2);
       }
 
-      // if (isShowedFixHeader) {
-      //   setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
-      // } else {
-      //   setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
-      // }
-
       if (shadow.current) {
         if (Number((+rect.top / (+rect.width * 0.964)).toFixed(2)) < 0) {
           shadow.current.style.opacity = "1";
@@ -54,21 +51,25 @@ const HomePage = () => {
         }
       }
 
-      // +rect.top + 0.08 * +rect.width < 0
-      //   ? setIsFixHeaderSmall(true)
-      //   : setIsFixHeaderSmall(false);
 
-      // +rect.top + 0.08 * +rect.width < 0
-      //   ? setIsFixHeaderSmall(true)
-      //   : setIsFixHeaderSmall(false);
+
     }
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
     window.addEventListener("scroll", handleScroll);
+    setTopFixHeaderText(Math.min((49 * window.outerWidth) / 390, 60.31));
+    setLeftFixHeaderText(Math.min(((15 * window.outerWidth) / 390, 18.46)));
+    setFontFixHeaderText(Math.min((24 * window.outerWidth) / 390, 29.54));
+    setHeightFixHeaderText(Math.min((73 * window.outerWidth) / 390, 89.85));
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      setTopFixHeaderText(Math.min((49 * window.outerWidth) / 390, 60.31));
+      setLeftFixHeaderText(Math.min(((15 * window.outerWidth) / 390, 18.46)));
+      setFontFixHeaderText(Math.min((24 * window.outerWidth) / 390, 29.54));
+      setHeightFixHeaderText(Math.min((73 * window.outerWidth) / 390, 89.85));
     };
   }, []);
 
@@ -80,6 +81,7 @@ const HomePage = () => {
 
   return (
     <>
+
       <div className={s.shade} ref={shadow}></div>
       <div className={s.back}>
         <div className={s.topImgBlock}>
@@ -95,9 +97,11 @@ const HomePage = () => {
           </div>
           <div className={s.homedesk}>
             <div
+
               className={cn(s.smallTitle, isShowed ? s.opacity0 : s.opacity1)}
             >
               <Typograph_24>Главная</Typograph_24>
+
             </div>
             <SearchBar />
             <StoriesBar />
