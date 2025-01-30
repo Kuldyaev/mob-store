@@ -19,6 +19,7 @@ import s from "./style.module.scss";
 const CartPage = () => {
   const elRef = useRef<HTMLDivElement | null>(null);
   const isShowed = useSelector((state) => state.status.headerFixed.isShowed);
+  const goods = useSelector((state) => state.cart.goods);
   const [isSelectedAll, setIsSelectedAll] = useState<boolean>(false);
 
   const handleScroll = () => {
@@ -38,61 +39,6 @@ const CartPage = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const goods = [
-    {
-      id: 1,
-      brand: "Nike",
-      type: "shoes",
-      img: "nike",
-      desc: "Кроссовки The Powerpuff Girls x Nike SB Dunk Low «Buttercup»",
-      size: "43 EU",
-      delivery: "5-10",
-      color: "Зеленый",
-      price: "24 690",
-      available: true,
-      warning: "Осталось 3 шт по текущей цене",
-    },
-    {
-      id: 2,
-      brand: "Vans",
-      type: "shoes",
-      img: "vans",
-      desc: "Peaches x Vans Knu Skool «Black Pink»",
-      size: "38 EU",
-      delivery: "5-10",
-      color: "Красный",
-      price: "15 390",
-      available: true,
-      warning: null,
-    },
-    {
-      id: 3,
-      brand: "Nike",
-      type: "shoes",
-      img: "nike",
-      desc: "Кроссовки The Powerpuff Girls x Nike SB Dunk Low «Buttercup»",
-      size: "43 EU",
-      delivery: "5-10",
-      color: "Синий",
-      price: "24 690",
-      available: false,
-      warning: null,
-    },
-    {
-      id: 4,
-      brand: "New Balance",
-      type: "shoes",
-      img: "newbalance",
-      desc: "New Balance 2002R «White Beige»",
-      size: "39 EU",
-      delivery: "5-10",
-      color: "Синий",
-      price: "9 990",
-      available: true,
-      warning: null,
-    },
-  ];
 
   const cartResults = {
     quontityTotal: 5,

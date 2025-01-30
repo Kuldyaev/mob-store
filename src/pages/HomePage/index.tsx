@@ -17,9 +17,6 @@ const HomePage = () => {
   const shadow = useRef<HTMLDivElement | null>(null);
   const isShowed = useSelector((state) => state.status.headerFixed.isShowed);
 
-  // const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
-  // const [isFixHeaderSmall, setIsFixHeaderSmall] = useState<boolean>(false);
-
   const handleScroll = () => {
     if (elRef.current) {
       const rect = elRef.current.getBoundingClientRect();
@@ -37,12 +34,6 @@ const HomePage = () => {
         ).toFixed(2);
       }
 
-      // if (isShowedFixHeader) {
-      //   setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
-      // } else {
-      //   setIsShowedFixHeader(Math.round((+rect.top * 6) / +rect.width) < 1);
-      // }
-
       if (shadow.current) {
         if (Number((+rect.top / (+rect.width * 0.964)).toFixed(2)) < 0) {
           shadow.current.style.opacity = "1";
@@ -53,14 +44,6 @@ const HomePage = () => {
           ).toFixed(2);
         }
       }
-
-      // +rect.top + 0.08 * +rect.width < 0
-      //   ? setIsFixHeaderSmall(true)
-      //   : setIsFixHeaderSmall(false);
-
-      // +rect.top + 0.08 * +rect.width < 0
-      //   ? setIsFixHeaderSmall(true)
-      //   : setIsFixHeaderSmall(false);
     }
   };
 
