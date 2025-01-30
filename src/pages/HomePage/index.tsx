@@ -18,10 +18,6 @@ const HomePage = () => {
 
   const isShowed = useSelector((state) => state.status.headerFixed.isShowed);
 
-  // const [isShowedFixHeader, setIsShowedFixHeader] = useState<boolean>(false);
-  // const [isFixHeaderSmall, setIsFixHeaderSmall] = useState<boolean>(false);
-
-
   const handleScroll = () => {
     if (elRef.current) {
       const rect = elRef.current.getBoundingClientRect();
@@ -50,9 +46,6 @@ const HomePage = () => {
           ).toFixed(2);
         }
       }
-
-
-
     }
   };
 
