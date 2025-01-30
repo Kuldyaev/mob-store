@@ -121,15 +121,15 @@ button {
 
 .animHeader {
   color: black;
-  transform: translate(0px, 0px) scale(1);
-  transition-property: transform;
-  transition-duration: 1s;
-  transition-timing-function: linear;
+  // transform: translate(0px, 0px) scale(1);
+  // transition-property: transform;
+  // transition-duration: 0.3s;
+  // transition-timing-function: linear;
 }
 .animHeader.inCenter {
   transform: translate($size140px, -1 * $size42px) scale(0.666);
   transition-property: transform;
-  transition-duration: 1s;
+  transition-duration: 0.3s;
   transition-timing-function: linear;
 }
 
@@ -184,6 +184,15 @@ button {
 }
 .blue {
   color: $color-blue;
+
+.homeTopHeaderFixed {
+  height: min($size73px, $flexsize73px);
+  transition: height 2s linear;
+}
+
+.smaller {
+  height: 43px;
+
 }
 
 @media (prefers-color-scheme: light) {

@@ -18,8 +18,14 @@
   top: 0;
   z-index: 6;
   width: 100%;
-  height: min($size73px, $flexsize73px);
-  transition: opacity 0.5s linear;
+  // max-height: min($size73px, $flexsize73px);
+  transition: opacity 0.3s linear;
+
+  .smallTitle {
+    position: absolute;
+    width: min(480px, 100vw);
+    height: min($size43px, $flexsize43px);
+  }
 
   .infoBlock {
     position: absolute;
@@ -29,8 +35,14 @@
     flex-direction: row;
     justify-content: flex-start;
     text-align: left;
-    left: min($size15px, $flexsize15px);
-    top: min($size49px, $flexsize49px);
+    // left: min($size15px, $flexsize15px);
+    // top: min($size49px, $flexsize49px);
+
+    h1 {
+      padding: 0;
+      margin: 0;
+      line-height: min($size24px, $flexsize24px);
+    }
   }
 
   .infoBlock.infoBlockSmall {
@@ -139,6 +151,20 @@
       opacity: 1;
     }
     .opacity0 {
+      opacity: 0;
+    }
+
+    .titlePlace {
+      color: $color-black;
+      width: 100%;
+      height: min($size24px, $flexsize24px);
+      padding-bottom: min($size15px, $flexsize15px);
+      opacity: 1;
+      transition: opacity 3s;
+    }
+
+    .blackText {
+      color: $color-white;
       opacity: 0;
     }
 

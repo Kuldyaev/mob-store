@@ -15,11 +15,13 @@ import s from "./style.module.scss";
 const HomePage = () => {
   const elRef = useRef<HTMLDivElement | null>(null);
   const shadow = useRef<HTMLDivElement | null>(null);
+
   const isShowed = useSelector((state) => state.status.headerFixed.isShowed);
 
   const handleScroll = () => {
     if (elRef.current) {
       const rect = elRef.current.getBoundingClientRect();
+      const currYpos = Math.round((+rect.top * 390) / +rect.width);
 
       dispatch(
         setHeaderFixedShowed(Math.round((+rect.top * 100) / +rect.width) < -15)
@@ -50,8 +52,17 @@ const HomePage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     window.addEventListener("scroll", handleScroll);
+    setTopFixHeaderText(Math.min((49 * window.outerWidth) / 390, 60.31));
+    setLeftFixHeaderText(Math.min(((15 * window.outerWidth) / 390, 18.46)));
+    setFontFixHeaderText(Math.min((24 * window.outerWidth) / 390, 29.54));
+    setHeightFixHeaderText(Math.min((73 * window.outerWidth) / 390, 89.85));
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      setTopFixHeaderText(Math.min((49 * window.outerWidth) / 390, 60.31));
+      setLeftFixHeaderText(Math.min(((15 * window.outerWidth) / 390, 18.46)));
+      setFontFixHeaderText(Math.min((24 * window.outerWidth) / 390, 29.54));
+      setHeightFixHeaderText(Math.min((73 * window.outerWidth) / 390, 89.85));
     };
   }, []);
 
@@ -63,6 +74,7 @@ const HomePage = () => {
 
   return (
     <>
+
       <div className={s.shade} ref={shadow}></div>
       <div className={s.back}>
         <div className={s.topImgBlock}>
@@ -78,9 +90,11 @@ const HomePage = () => {
           </div>
           <div className={s.homedesk}>
             <div
+
               className={cn(s.smallTitle, isShowed ? s.opacity0 : s.opacity1)}
             >
               <Typograph_24>Главная</Typograph_24>
+
             </div>
             <SearchBar />
             <StoriesBar />
