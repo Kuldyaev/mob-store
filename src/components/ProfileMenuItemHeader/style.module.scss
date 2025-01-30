@@ -1,0 +1,55 @@
+@use "./../../scss/colors.scss" as *;
+@use "./../../scss/variabels.scss" as *;
+
+.profileItemHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: min(480px, 100vw);
+  padding-top: $size6px;
+  height: $size37px;
+  background-color: $color-white;
+  color: $color-black;
+
+  .left,
+  .right {
+    width: $size50px;
+    height: $size31px;
+  }
+
+  .left {
+    margin-left: $size16px;
+  }
+
+  .right {
+    margin-right: $size16px;
+  }
+
+  .center {
+    padding-top: $size6px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profileItemHeader {
+    height: $flexsize37px;
+    padding-top: $flexsize6px;
+    .left,
+    .right {
+      width: $flexsize50px;
+      height: $flexsize31px;
+    }
+
+    .left {
+      margin-left: $flexsize16px;
+    }
+
+    .right {
+      margin-right: $flexsize16px;
+    }
+    .center {
+      padding-top: $flexsize6px;
+    }
+  }
+}

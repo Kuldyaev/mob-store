@@ -119,6 +119,19 @@ button {
   justify-content: center;
 }
 
+.flex-column-center-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.flex-column-start-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
 .animHeader {
   color: black;
   transform: translate(0px, 0px) scale(1);

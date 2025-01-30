@@ -29,6 +29,7 @@ import SlideIndicatorIcon from "./SlideIndicatorIcon";
 import WarningInfoIcon from "./WarningInfoIcon";
 import PlusIcon from "./PlusIcon";
 import MinusIcon from "./MinusIcon";
+import CameraIcon from "./CameraIcon";
 
 export {
   SearchIcon,
@@ -62,4 +63,5 @@ export {
   WarningInfoIcon,
   PlusIcon,
   MinusIcon,
+  CameraIcon,
 };
