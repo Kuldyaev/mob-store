@@ -1,42 +1,255 @@
 @use "./../../../scss/colors.scss" as *;
 @use "./../../../scss/variabels.scss" as *;
 
-.profileBrands {
+.profileSettings {
   display: flex;
   flex-direction: row;
   width: min(480px, 100vw);
   display: flex;
   flex-direction: column;
+  background-color: $color-grey;
 
-  .profileBrandsHeader {
-    width: 92%;
-    padding: 0px 4%;
-    height: $size43px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  .topBlock {
+    width: 100%;
+    background-color: $color-white;
+    height: $size189px;
+    padding-bottom: $size15px;
+    padding-top: $size10px;
+    border-radius: 0 0 $size25px $size25px;
+    margin-bottom: $size8px;
+
+    .ava {
+      background-color: aqua;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center;
+      width: $size80px;
+      max-width: $size80px;
+      height: $size80px;
+      border-radius: $size25px;
+      margin-bottom: $size10px;
+      cursor: pointer;
+      svg {
+        width: $size32px;
+        height: $size32px;
+      }
+    }
+
+    .downloadAva {
+      width: $size121px;
+      height: $size16px;
+      margin-bottom: $size20px;
+      cursor: pointer;
+    }
+
+    .name {
+      background-color: $color-grey;
+      height: $size33px;
+      width: $size330px;
+      padding: $size15px;
+      border-radius: $size14px;
+
+      .infoBlock {
+        width: $size255px;
+        height: $size33px;
+        gap: $size3px;
+      }
+
+      .moreBtnPlace {
+        height: $size33px;
+        width: $size50px;
+
+        svg {
+          width: $size6px;
+          height: $size10px;
+        }
+      }
+    }
   }
 
-  .profileBrandsBody {
-    margin-top: $size10px;
-    width: 92%;
-    padding: 0px 4%;
+  .mainBlock {
+    width: 100%;
+    background-color: $color-white;
+    height: $size567px;
+    padding-bottom: $size48px;
+    padding-top: $size15px;
+    border-radius: $size25px $size25px 0 0;
     gap: $size15px;
-    display: flex;
-    flex-direction: column;
+
+    .persInfo,
+    .otherInfo {
+      background-color: $color-grey;
+      width: $size345px;
+      padding-left: $size15px;
+      border-radius: $size14px;
+    }
+
+    .persInfo {
+      height: $size228px;
+    }
+    .otherInfo {
+      height: $size285px;
+    }
+
+    button {
+      width: $size360px;
+      height: $size44px;
+      min-height: $size44px;
+      padding: 0px;
+      border-radius: $size10px;
+      border: none;
+      background-color: rgba(255, 40, 84, 0.07);
+    }
+  }
+
+  .item {
+    height: $size32px;
+    width: $size345px;
+    padding: $size12px 0;
+    border-bottom: 0.25px solid #b5bdd2;
+
+    .infoBlock {
+      width: $size255px;
+      height: $size33px;
+      gap: $size3px;
+    }
+
+    .moreBtnPlace {
+      height: $size33px;
+      width: $size50px;
+      margin-right: $size15px;
+
+      svg {
+        width: $size6px;
+        height: $size10px;
+      }
+    }
+  }
+
+  .item:first-child {
+    padding-top: $size15px;
+    padding-bottom: $size10px;
+  }
+
+  .item:last-child {
+    border-bottom: none;
+    padding-top: $size11px;
+    padding-bottom: $size15px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .profileBrands {
-    .profileBrandsHeader {
-      height: $flexsize43px;
+  .profileSettings {
+    display: flex;
+
+    .topBlock {
+      height: $flexsize189px;
+      padding-bottom: $flexsize15px;
+      padding-top: $flexsize10px;
+      border-radius: 0 0 $flexsize25px $flexsize25px;
+      margin-bottom: $flexsize8px;
+
+      .ava {
+        width: $flexsize80px;
+        height: $flexsize80px;
+        max-width: $flexsize80px;
+        border-radius: $flexsize25px;
+        margin-bottom: $flexsize10px;
+
+        svg {
+          width: $flexsize32px;
+          height: $flexsize32px;
+        }
+      }
+
+      .downloadAva {
+        width: $flexsize121px;
+        height: $flexsize16px;
+        margin-bottom: $flexsize20px;
+      }
+
+      .name {
+        height: $flexsize33px;
+        width: $flexsize330px;
+        padding: $flexsize15px;
+        border-radius: $flexsize14px;
+
+        .infoBlock {
+          width: $flexsize255px;
+          height: $flexsize33px;
+          gap: $flexsize3px;
+        }
+
+        .moreBtnPlace {
+          height: $flexsize33px;
+          width: $flexsize50px;
+          svg {
+            width: $flexsize6px;
+            height: $flexsize10px;
+          }
+        }
+      }
     }
 
-    .profileBrandsBody {
-      margin-top: $flexsize10px;
+    .mainBlock {
+      height: $flexsize567px;
+      padding-bottom: $flexsize48px;
+      padding-top: $flexsize15px;
+      border-radius: $flexsize25px $flexsize25px 0 0;
       gap: $flexsize15px;
+
+      .persInfo,
+      .otherInfo {
+        width: $flexsize345px;
+        padding-left: $flexsize15px;
+        border-radius: $flexsize14px;
+      }
+
+      .persInfo {
+        height: $flexsize228px;
+      }
+      .otherInfo {
+        height: $flexsize285px;
+      }
+      button {
+        width: $flexsize360px;
+        height: $flexsize44px;
+        border-radius: $flexsize10px;
+        min-height: $flexsize44px;
+      }
+    }
+
+    .item {
+      height: $flexsize32px;
+      width: $flexsize345px;
+      padding: $flexsize12px 0;
+
+      .infoBlock {
+        width: $flexsize255px;
+        height: $flexsize33px;
+        gap: $flexsize3px;
+      }
+
+      .moreBtnPlace {
+        height: $flexsize33px;
+        width: $flexsize50px;
+        margin-right: $flexsize15px;
+        svg {
+          width: $flexsize6px;
+          height: $flexsize10px;
+        }
+      }
+    }
+
+    .item:first-child {
+      padding-top: $flexsize15px;
+      padding-bottom: $flexsize10px;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+      padding-top: $flexsize11px;
+      padding-bottom: $flexsize15px;
     }
   }
 }
