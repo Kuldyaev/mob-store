@@ -11,6 +11,8 @@
   height: $size37px;
   background-color: $color-white;
   color: $color-black;
+  position: sticky;
+  top: 0;
 
   .left,
   .right {

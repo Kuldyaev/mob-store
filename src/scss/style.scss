@@ -55,9 +55,9 @@ body {
 
 main {
   // background-color: white;
-  color: black;
+  color: $color-black;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100dvh - min($size57px, $flexsize57px));
 }
 
 main::-webkit-scrollbar {

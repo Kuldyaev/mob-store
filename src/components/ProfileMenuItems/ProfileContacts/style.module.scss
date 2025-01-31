@@ -1,42 +1,31 @@
 @use "./../../../scss/colors.scss" as *;
 @use "./../../../scss/variabels.scss" as *;
 
-.profileBrands {
-  display: flex;
-  flex-direction: row;
-  width: min(480px, 100vw);
-  display: flex;
-  flex-direction: column;
-
-  .profileBrandsHeader {
-    width: 92%;
-    padding: 0px 4%;
-    height: $size43px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .profileBrandsBody {
-    margin-top: $size10px;
-    width: 92%;
-    padding: 0px 4%;
-    gap: $size15px;
-    display: flex;
-    flex-direction: column;
+.profileContacts {
+  width: calc(480px - $size30px);
+  margin-top: calc(100dvh - $size200px);
+  min-height: calc(100dvh - $size90px);
+  margin-left: $size15px;
+  gap: $size7px;
+  .empty {
+    background-color: $color-grey;
+    width: $size360px;
+    height: $size44px;
+    border-radius: $size14px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .profileBrands {
-    .profileBrandsHeader {
-      height: $flexsize43px;
-    }
-
-    .profileBrandsBody {
-      margin-top: $flexsize10px;
-      gap: $flexsize15px;
+  .profileContacts {
+    width: $flexsize360px;
+    margin-left: $flexsize15px;
+    margin-top: calc(100dvh - $flexsize200px);
+    gap: $flexsize7px;
+    min-height: calc(100dvh - $flexsize90px);
+    .empty {
+      width: $flexsize360px;
+      height: $flexsize44px;
+      border-radius: $flexsize14px;
     }
   }
 }

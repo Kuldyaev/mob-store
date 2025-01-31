@@ -49,3 +49,17 @@
   padding: 12px 24px;
   font-size: 16px;
 }
+.btn--full {
+  width: 100%;
+  height: min(54.154px, 11.28vw);
+  border-radius: min(12.308px, 2.56vw);
+}
+.btn--15_5 {
+  font-size: min(3.974vw, 19.077px);
+  font-weight: 600;
+  letter-spacing: calc(-1.5 * min(0.039vw, 0.19px));
+}
+.btn--14_5 h5 {
+  font-size: min(3.72vw, 17.846px);
+  font-weight: 400;
+}

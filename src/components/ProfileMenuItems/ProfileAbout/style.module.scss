@@ -1,42 +1,29 @@
 @use "./../../../scss/colors.scss" as *;
 @use "./../../../scss/variabels.scss" as *;
 
-.profileBrands {
-  display: flex;
-  flex-direction: row;
-  width: min(480px, 100vw);
-  display: flex;
-  flex-direction: column;
-
-  .profileBrandsHeader {
-    width: 92%;
-    padding: 0px 4%;
-    height: $size43px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .profileBrandsBody {
-    margin-top: $size10px;
-    width: 92%;
-    padding: 0px 4%;
-    gap: $size15px;
-    display: flex;
-    flex-direction: column;
+.profileAbout {
+  width: 480px;
+  margin-top: $size10px;
+  min-height: calc(100dvh - $size57px);
+  gap: $size7px;
+  .empty {
+    background-color: $color-grey;
+    width: $size360px;
+    height: $size44px;
+    border-radius: $size14px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .profileBrands {
-    .profileBrandsHeader {
-      height: $flexsize43px;
-    }
-
-    .profileBrandsBody {
-      margin-top: $flexsize10px;
-      gap: $flexsize15px;
+  .profileAbout {
+    width: 100vw;
+    margin-top: $flexsize10px;
+    gap: $flexsize7px;
+    min-height: calc(100dvh - $flexsize57px);
+    .empty {
+      width: $flexsize360px;
+      height: $flexsize44px;
+      border-radius: $flexsize14px;
     }
   }
 }
