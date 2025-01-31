@@ -5,9 +5,8 @@ import {
   Typograph_15_5,
   Typograph_11_5,
   Typograph_14_5,
+  Button,
 } from "@/components/uikit";
-
-import { Button } from "@/components/uikit";
 import s from "./style.module.scss";
 import cn from "classnames";
 
@@ -154,6 +153,7 @@ const ProfileSettings: FC<ProfileSettingsProps> = ({ title, onClickBack }) => {
             Выйти из аккаунта
           </Typograph_14_5>
         </button>
+        <Button version="warning" label="Выйти из аккаунта" fontSize="14_5" />
       </div>
     </div>
   );

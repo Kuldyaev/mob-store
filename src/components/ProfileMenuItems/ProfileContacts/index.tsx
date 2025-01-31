@@ -1,6 +1,8 @@
 import { FC } from "react";
-import { Paragraph9, BackBtn } from "@/components/uikit";
+import ProfileMenuItemHeader from "@/components/ProfileMenuItemHeader";
+import { Button } from "@/components/uikit";
 import s from "./style.module.scss";
+import cn from "classnames";
 
 interface ProfileContactsProps {
   title: string;
@@ -9,15 +11,12 @@ interface ProfileContactsProps {
 
 const ProfileContacts: FC<ProfileContactsProps> = ({ title, onClickBack }) => {
   return (
-    <div className={s.profileBrands}>
-      <div className={s.profileBrandsHeader}>
-        <BackBtn onClick={onClickBack} />
-        <Paragraph9>{title}</Paragraph9>
-        <div>{}</div>
+    <>
+      <ProfileMenuItemHeader title={title} onClickBack={onClickBack} />
+      <div className={cn(s.profileContacts, "flex-column-start-center")}>
+        <Button label="Перейти в Telegram" />
       </div>
-
-      <div className={s.ProfileSettingsBody}>ProfileContacts</div>
-    </div>
+    </>
   );
 };
 
