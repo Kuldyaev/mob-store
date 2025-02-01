@@ -1,6 +1,8 @@
 import { FC } from "react";
-import { Paragraph9, BackBtn } from "@/components/uikit";
+import ProfileMenuItemHeader from "@/components/ProfileMenuItemHeader";
+import { Button } from "@/components/uikit";
 import s from "./style.module.scss";
+import cn from "classnames";
 
 interface ProfilePromoProps {
   title: string;
@@ -9,15 +11,15 @@ interface ProfilePromoProps {
 
 const ProfilePromo: FC<ProfilePromoProps> = ({ title, onClickBack }) => {
   return (
-    <div className={s.profileBrands}>
-      <div className={s.profileBrandsHeader}>
-        <BackBtn onClick={onClickBack} />
-        <Paragraph9>{title}</Paragraph9>
-        <div>{}</div>
+    <>
+      <ProfileMenuItemHeader title={title} onClickBack={onClickBack} />
+      <div className={cn(s.profilePromo, "flex-column-start-center")}>
+        <div className={s.promoItem}>
+          <Button label="Выбрать товары" />
+        </div>
+        <div className={s.promoItem}></div>
       </div>
-
-      <div className={s.ProfileSettingsBody}>ProfilePromo</div>
-    </div>
+    </>
   );
 };
 

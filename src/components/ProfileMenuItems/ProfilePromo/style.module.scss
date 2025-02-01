@@ -1,42 +1,33 @@
 @use "./../../../scss/colors.scss" as *;
 @use "./../../../scss/variabels.scss" as *;
 
-.profileBrands {
-  display: flex;
-  flex-direction: row;
-  width: min(480px, 100vw);
-  display: flex;
-  flex-direction: column;
+.profilePromo {
+  width: 480px;
+  margin-top: $size10px;
+  min-height: calc(100dvh - $size57px);
+  gap: $size15px;
 
-  .profileBrandsHeader {
-    width: 92%;
-    padding: 0px 4%;
-    height: $size43px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .profileBrandsBody {
-    margin-top: $size10px;
-    width: 92%;
-    padding: 0px 4%;
-    gap: $size15px;
-    display: flex;
-    flex-direction: column;
+  .promoItem {
+    background-color: $color-grey;
+    width: $size330px;
+    height: $size93px;
+    border-radius: $size14px;
+    padding: $size15px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .profileBrands {
-    .profileBrandsHeader {
-      height: $flexsize43px;
-    }
+  .profilePromo {
+    width: 100vw;
+    margin-top: $flexsize10px;
+    min-height: calc(100dvh - $flexsize57px);
+    gap: $flexsize15px;
 
-    .profileBrandsBody {
-      margin-top: $flexsize10px;
-      gap: $flexsize15px;
+    .promoItem {
+      width: $flexsize330px;
+      height: $flexsize93px;
+      border-radius: $flexsize14px;
+      padding: $flexsize15px;
     }
   }
 }
