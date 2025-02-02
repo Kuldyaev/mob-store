@@ -1,0 +1,54 @@
+@use "./../../../scss/colors.scss" as *;
+@use "./../../../scss/variabels.scss" as *;
+
+.toggleSwitch {
+  width: $size40px;
+  height: $size23px;
+  border-radius: $size100px;
+  background-color: $color-grey-deep;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.on {
+  background-color: $color-blue; /* Цвет фона при включенном состоянии */
+}
+
+.off {
+  background-color: $color-grey-deep; /* Цвет фона при включенном состоянии */
+}
+
+.switch {
+  width: $size19px;
+  height: $size19px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.3s;
+}
+
+.switchOn {
+  transform: translateX($size20px); /* Перемещение переключателя вправо */
+}
+
+.switchOff {
+  transform: translateX(0); /* Перемещение переключателя влево */
+}
+
+@media screen and (max-width: 480px) {
+  .toggleSwitch {
+    width: $flexsize40px;
+    height: $flexsize23px;
+    border-radius: $flexsize100px;
+  }
+
+  .switch {
+    width: $flexsize19px;
+    height: $flexsize19px;
+  }
+
+  .switchOn {
+    transform: translateX($flexsize20px); /* Перемещение переключателя вправо */
+  }
+}
