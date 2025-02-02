@@ -16,6 +16,7 @@ import { SearchBtn } from "./Buttons/SearchBtn";
 import { BackBtn } from "./Buttons/BackBtn";
 import { ContextMenuBtn } from "./Buttons/ContextMenuBtn";
 import { Button } from "./Buttons/Button";
+import ToggleSwitch from "./ToggleSwitch";
 
 import { Typograph_24 } from "./Text/Typograph_24";
 import { Typograph_20 } from "./Text/Typograph_20";
@@ -54,4 +55,5 @@ export {
   Typograph_12_5,
   Typograph_11_5,
   Typograph_9,
+  ToggleSwitch,
 };

@@ -1,42 +1,106 @@
 @use "./../../../scss/colors.scss" as *;
 @use "./../../../scss/variabels.scss" as *;
 
-.profileBrands {
-  display: flex;
-  flex-direction: row;
-  width: min(480px, 100vw);
-  display: flex;
-  flex-direction: column;
+.profilePromo {
+  width: 480px;
+  margin-top: $size10px;
+  min-height: calc(100dvh - $size57px);
+  gap: $size15px;
 
-  .profileBrandsHeader {
-    width: 92%;
-    padding: 0px 4%;
-    height: $size43px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .profileBrandsBody {
-    margin-top: $size10px;
-    width: 92%;
-    padding: 0px 4%;
+  .promoItem {
+    background-color: $color-grey;
+    width: $size330px;
+    height: $size93px;
+    border-radius: $size14px;
+    padding: $size15px;
     gap: $size15px;
-    display: flex;
-    flex-direction: column;
+
+    .topPromoItem {
+      width: 100%;
+      height: $size46px;
+
+      .symbolPlace {
+        height: calc(100% - $size9px);
+        padding-top: $size9px;
+        width: $size45px;
+        margin-right: $size14-5px;
+
+        svg {
+          width: $size52px;
+          height: $size32px;
+        }
+      }
+
+      .promoText {
+        gap: $size3px;
+        height: 100%;
+        width: $size204px;
+        margin-right: $size25px;
+
+        h3 {
+          line-height: 1.1;
+        }
+      }
+      .switchPlace {
+        height: calc(100% - $size14px);
+        width: $size40px;
+        padding-top: $size13px;
+      }
+    }
+
+    button {
+      height: $size29px;
+      background-color: $color-grey-deep;
+      color: $color-super-black;
+    }
   }
 }
 
 @media screen and (max-width: 480px) {
-  .profileBrands {
-    .profileBrandsHeader {
-      height: $flexsize43px;
-    }
+  .profilePromo {
+    width: 100vw;
+    margin-top: $flexsize10px;
+    min-height: calc(100dvh - $flexsize57px);
+    gap: $flexsize15px;
 
-    .profileBrandsBody {
-      margin-top: $flexsize10px;
+    .promoItem {
+      width: $flexsize330px;
+      height: $flexsize93px;
+      border-radius: $flexsize14px;
+      padding: $flexsize15px;
       gap: $flexsize15px;
+
+      .topPromoItem {
+        height: $flexsize46px;
+
+        .symbolPlace {
+          height: calc(100% - $flexsize9px);
+          padding-top: $flexsize9px;
+          width: $flexsize45px;
+          margin-right: $flexsize14-5px;
+
+          svg {
+            width: $flexsize52px;
+            height: $flexsize32px;
+          }
+        }
+
+        .promoText {
+          gap: $flexsize3px;
+          width: $flexsize204px;
+          margin-right: $flexsize25px;
+        }
+
+        .switchPlace {
+          width: $flexsize40px;
+          height: calc(100% - $flexsize14px);
+          padding-top: $flexsize13px;
+        }
+      }
+
+      button {
+        height: $size29px;
+      }
     }
   }
 }
