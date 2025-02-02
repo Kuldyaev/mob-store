@@ -191,7 +191,9 @@ const ProfilePage = () => {
       <div
         className={cn(
           s.secondDesk,
-          ["settings", "about", "promo"].includes(activeMenuScreen)
+          ["settings", "about", "promo", "deliveries"].includes(
+            activeMenuScreen
+          )
             ? s.showed
             : s.hidden
         )}

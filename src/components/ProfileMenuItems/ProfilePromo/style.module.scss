@@ -13,6 +13,46 @@
     height: $size93px;
     border-radius: $size14px;
     padding: $size15px;
+    gap: $size15px;
+
+    .topPromoItem {
+      width: 100%;
+      height: $size46px;
+
+      .symbolPlace {
+        height: calc(100% - $size9px);
+        padding-top: $size9px;
+        width: $size45px;
+        margin-right: $size14-5px;
+
+        svg {
+          width: $size52px;
+          height: $size32px;
+        }
+      }
+
+      .promoText {
+        gap: $size3px;
+        height: 100%;
+        width: $size204px;
+        margin-right: $size25px;
+
+        h3 {
+          line-height: 1.1;
+        }
+      }
+      .switchPlace {
+        height: calc(100% - $size14px);
+        width: $size40px;
+        padding-top: $size13px;
+      }
+    }
+
+    button {
+      height: $size29px;
+      background-color: $color-grey-deep;
+      color: $color-super-black;
+    }
   }
 }
 
@@ -28,6 +68,39 @@
       height: $flexsize93px;
       border-radius: $flexsize14px;
       padding: $flexsize15px;
+      gap: $flexsize15px;
+
+      .topPromoItem {
+        height: $flexsize46px;
+
+        .symbolPlace {
+          height: calc(100% - $flexsize9px);
+          padding-top: $flexsize9px;
+          width: $flexsize45px;
+          margin-right: $flexsize14-5px;
+
+          svg {
+            width: $flexsize52px;
+            height: $flexsize32px;
+          }
+        }
+
+        .promoText {
+          gap: $flexsize3px;
+          width: $flexsize204px;
+          margin-right: $flexsize25px;
+        }
+
+        .switchPlace {
+          width: $flexsize40px;
+          height: calc(100% - $flexsize14px);
+          padding-top: $flexsize13px;
+        }
+      }
+
+      button {
+        height: $size29px;
+      }
     }
   }
 }
