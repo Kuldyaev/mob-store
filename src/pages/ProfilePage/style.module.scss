@@ -10,6 +10,49 @@
   height: min($size36px, $flexsize36px);
 }
 
+.verticalSlideDesk {
+  width: min(480px, 100vw);
+  min-height: calc(100dvh - min($size57px, $flexsize57px));
+  z-index: 25;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+
+  overflow: hidden;
+  padding-top: $size38px;
+
+  .slideBlock {
+    background-color: $color-white;
+    width: 100%;
+    min-height: 150px;
+    height: calc(100dvh - $size38px - $size25px);
+    border-radius: $size25px $size25px 0 0;
+    position: sticky;
+    margin-top: 100dvh;
+    transition: margin-top 0.3s;
+    padding-top: $size25px;
+
+    .slideControl {
+      position: absolute;
+      top: 0;
+      height: $size20px;
+      width: $size80px;
+      left: $size155px;
+
+      .bar {
+        background-color: $color-grey;
+        width: $size40px;
+        height: $size4px;
+        border-radius: $size10px;
+      }
+    }
+  }
+
+  .show {
+    margin-top: 0;
+  }
+}
+
 .secondDesk {
   width: min(480px, 100vw);
   height: 100%;
@@ -183,6 +226,30 @@
 }
 
 @media screen and (max-width: 480px) {
+  .verticalSlideDesk {
+    padding-top: $flexsize38px;
+
+    .slideBlock {
+      height: calc(100dvh - $flexsize38px - $flexsize25px);
+      border-radius: $flexsize25px $flexsize25px 0 0;
+      padding-top: $flexsize25px;
+
+      .slideControl {
+        position: absolute;
+        top: 0;
+        height: $flexsize20px;
+        width: $flexsize80px;
+        left: $flexsize155px;
+
+        .bar {
+          width: $flexsize40px;
+          height: $flexsize4px;
+          border-radius: $flexsize10px;
+        }
+      }
+    }
+  }
+
   .profileDesk {
     padding: 0px;
     width: 100vw;
