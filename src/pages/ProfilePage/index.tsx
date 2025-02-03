@@ -153,6 +153,8 @@ const menu = [
 const ProfilePage = () => {
   const [activeMenuScreen, setActiveMenuScreen] = useState<string>("main");
   const elRef = useRef<HTMLDivElement | null>(null);
+  const slideControl = useRef<HTMLDivElement | null>(null);
+  const touchStartRef = useRef(0);
   const isShowed = useSelector((state) => state.status.headerFixed.isShowed);
 
   const handleScroll = () => {
@@ -186,14 +188,83 @@ const ProfilePage = () => {
     setActiveMenuScreen("main");
   };
 
+  const handleTouchStart = (e) => {
+    console.log(e.touches[0].clientY);
+    touchStartRef.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndY = e.changedTouches[0].clientY;
+
+    if (touchStartRef.current < touchEndY - 40) {
+      // Смахивание вниз
+      setActiveMenuScreen("main");
+    }
+  };
+
   return (
     <>
       <div
         className={cn(
-          s.secondDesk,
-          ["settings", "about", "promo", "deliveries"].includes(
+          s.verticalSlideDesk,
+          ["refferal", "address", "discount", "contacts"].includes(
             activeMenuScreen
           )
+            ? s.showed
+            : s.hidden
+        )}
+      >
+        <div className={cn(s.slideBlock, "flex-column-start-center", s.show)}>
+          <div
+            className={cn(s.slideControl, "flex-column-center-center")}
+            ref={slideControl}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div className={s.bar}>{}</div>
+          </div>
+          {activeMenuScreen === "refferal" && (
+            <Suspense fallback={<Loader />}>
+              <ProfileRefferal
+                title="Скидки для вас и ваших друзей"
+                onClickBack={hideMenuItem}
+              />
+            </Suspense>
+          )}
+          {activeMenuScreen === "address" && (
+            <Suspense fallback={<Loader />}>
+              <ProfileAddress title="Мои адреса" onClickBack={hideMenuItem} />
+            </Suspense>
+          )}
+          {activeMenuScreen === "discount" && (
+            <Suspense fallback={<Loader />}>
+              <ProfileDiscount
+                title="Ваши скидки в декабре"
+                onClickBack={hideMenuItem}
+              />
+            </Suspense>
+          )}
+          {activeMenuScreen === "contacts" && (
+            <Suspense fallback={<Loader />}>
+              <ProfileContacts
+                title="Связаться с нами"
+                onClickBack={hideMenuItem}
+              />
+            </Suspense>
+          )}
+        </div>
+      </div>
+      <div
+        className={cn(
+          s.secondDesk,
+          [
+            "settings",
+            "about",
+            "promo",
+            "deliveries",
+            "brands",
+            "shopping",
+          ].includes(activeMenuScreen)
             ? s.showed
             : s.hidden
         )}
@@ -226,40 +297,13 @@ const ProfilePage = () => {
             <ProfileAbout title="О сервисе" onClickBack={hideMenuItem} />
           </Suspense>
         )}
-        {activeMenuScreen === "address" && (
-          <Suspense fallback={<Loader />}>
-            <ProfileAddress title="Мои адреса" onClickBack={hideMenuItem} />
-          </Suspense>
-        )}
-        {activeMenuScreen === "discount" && (
-          <Suspense fallback={<Loader />}>
-            <ProfileDiscount
-              title="Ваши скидки в декабре"
-              onClickBack={hideMenuItem}
-            />
-          </Suspense>
-        )}
-        {activeMenuScreen === "refferal" && (
-          <Suspense fallback={<Loader />}>
-            <ProfileRefferal
-              title="Скидки для вас и ваших друзей"
-              onClickBack={hideMenuItem}
-            />
-          </Suspense>
-        )}
+
         {activeMenuScreen === "faq" && (
           <Suspense fallback={<Loader />}>
             <ProfileFaq title="Отзывы и вопросы" onClickBack={hideMenuItem} />
           </Suspense>
         )}
-        {activeMenuScreen === "contacts" && (
-          <Suspense fallback={<Loader />}>
-            <ProfileContacts
-              title="Связаться с нами"
-              onClickBack={hideMenuItem}
-            />
-          </Suspense>
-        )}
+
         {activeMenuScreen === "settings" && (
           <Suspense fallback={<Loader />}>
             <ProfileSettings title="Настройки" onClickBack={hideMenuItem} />
