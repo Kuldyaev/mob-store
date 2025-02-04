@@ -188,17 +188,26 @@ const ProfilePage = () => {
     setActiveMenuScreen("main");
   };
 
-  const handleTouchStart = (e) => {
-    console.log(e.touches[0].clientY);
+  const handleTouchStart = (e: any) => {
     touchStartRef.current = e.touches[0].clientY;
   };
 
-  const handleTouchEnd = (e) => {
+  const handleTouchMove = (e: any) => {
+    if (slideControl.current) {
+      slideControl.current.style.marginTop =
+        e.touches[0].clientY - touchStartRef.current + "px";
+    }
+  };
+
+  const handleTouchEnd = (e: any) => {
     const touchEndY = e.changedTouches[0].clientY;
 
     if (touchStartRef.current < touchEndY - 40) {
-      // Смахивание вниз
       setActiveMenuScreen("main");
+      slideControl.current
+        ? (slideControl.current.style.marginTop = "0px")
+        : null;
+      touchStartRef.current = 0;
     }
   };
 
@@ -214,11 +223,14 @@ const ProfilePage = () => {
             : s.hidden
         )}
       >
-        <div className={cn(s.slideBlock, "flex-column-start-center", s.show)}>
+        <div
+          className={cn(s.slideBlock, "flex-column-start-center", s.show)}
+          ref={slideControl}
+        >
           <div
             className={cn(s.slideControl, "flex-column-center-center")}
-            ref={slideControl}
             onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
             <div className={s.bar}>{}</div>
