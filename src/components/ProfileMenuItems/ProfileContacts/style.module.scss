@@ -1,31 +1,19 @@
 @use "./../../../scss/colors.scss" as *;
 @use "./../../../scss/variabels.scss" as *;
 
-.profileContacts {
-  width: calc(480px - $size30px);
-  margin-top: calc(100dvh - $size200px);
-  min-height: calc(100dvh - $size90px);
-  margin-left: $size15px;
-  gap: $size7px;
-  .empty {
-    background-color: $color-grey;
-    width: $size360px;
-    height: $size44px;
-    border-radius: $size14px;
+.contacts {
+  width: calc(100% - $size30px);
+  padding: $size3px $size15px $size8px $size15px;
+  height: calc(100% - $size11px);
+  .profileContacts {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .profileContacts {
-    width: $flexsize360px;
-    margin-left: $flexsize15px;
-    margin-top: calc(100dvh - $flexsize200px);
-    gap: $flexsize7px;
-    min-height: calc(100dvh - $flexsize90px);
-    .empty {
-      width: $flexsize360px;
-      height: $flexsize44px;
-      border-radius: $flexsize14px;
-    }
+  .contacts {
+    width: calc(100% - $flexsize30px);
+    padding: $flexsize3px $flexsize15px $flexsize8px $flexsize15px;
+    height: calc(100% - $flexsize11px);
   }
 }
