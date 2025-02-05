@@ -132,6 +132,13 @@ button {
   align-items: center;
   justify-content: flex-start;
 }
+
+.flex-column-between-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
 .animHeader {
   color: black;
   transform: translate(0px, 0px) scale(1);
