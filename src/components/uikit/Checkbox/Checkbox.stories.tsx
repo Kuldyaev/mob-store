@@ -7,7 +7,7 @@ export default {
 
 interface CheckBoxProps {
   checked: boolean;
-  changeValue: (x: boolean) => void;
+  onChange: (x: boolean) => void;
 }
 
 const Template = (args: CheckBoxProps) => <CheckBox {...args} />;

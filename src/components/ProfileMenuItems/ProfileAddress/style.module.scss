@@ -1,42 +1,137 @@
 @use "./../../../scss/colors.scss" as *;
 @use "./../../../scss/variabels.scss" as *;
 
-.profileBrands {
-  display: flex;
-  flex-direction: row;
-  width: min(480px, 100vw);
-  display: flex;
-  flex-direction: column;
+.adresses {
+  width: calc(100% - $size30px);
+  padding: $size3px $size15px $size8px $size15px;
+  height: calc(100% - $size11px);
 
-  .profileBrandsHeader {
-    width: 92%;
-    padding: 0px 4%;
-    height: $size43px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  .adressesTopText {
+    width: 100%;
+    gap: $size28px;
+
+    .header {
+      width: 100%;
+
+      .addAdressBtn {
+        background-color: $color-grey;
+        padding: $size5px $size12px;
+        border-radius: $size22px;
+        gap: $size5px;
+
+        svg {
+          width: $size9px;
+          height: $size9px;
+        }
+
+        h5 {
+          padding: 0;
+          margin: 0;
+          font-weight: 500;
+          line-height: 1.2;
+          font-size: $size11px;
+          user-select: none;
+        }
+      }
+    }
+
+    .body {
+      width: 100%;
+      gap: $size15px;
+
+      .address {
+        width: 100%;
+        height: $size40px;
+
+        .adressesLeft {
+          height: 100%;
+          gap: $size10px;
+
+          .adressesLogoPlace {
+            background-color: $color-grey;
+            width: $size40px;
+            height: $size40px;
+            border-radius: $size14px;
+          }
+
+          .adressesInfoPlace {
+            gap: $size3px;
+            h3 {
+              text-align: left;
+              font-weight: 400;
+              line-height: 1.2;
+            }
+
+            .editAddress {
+              cursor: pointer;
+            }
+          }
+        }
+
+        .adressesCheckBoxPlace {
+          height: 100%;
+          width: $size22px;
+        }
+      }
+    }
   }
 
-  .profileBrandsBody {
-    margin-top: $size10px;
-    width: 92%;
-    padding: 0px 4%;
-    gap: $size15px;
-    display: flex;
-    flex-direction: column;
+  .adressesBtn {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .profileBrands {
-    .profileBrandsHeader {
-      height: $flexsize43px;
-    }
+  .adresses {
+    width: calc(100% - $flexsize30px);
+    padding: $flexsize3px $flexsize15px $flexsize8px $flexsize15px;
+    height: calc(100% - $flexsize11px);
 
-    .profileBrandsBody {
-      margin-top: $flexsize10px;
-      gap: $flexsize15px;
+    .adressesTopText {
+      gap: $flexsize28px;
+
+      .header {
+        .addAdressBtn {
+          padding: $flexsize5px $flexsize12px;
+          border-radius: $flexsize22px;
+          gap: $flexsize5px;
+
+          svg {
+            width: $flexsize9px;
+            height: $flexsize9px;
+          }
+
+          h5 {
+            font-size: $flexsize11px;
+          }
+        }
+      }
+
+      .body {
+        gap: $flexsize15px;
+
+        .address {
+          height: $flexsize40px;
+
+          .adressesLeft {
+            gap: $flexsize10px;
+
+            .adressesLogoPlace {
+              width: $flexsize40px;
+              height: $flexsize40px;
+              border-radius: $flexsize14px;
+            }
+
+            .adressesInfoPlace {
+              gap: $flexsize3px;
+            }
+          }
+
+          .adressesCheckBoxPlace {
+            width: $flexsize22px;
+          }
+        }
+      }
     }
   }
 }
