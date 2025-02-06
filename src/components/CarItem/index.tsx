@@ -63,7 +63,7 @@ const CartItem: FC<CartItemProps> = ({ item }) => {
               </div>
             )}
           </div>
-          <CheckBox changeValue={setChecked} checked={checked} />
+          <CheckBox onChange={setChecked} checked={checked} />
         </div>
         <div className={s.itemBody}>
           {/* <div className={s.bodySettings}>

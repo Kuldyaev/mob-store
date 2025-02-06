@@ -99,7 +99,7 @@ const CartPage = () => {
               </Typograph_12_5>
               <CheckBox
                 checked={isSelectedAll}
-                changeValue={() => {
+                onChange={() => {
                   setIsSelectedAll(!isSelectedAll);
                 }}
               />

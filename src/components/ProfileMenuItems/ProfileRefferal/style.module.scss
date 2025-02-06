@@ -1,42 +1,33 @@
 @use "./../../../scss/colors.scss" as *;
 @use "./../../../scss/variabels.scss" as *;
 
-.profileBrands {
-  display: flex;
-  flex-direction: row;
-  width: min(480px, 100vw);
-  display: flex;
-  flex-direction: column;
+.refferal {
+  width: calc(100% - $size30px);
+  padding: $size3px $size15px $size8px $size15px;
+  height: calc(100% - $size11px);
 
-  .profileBrandsHeader {
-    width: 92%;
-    padding: 0px 4%;
-    height: $size43px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  .refferalTopText {
+    width: 100%;
+    gap: $size10px;
+
+    h3 {
+      line-height: 1.22;
+    }
   }
 
-  .profileBrandsBody {
-    margin-top: $size10px;
-    width: 92%;
-    padding: 0px 4%;
-    gap: $size15px;
-    display: flex;
-    flex-direction: column;
+  .refferalBtn {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .profileBrands {
-    .profileBrandsHeader {
-      height: $flexsize43px;
-    }
+  .refferal {
+    width: calc(100% - $flexsize30px);
+    padding: $flexsize3px $flexsize15px $flexsize8px $flexsize15px;
+    height: calc(100% - $flexsize11px);
 
-    .profileBrandsBody {
-      margin-top: $flexsize10px;
-      gap: $flexsize15px;
+    .refferalTopText {
+      gap: $flexsize10px;
     }
   }
 }

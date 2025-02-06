@@ -3,19 +3,16 @@ import s from "./style.module.scss";
 
 interface CheckBoxProps {
   checked: boolean;
-  changeValue: (x: boolean) => void;
+  onChange: (x: boolean) => void;
 }
 
-export const CheckBox: FC<CheckBoxProps> = ({
-  checked = false,
-  changeValue,
-}) => {
+export const CheckBox: FC<CheckBoxProps> = ({ checked = false, onChange }) => {
   return (
     <label className={s.checkboxcontainer}>
       <input
         type="checkbox"
         checked={checked}
-        onClick={() => changeValue(!checked)}
+        onClick={() => onChange(!checked)}
       />
       <span className={s.checkmark}>
         <svg
